@@ -1,0 +1,6 @@
+[submodule "Server/thinkphp"]
+	path = Server/thinkphp
+	url = https://github.com/top-think/framework
+[submodule "Server/think"]
+	path = Server/think
+	url = https://github.com/top-think/think
