@@ -1,0 +1,6 @@
+framework module LGHelper {
+  umbrella header "LGHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}
