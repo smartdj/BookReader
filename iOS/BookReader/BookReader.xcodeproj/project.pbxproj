@@ -27,6 +27,7 @@
 		8EE70E2A1D79297C000A5C37 /* GCDSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E261D79297C000A5C37 /* GCDSemaphore.swift */; };
 		8EE70E2B1D79297C000A5C37 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E271D79297C000A5C37 /* GCDTimer.swift */; };
 		8EE70E301D7940DB000A5C37 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E2F1D7940DB000A5C37 /* UIDeviceExtension.swift */; };
+		8EE70E331D79754C000A5C37 /* DrawerVisualStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E321D79754C000A5C37 /* DrawerVisualStateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		8EE70E271D79297C000A5C37 /* GCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
 		8EE70E2C1D7929EF000A5C37 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8EE70E2F1D7940DB000A5C37 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		8EE70E321D79754C000A5C37 /* DrawerVisualStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerVisualStateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				8EE70E0F1D781CDB000A5C37 /* BookListViewController.swift */,
 				8EE70E171D781DAE000A5C37 /* SettingCenterViewController.swift */,
 				8EE70E191D781DE4000A5C37 /* ProfileViewController.swift */,
+				8EE70E321D79754C000A5C37 /* DrawerVisualStateManager.swift */,
 				8EE70E1E1D7913E9000A5C37 /* DSwiftHelper */,
 				8EE70E1B1D781E3D000A5C37 /* Controls */,
 				8EE70E161D781D74000A5C37 /* 侧边栏 */,
@@ -427,6 +430,7 @@
 				8EE70E131D781D59000A5C37 /* LeftMenuViewController.swift in Sources */,
 				8EE70E2B1D79297C000A5C37 /* GCDTimer.swift in Sources */,
 				8EE70E291D79297C000A5C37 /* GCDQueue.swift in Sources */,
+				8EE70E331D79754C000A5C37 /* DrawerVisualStateManager.swift in Sources */,
 				8EE70E1A1D781DE4000A5C37 /* ProfileViewController.swift in Sources */,
 				8EE70E101D781CDB000A5C37 /* BookListViewController.swift in Sources */,
 				8EE70E1D1D781E6C000A5C37 /* DNavigationController.swift in Sources */,

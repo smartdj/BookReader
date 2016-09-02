@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5949D4C04D88774ED8CAA415'
+               BlueprintIdentifier = 'C33AD07610148D72EF716D59'
                BlueprintName = 'SWTableViewCell'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SWTableViewCell.framework'>

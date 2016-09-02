@@ -21,21 +21,20 @@ target "BookReader" do
     pod 'NightNight'#夜间模式
     pod 'TYAttributedLabel', '~> 2.6.2'#coretext
     pod 'SWTableViewCell'#带很多手势的表单元格。
-    #pod 'iOSSlideMenu', :git => 'https://github.com/smartdj/iOSSlideMenu.git'#侧边菜单
-    pod 'PKRevealController'
+    pod 'DrawerController', '~> 1.0' #侧边菜单 is a swift version of the popular MMDrawerController
 end
 
 
 
 #Using Alamofire (3.4.2)
 #Using AlamofireImage (2.4.1)
+#Installing DrawerController (1.1.1)
 #Using IQKeyboardManagerSwift (4.0.5)
 #Installing LGHelper 1.1.2 (was 1.1.2)
 #Using MBProgressHUD (1.0.0)
 #Using MJRefresh (3.1.12)
 #Using NightNight (0.3.1)
 #Using ObjectMapper (1.4.0)
-#Installing PKRevealController (2.0.6)
 #Using RTRootNavigationController (0.5.20)
 #Using Realm (1.0.2)
 #Using RealmSwift (1.0.2)

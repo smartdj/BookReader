@@ -2,13 +2,18 @@ PODS:
   - Alamofire (3.4.2)
   - AlamofireImage (2.4.1):
     - Alamofire (~> 3.3)
+  - DrawerController (1.1.1):
+    - DrawerController/Core (= 1.1.1)
+    - DrawerController/DrawerVisualStates (= 1.1.1)
+  - DrawerController/Core (1.1.1)
+  - DrawerController/DrawerVisualStates (1.1.1):
+    - DrawerController/Core
   - IQKeyboardManagerSwift (4.0.5)
   - LGHelper (1.1.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - NightNight (0.3.1)
   - ObjectMapper (1.4.0)
-  - PKRevealController (2.0.6)
   - Realm (1.0.2):
     - Realm/Headers (= 1.0.2)
   - Realm/Headers (1.0.2)
@@ -32,13 +37,13 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.4)
   - AlamofireImage (~> 2.0)
+  - DrawerController (~> 1.0)
   - IQKeyboardManagerSwift
   - LGHelper (from `https://github.com/smartdj/LGHelper.git`)
   - MBProgressHUD
   - MJRefresh
   - NightNight
   - ObjectMapper
-  - PKRevealController
   - RealmSwift
   - Reveal-iOS-SDK
   - RTRootNavigationController
@@ -68,13 +73,13 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
   AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
+  DrawerController: ff3a2630c74f0daf7840702a1492b8accbbf3d7e
   IQKeyboardManagerSwift: 41fd3a45a2cdb2a0e031af697708a95b865068a1
   LGHelper: e1976649226bb222c1dcb9a0452c654f095af525
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   NightNight: c3ff139aace06406787b7c6cc85e4d954f53e29a
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
-  PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33

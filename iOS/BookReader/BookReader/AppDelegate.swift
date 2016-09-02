@@ -8,19 +8,17 @@
 
 import UIKit
 import RTRootNavigationController
-import PKRevealController
+import DrawerController
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var revealController:PKRevealController?;
+    var drawerController: DrawerController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.backgroundColor = UIColor.whiteColor()
         
         let centerViewController = MainViewController();
         let leftMenuViewController = LeftMenuViewController();
@@ -29,32 +27,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
         let mainNavigationController = RTRootNavigationController(rootViewController: centerViewController);
         
         // 初始化侧滑菜单.
-        revealController = PKRevealController(frontViewController: mainNavigationController, leftViewController: leftMenuViewController, rightViewController: rightMenuViewController)
+        self.drawerController = DrawerController(centerViewController: mainNavigationController, leftDrawerViewController: leftMenuViewController, rightDrawerViewController: rightMenuViewController)
+        self.drawerController.showsShadows = false
         
-        // 设置侧滑菜单.
-        revealController!.delegate = self;
-        revealController!.animationDuration = 0.25;
-        revealController!.allowsOverdraw = true;
-        revealController!.disablesFrontViewInteraction = true
-        revealController!.setMinimumWidth(60, maximumWidth: 60, forViewController: leftMenuViewController);
-        revealController!.setMinimumWidth(260, maximumWidth: 260, forViewController: rightMenuViewController);
+        self.drawerController.restorationIdentifier = "Drawer"
+        self.drawerController.maximumRightDrawerWidth = 200.0
+        self.drawerController.openDrawerGestureModeMask = .All
+        self.drawerController.closeDrawerGestureModeMask = .All
+        self.drawerController.maximumLeftDrawerWidth = 60;
+        self.drawerController.shouldStretchDrawer = false
+        self.drawerController.drawerVisualStateBlock = { (drawerController, drawerSide, percentVisible) in
+            let block = DrawerVisualStateManager.sharedManager.drawerVisualStateBlockForDrawerSide(drawerSide)
+            block?(drawerController, drawerSide, percentVisible)
+        }
         
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.backgroundColor = UIColor.whiteColor()
+        let tintColor = UIColor(red: 29 / 255, green: 173 / 255, blue: 234 / 255, alpha: 1.0)
+        self.window?.tintColor = tintColor
         // 指定 root view controller
-        self.window?.rootViewController = revealController
+        self.window?.rootViewController = self.drawerController
         
         self.window?.makeKeyAndVisible()
         
         return true
     }
     
-    //MARK: - PKRevealing
-    func revealController(revealController: PKRevealController!, didChangeToState state: PKRevealControllerState) {
-        
-    }
-    
-    func revealController(revealController: PKRevealController!, willChangeToState state: PKRevealControllerState) {
-        
-    }
     //MARK:
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
