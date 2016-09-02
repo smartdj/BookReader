@@ -12,10 +12,11 @@ namespace Spider;
 include_once "webRequest.php";
 include_once "../utils/encoder.php";
 require '../vendor/autoload.php';
+include_once "simple_html_dom.php";
 
 class SoshuSpider
 {
-    private static $baseURL = "http://3g.soshu.cc/";
+    private static $baseURL = "http://3g.soshu.cc/Book/";
     private static $searchURL = "http://3g.soshu.cc/Book/Search.aspx";
 
     private static $headersArray = array(
@@ -46,12 +47,22 @@ class SoshuSpider
 
 
     //解析返回数据
-    static function analyseHTML($htmlData)
+    static function analyseSearchResultHTML($htmlData)
     {
-        $html_dom = new \HtmlParser\ParserDom($htmlData);
+        $html_dom = str_get_html($htmlData);
+        // 查找搜索结果中的第一个结果
+        $firstSearchResult = $html_dom->find('form p a',0);
 
+        if($firstSearchResult && $firstSearchResult->href){
+            $fullURL = self::$baseURL . $firstSearchResult->href;
+            echo $fullURL;
+        }
+
+//        echo "<TEXTAREA  rows=6 cols=60>";
+//        echo $htmlData;
+//        echo "</TEXTAREA>";
     }
 }
 
 $htmlData = SoshuSpider::search("俗人回档");
-SoshuSpider::analyseHTML($htmlData);
+SoshuSpider::analyseSearchResultHTML($htmlData);
