@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2C1167C486EEB6C2BF11811E037780AB2F604A25",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2C1167C486EEB6C2BF11811E037780AB2F604A25" : 0,
+    "F5A82FE36FF882A64BF591122226FD63FAAB772A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "49B6B3A2-6F46-47E0-9369-953DA45D32DD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2C1167C486EEB6C2BF11811E037780AB2F604A25" : "BookReader\/",
+    "F5A82FE36FF882A64BF591122226FD63FAAB772A" : "BookReader\/iOS\/BookReader\/BookReader\/DSwiftHelper\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BookReader",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iOS\/BookReader\/BookReader.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/smartdj\/BookReader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2C1167C486EEB6C2BF11811E037780AB2F604A25"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/smartdj\/DSwiftHelper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F5A82FE36FF882A64BF591122226FD63FAAB772A"
+    }
+  ]
+}

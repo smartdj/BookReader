@@ -16,11 +16,17 @@
 		8EBFB8C11D78184800568EC7 /* BookReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBFB8C01D78184800568EC7 /* BookReaderUITests.swift */; };
 		8EE70E0E1D781CAD000A5C37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E0D1D781CAD000A5C37 /* MainViewController.swift */; };
 		8EE70E101D781CDB000A5C37 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E0F1D781CDB000A5C37 /* BookListViewController.swift */; };
-		8EE70E131D781D59000A5C37 /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E121D781D59000A5C37 /* LeftSideViewController.swift */; };
-		8EE70E151D781D6C000A5C37 /* RightSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E141D781D6C000A5C37 /* RightSideViewController.swift */; };
+		8EE70E131D781D59000A5C37 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E121D781D59000A5C37 /* LeftMenuViewController.swift */; };
+		8EE70E151D781D6C000A5C37 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E141D781D6C000A5C37 /* RightMenuViewController.swift */; };
 		8EE70E181D781DAE000A5C37 /* SettingCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E171D781DAE000A5C37 /* SettingCenterViewController.swift */; };
 		8EE70E1A1D781DE4000A5C37 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E191D781DE4000A5C37 /* ProfileViewController.swift */; };
 		8EE70E1D1D781E6C000A5C37 /* DNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E1C1D781E6C000A5C37 /* DNavigationController.swift */; };
+		8EE70E221D79140F000A5C37 /* DSwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E211D79140F000A5C37 /* DSwiftHelper.swift */; };
+		8EE70E281D79297C000A5C37 /* GCDGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E241D79297C000A5C37 /* GCDGroup.swift */; };
+		8EE70E291D79297C000A5C37 /* GCDQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E251D79297C000A5C37 /* GCDQueue.swift */; };
+		8EE70E2A1D79297C000A5C37 /* GCDSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E261D79297C000A5C37 /* GCDSemaphore.swift */; };
+		8EE70E2B1D79297C000A5C37 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E271D79297C000A5C37 /* GCDTimer.swift */; };
+		8EE70E301D7940DB000A5C37 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E2F1D7940DB000A5C37 /* UIDeviceExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +64,18 @@
 		8EBFB8C21D78184800568EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EE70E0D1D781CAD000A5C37 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8EE70E0F1D781CDB000A5C37 /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
-		8EE70E121D781D59000A5C37 /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
-		8EE70E141D781D6C000A5C37 /* RightSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSideViewController.swift; sourceTree = "<group>"; };
+		8EE70E121D781D59000A5C37 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		8EE70E141D781D6C000A5C37 /* RightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
 		8EE70E171D781DAE000A5C37 /* SettingCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCenterViewController.swift; sourceTree = "<group>"; };
 		8EE70E191D781DE4000A5C37 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8EE70E1C1D781E6C000A5C37 /* DNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNavigationController.swift; sourceTree = "<group>"; };
+		8EE70E211D79140F000A5C37 /* DSwiftHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSwiftHelper.swift; sourceTree = "<group>"; };
+		8EE70E241D79297C000A5C37 /* GCDGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDGroup.swift; sourceTree = "<group>"; };
+		8EE70E251D79297C000A5C37 /* GCDQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueue.swift; sourceTree = "<group>"; };
+		8EE70E261D79297C000A5C37 /* GCDSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDSemaphore.swift; sourceTree = "<group>"; };
+		8EE70E271D79297C000A5C37 /* GCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
+		8EE70E2C1D7929EF000A5C37 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8EE70E2F1D7940DB000A5C37 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +143,7 @@
 				8EE70E0F1D781CDB000A5C37 /* BookListViewController.swift */,
 				8EE70E171D781DAE000A5C37 /* SettingCenterViewController.swift */,
 				8EE70E191D781DE4000A5C37 /* ProfileViewController.swift */,
+				8EE70E1E1D7913E9000A5C37 /* DSwiftHelper */,
 				8EE70E1B1D781E3D000A5C37 /* Controls */,
 				8EE70E161D781D74000A5C37 /* 侧边栏 */,
 				8EBFB8A71D78184800568EC7 /* Assets.xcassets */,
@@ -169,8 +183,8 @@
 		8EE70E161D781D74000A5C37 /* 侧边栏 */ = {
 			isa = PBXGroup;
 			children = (
-				8EE70E121D781D59000A5C37 /* LeftSideViewController.swift */,
-				8EE70E141D781D6C000A5C37 /* RightSideViewController.swift */,
+				8EE70E121D781D59000A5C37 /* LeftMenuViewController.swift */,
+				8EE70E141D781D6C000A5C37 /* RightMenuViewController.swift */,
 			);
 			name = "侧边栏";
 			sourceTree = "<group>";
@@ -181,6 +195,36 @@
 				8EE70E1C1D781E6C000A5C37 /* DNavigationController.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		8EE70E1E1D7913E9000A5C37 /* DSwiftHelper */ = {
+			isa = PBXGroup;
+			children = (
+				8EE70E2E1D7940AD000A5C37 /* extension */,
+				8EE70E231D79297C000A5C37 /* GCD */,
+				8EE70E211D79140F000A5C37 /* DSwiftHelper.swift */,
+			);
+			path = DSwiftHelper;
+			sourceTree = "<group>";
+		};
+		8EE70E231D79297C000A5C37 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				8EE70E241D79297C000A5C37 /* GCDGroup.swift */,
+				8EE70E251D79297C000A5C37 /* GCDQueue.swift */,
+				8EE70E261D79297C000A5C37 /* GCDSemaphore.swift */,
+				8EE70E271D79297C000A5C37 /* GCDTimer.swift */,
+				8EE70E2C1D7929EF000A5C37 /* README.md */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		8EE70E2E1D7940AD000A5C37 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				8EE70E2F1D7940DB000A5C37 /* UIDeviceExtension.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		B48ED43D94997EE6AE1656B1 /* Frameworks */ = {
@@ -373,14 +417,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE70E301D7940DB000A5C37 /* UIDeviceExtension.swift in Sources */,
 				8EE70E181D781DAE000A5C37 /* SettingCenterViewController.swift in Sources */,
+				8EE70E221D79140F000A5C37 /* DSwiftHelper.swift in Sources */,
+				8EE70E281D79297C000A5C37 /* GCDGroup.swift in Sources */,
+				8EE70E2A1D79297C000A5C37 /* GCDSemaphore.swift in Sources */,
 				8EBFB8A11D78184800568EC7 /* AppDelegate.swift in Sources */,
 				8EE70E0E1D781CAD000A5C37 /* MainViewController.swift in Sources */,
-				8EE70E131D781D59000A5C37 /* LeftSideViewController.swift in Sources */,
+				8EE70E131D781D59000A5C37 /* LeftMenuViewController.swift in Sources */,
+				8EE70E2B1D79297C000A5C37 /* GCDTimer.swift in Sources */,
+				8EE70E291D79297C000A5C37 /* GCDQueue.swift in Sources */,
 				8EE70E1A1D781DE4000A5C37 /* ProfileViewController.swift in Sources */,
 				8EE70E101D781CDB000A5C37 /* BookListViewController.swift in Sources */,
 				8EE70E1D1D781E6C000A5C37 /* DNavigationController.swift in Sources */,
-				8EE70E151D781D6C000A5C37 /* RightSideViewController.swift in Sources */,
+				8EE70E151D781D6C000A5C37 /* RightMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +578,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BookReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -541,6 +592,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BookReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

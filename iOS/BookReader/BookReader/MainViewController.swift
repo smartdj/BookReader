@@ -10,17 +10,18 @@ import UIKit
 import SnapKit
 import LGHelper
 
+
 class MainViewController: UIViewController {
     
     let userBookListViewController = UserBookListViewController();
-    let leftSideViewController = LeftSideViewController();
-    let rightSideViewController = RightSideViewController();
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = UIColor.redColor();
         title = "盗版小说！"
+        
         //更新约束
         view.setNeedsUpdateConstraints();
         
