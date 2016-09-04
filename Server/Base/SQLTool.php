@@ -75,6 +75,58 @@ class SQLTool
         }
     }
 
+    public function update($dataArray, $constraintArray, $tableName){
+        $sql = ""; $constraintString ="";
+
+        foreach ($dataArray as $k => $v) {
+            $value = $v;
+            //如果是字符型数据需要先转义处理一下
+            if(is_string($value)) {
+                $value = mysqli_real_escape_string($this->conn, $v);
+                $sql = $sql. $k . "=\"".$value."\", ";
+            }
+            else{
+                $sql = $sql. $k . "=".$value.", ";
+            }
+        }
+
+        foreach ($constraintArray as $k => $v){
+            $value = $v;
+            //如果是字符型数据需要先转义处理一下
+            if(is_string($value)) {
+                $value = mysqli_real_escape_string($this->conn, $v);
+                $constraintString = $constraintString. $k . "=\"".$value."\" and ";
+            }
+            else{
+                $constraintString = $constraintString. $k . "=".$value." and ";
+            }
+        }
+
+        $sql = substr($sql, 0, strlen($sql)-1);//移除最后一个逗号
+        $constraintString = substr($constraintString, 0, strlen($constraintString)-3);//移除最后一个逗号
+
+        $sql = sprintf("UPDATE %s SET %s WHERE %s", $tableName, $sql, $constraintString);
+
+        $b=mysqli_query($this->conn, $sql);
+        if(!$b)
+        {
+            //echo print_r("insert error :%s",mysqli_error($this->conn));
+            echo mysqli_error($this->conn);
+            echo "<br/>";
+            return 0;
+        }else {
+            if(mysqli_affected_rows($this->conn)>0)
+            {
+                return 1;
+            }else{
+                //echo print_r("not inserted :%s",mysqli_error($this->conn));
+                echo mysqli_error($this->conn);
+                echo "<br/>";
+                return 2;
+            }
+        }
+    }
+
     // dml语句是针对update delete insert 命令，返回值为true false
     public function execute_dml($sql)
     {

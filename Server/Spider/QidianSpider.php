@@ -142,10 +142,11 @@ class QidianSpider
 
 }
 
-
+//取消脚本最大时间限制
+set_time_limit(0);
 
 $qidianSpider = new QidianSpider();
-$startPageNumber = 44;
+$startPageNumber = 1;
 $maxPage = $startPageNumber+1;//初始先设置为2,为了让循环能顺利运行下去
 for ($page=$startPageNumber; $page<$maxPage; $page++){
 
