@@ -33,6 +33,21 @@ class RequestModel
 
 class WebRequest
 {
+    public static function genHeaders($URL){
+        $arr = parse_url($URL);
+        $host = $arr['host'];
+        array(
+            "Origin" => $host,
+            "User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36",
+            "Content-Type" => "application/x-www-form-urlencoded",
+            "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            //"Referer:http://3g.soshu.cc/Book/Search.aspx",
+            "Accept-Encoding" => "gzip, deflate",
+            "Accept-Language" =>"zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4"
+        );
+    }
+
+
     private static function genCookie($cookieArray)
     {
         $cookie = '';
@@ -66,7 +81,7 @@ class WebRequest
         return $result;
     }
 
-    static function get($url, $headers, $cookiesArray)
+    static function get($url, $headers, $cookiesArray = null)
     {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_HEADER, 0);
