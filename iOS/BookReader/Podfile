@@ -1,50 +1,57 @@
-#source 'https://gitcafe.com/akuandev/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, "8.0"
 use_frameworks!
 target "BookReader" do
-    pod 'Alamofire', '~> 3.4'               #pod 'AFNetworking'
-    pod 'AlamofireImage', '~> 2.0'          #pod 'YYWebImage'
-    pod 'ObjectMapper'                      #pod 'Mantle' #pod 'AlamofireObjectMapper', '~> 3.0'
-    pod 'SnapKit'                           #pod 'Masonry'
+    pod 'Alamofire'                                 #pod 'AFNetworking'
+    pod 'AlamofireImage'                            #pod 'YYWebImage'
+    pod 'AlamofireObjectMapper', '3.0.2'             #pod 'Mantle' pod 'ObjectMapper', '1.5.0'
+    pod 'SnapKit', '0.22.0'                   #pod 'Masonry'
     pod 'MBProgressHUD'
     pod 'SDCycleScrollView','~> 1.64'
     pod 'MJRefresh'
-    pod 'IQKeyboardManagerSwift'
+    pod 'IQKeyboardManagerSwift', '4.0.5'
     pod 'UITableView+FDTemplateLayoutCell'
     pod 'RealmSwift'
     pod 'SweetAlert', :git => 'https://github.com/codestergit/SweetAlert-iOS.git'                       #pod 'LGAlertView'
-    pod 'XCGLogger', '~> 3.3'               #pod 'CocoaLumberjack'
+    pod 'XCGLogger'                                 #pod 'CocoaLumberjack'
     pod 'XLPagerTabStrip', '~> 5.0'
     pod 'Reveal-iOS-SDK', :configurations => ['Debug']
     pod 'LGHelper', :git => 'https://github.com/smartdj/LGHelper.git'
-    pod 'RTRootNavigationController'#, :git => 'https://github.com/rickytan/RTRootNavigationController.git'
-    pod 'NightNight'#夜间模式
-    pod 'TYAttributedLabel', '~> 2.6.2'#coretext
-    pod 'SWTableViewCell'#带很多手势的表单元格。
-    pod 'DrawerController', '~> 1.0' #侧边菜单 is a swift version of the popular MMDrawerController
+    pod 'RTRootNavigationController'                #, :git => 'https://github.com/rickytan/RTRootNavigationController.git'
+    pod 'NightNight'                                #夜间模式
+    pod 'TYAttributedLabel', '~> 2.6.2'             #coretext
+    pod 'SWTableViewCell'                           #带很多手势的表单元格。
+    pod 'DrawerController'                          #侧边菜单 is a swift version of the popular MMDrawerController
+    pod 'PromiseKit', '~> 3.5'
 end
 
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '2.3' # or '3.0'
+        end
+    end
+end
 
-
-#Using Alamofire (3.4.2)
-#Using AlamofireImage (2.4.1)
-#Installing DrawerController (1.1.1)
-#Using IQKeyboardManagerSwift (4.0.5)
+#Using Alamofire (3.5.0)
+#Using AlamofireImage (2.5.0)
+#Using DrawerController (1.1.1)
+#Using IQKeyboardManagerSwift (4.0.6)
 #Installing LGHelper 1.1.2 (was 1.1.2)
 #Using MBProgressHUD (1.0.0)
 #Using MJRefresh (3.1.12)
 #Using NightNight (0.3.1)
-#Using ObjectMapper (1.4.0)
-#Using RTRootNavigationController (0.5.20)
-#Using Realm (1.0.2)
-#Using RealmSwift (1.0.2)
+#Using ObjectMapper (2.0.0)
+#Using RTRootNavigationController (0.5.21)
+#Using Realm (1.1.0)
+#Using RealmSwift (1.1.0)
 #Using Reveal-iOS-SDK (1.6.2)
 #Using SDCycleScrollView (1.65)
-#Using SDWebImage (3.8.1)
+#Using SDWebImage (3.8.2)
 #Using SWTableViewCell (0.3.7)
-#Using SnapKit (0.22.0)
+#Using SnapKit (3.0.0)
 #Installing SweetAlert 0.1.0 (was 0.1.0)
 #Using TYAttributedLabel (2.6.2)
 #Using UITableView+FDTemplateLayoutCell (1.4)
-#Using XCGLogger (3.5.1)
-#Using XLPagerTabStrip (5.0.0)
+#Using XCGLogger (3.5.3)
+#Using XLPagerTabStrip (5.1.0)
