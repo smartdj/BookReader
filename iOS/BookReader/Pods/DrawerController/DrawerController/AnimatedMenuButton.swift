@@ -67,9 +67,9 @@ public class AnimatedMenuButton : UIButton {
             layer.lineCap = kCALineCapRound
             layer.masksToBounds = true
             
-            let strokingPath = CGPathCreateCopyByStrokingPath(layer.path, nil, 4, .Round, .Miter, 4)
+            let strokingPath = CGPathCreateCopyByStrokingPath(layer.path!, nil, 4, .Round, .Miter, 4)
             
-            layer.bounds = CGPathGetPathBoundingBox(strokingPath)
+            layer.bounds = CGPathGetPathBoundingBox(strokingPath!)
             
             layer.actions = [
                 "opacity": NSNull(),

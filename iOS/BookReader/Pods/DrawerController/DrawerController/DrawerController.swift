@@ -712,7 +712,7 @@ public class DrawerController: UIViewController, UIGestureRecognizerDelegate {
             if self.centerContainerView.layer.shadowPath == nil {
                 self.centerContainerView.layer.shadowPath = UIBezierPath(rect: self.centerContainerView.bounds).CGPath
             } else {
-                let currentPath = CGPathGetPathBoundingBox(self.centerContainerView.layer.shadowPath)
+                let currentPath = CGPathGetPathBoundingBox(self.centerContainerView.layer.shadowPath!)
                 
                 if CGRectEqualToRect(currentPath, self.centerContainerView.bounds) == false {
                     self.centerContainerView.layer.shadowPath = UIBezierPath(rect: self.centerContainerView.bounds).CGPath
