@@ -1,3 +1,6 @@
 [submodule "iOS/BookReader/BookReader/DSwiftHelper"]
 	path = iOS/BookReader/BookReader/DSwiftHelper
 	url = https://github.com/smartdj/DSwiftHelper.git
+[submodule "Server/think"]
+	path = Server/think
+	url = https://github.com/top-think/think
