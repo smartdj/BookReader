@@ -1,6 +1,3 @@
 [submodule "iOS/BookReader/BookReader/DSwiftHelper"]
 	path = iOS/BookReader/BookReader/DSwiftHelper
 	url = https://github.com/smartdj/DSwiftHelper.git
-[submodule "Server/think-5.0/thinkphp"]
-	path = Server/think-5.0/thinkphp
-	url = https://github.com/top-think/framework.git
