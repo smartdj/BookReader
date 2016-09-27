@@ -48,6 +48,10 @@ return [
     'default_filter'         => '',
     // 默认语言
     'default_lang'           => 'zh-cn',
+    // 开启语言包功能
+    'lang_switch_on'         => true,   
+    // 支持的语言列表
+    'lang_list'              => ['zh-cn', 'fr'],
     // 应用类库后缀
     'class_suffix'           => false,
     // 控制器类后缀
