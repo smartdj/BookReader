@@ -1,26 +1,38 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<!--Head-->
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Login Page</title>
-    <meta name="description" content="login page" />
+    <meta charset="UTF-8">
+	<meta name="description" content="login page" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-        .loginbox-textbox img{
-            width: 100%;
-        }
-    </style>
+    <title>快递网</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/css/index.css" rel="stylesheet"/>
 </head>
-<!--Head Ends-->
-<!--Body-->
-
 <body>
 {$Think.lang.hello_thinkphp}
-</body>
-<!--Body Ends-->
+<div style="TEXT-ALIGN: center;">
+    <div style="margin-top:25px; margin-left:auto;margin-right:auto;">
+        <div>
+            <span class="lg_login lg"><img src="assets/img/track.png" style="width:45px; height:45px;">&nbsp;&nbsp;包&nbsp;裹&nbsp;查&nbsp;询</span>
+            <div>
+                <form method="post" action="http://www.ecotransite.com/cgi-bin/GInfo.dll?EmmisTrack" target="_self">
+                    <input type="hidden" name="w" value="ecotransite">
+                    <input type="hidden" name="ntype" value="1000">
+                    <textarea style="width:205px;height:120px;margin-top:20px;border:1px dashed #ff7514;color:#999999;"
+                              name="cno" class="M_track" id="cno"
+                              onfocus="this.value=''">输入单号跟踪包裹,最多可输入30个单号,每个单号占一行。</textarea>
+                    <div style="margin-left:160px;margin-top:10px;">
+                        <input class="btn-warning " type="submit" value=" OK ">
+                    </div>
+                </form>
+            </div>
+            <div>
 
+            </div>
+        </div>
+    </div>
+</body>
 </html>
