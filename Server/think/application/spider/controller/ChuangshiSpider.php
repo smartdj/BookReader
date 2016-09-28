@@ -10,25 +10,7 @@ namespace app\spider\controller;
 
 //include_once "../common/base/simple_html_dom.php";
 use Sunra\PhpSimple\HtmlDomParser;
-
-class ChuangShiBookModel
-{
-    public $Id;
-    public $URL;
-    public $coverImgURL;
-    public $shortDescription;
-    public $longDescription;
-    public $name;
-    public $authorURL;
-    public $authorName;
-    public $mainCategory;
-    public $subCategory;
-    public $status;
-    public $writtenWords;
-    public $lastestUpdateTime;
-    public $lastestChapter;
-    public $lastestChapterURL;
-}
+use app\spider\model\ChuangShiBook;
 
 class ChuangshiSpider
 {
@@ -89,7 +71,7 @@ class ChuangshiSpider
         $books = $html_dom->find("tr[!class]");
         foreach ($books as $booktr){
 
-            $bookDataModel = new ChuangShiBookModel();
+            $bookDataModel = model('ChuangShiBook');
 
             //获取小说分类
             $categoryElem = $booktr->find("td",1)->find("a",0);
@@ -152,23 +134,7 @@ class ChuangshiSpider
                 $bookDataModel->lastestUpdateTime = $lastestUpdateTimeElem->innertext;
             }
 
-            $sqlTool=new \SQLTool();
-            $dataArray=array("id" => intval($bookDataModel->Id),
-                "url" => $bookDataModel->URL,
-                "cover_image_url" => $bookDataModel->coverImgURL,
-                "short_description" => $bookDataModel->shortDescription,
-                "name" => $bookDataModel->name,
-                "author_url" => $bookDataModel->authorURL,
-                "author_name" => $bookDataModel->authorName,
-                "main_category" => $bookDataModel->mainCategory,
-                "sub_category" => $bookDataModel->subCategory,
-                "status" => $bookDataModel->status,
-                "written_words" => $bookDataModel->writtenWords,
-                "lastest_update_time" => $bookDataModel->lastestUpdateTime,
-                "lastest_chapter" => $bookDataModel->lastestChapter,
-                "lastest_chapter_url" => $bookDataModel->lastestChapterURL);
-
-            $result = $sqlTool->insert($dataArray, "QiDianBaseInfo");
+            $bookDataModel->save();
 
             //array_push($booksInfo,$bookDataModel);
 
