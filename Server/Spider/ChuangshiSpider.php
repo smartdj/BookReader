@@ -12,11 +12,11 @@ include_once "simple_html_dom.php";
 include_once "../Base/Utils.php";
 include_once "../Base/SQLTool.php";
 
-class QidianBookModel
+class ChuangShiBookModel
 {
     public $Id;
     public $URL;
-    public $imgURL;
+    public $coverImgURL;
     public $shortDescription;
     public $longDescription;
     public $name;
@@ -26,6 +26,9 @@ class QidianBookModel
     public $subCategory;
     public $status;
     public $writtenWords;
+    public $lastestUpdateTime;
+    public $lastestChapter;
+    public $lastestChapterURL;
 }
 
 class ChuangshiSpider
@@ -61,70 +64,76 @@ class ChuangshiSpider
     public function getBooksBaseInfo($html_dom){
         $booksInfo = array();
 
-        $books = $html_dom->find("tr[class!=underline]");
+        $books = $html_dom->find("tr[!class]");
         foreach ($books as $booktr){
 
-            $bookDataModel = new QidianBookModel();
+            $bookDataModel = new ChuangShiBookModel();
 
-            //获取bookid
-            $bookIdElem = $booktr->find("a[data-bid]", 0);
-            if($bookIdElem){
-                $bookDataModel->Id = $bookIdElem->attr["data-bid"];
-                $bookDataModel->URL = $bookIdElem->href;
-            }
-
-            //获取小说封面
-            $bookImageElem = $booktr->find("div.book-img-box a img", 0);
-            if($bookImageElem){
-                $bookDataModel->imgURL = $bookImageElem->attr["src"];
+            //获取小说分类
+            $categoryElem = $booktr->find("td",1)->find("a",0);
+            if($categoryElem){
+                $categoryStr = $categoryElem->innertext;
+                $categoryStr = str_replace("[", "", $categoryStr);
+                $categoryStr = str_replace("]", "", $categoryStr);
+                $categoryArray = explode("/",$categoryStr);
+                if($categoryArray)
+                {
+                    if(count($categoryArray)==2){
+                        $bookDataModel->mainCategory = $categoryArray[0];
+                        $bookDataModel->subCategory = $categoryArray[1];
+                    }
+                    else if(count($categoryArray)==1){
+                        $bookDataModel->mainCategory = $categoryArray[0];
+                    }
+                }
             }
 
             //获取书名
-            $bookNameElem = $booktr->find("div h4 a",0);
+            $bookNameElem = $booktr->find("td",2)->find("a",0);
             if($bookNameElem){
                 $bookDataModel->name = $bookNameElem->innertext;
+
+                //获取bookurl
+                $bookDataModel->URL = $bookNameElem->href;
+
+                //获取bookid
+                $URLPaths = explode("/",$bookDataModel->URL);
+                if($URLPaths && count($URLPaths)>0){
+                    $bookId = $URLPaths[count($URLPaths)-1];
+                    $bookDataModel->Id = str_replace(".html", "", $bookId);
+                }
+            }
+
+            //最新章节
+            $lastestChapterElem = $booktr->find("td",2)->find("a",1);
+            if($lastestChapterElem){
+                $bookDataModel->lastestChapterURL = $lastestChapterElem->href;
+                $bookDataModel->lastestChapter = $lastestChapterElem->innertext;
+            }
+
+            //获取小说字数
+            $writtenWrodsElem = $booktr->find("td",3);
+            if($writtenWrodsElem){
+                $bookDataModel->writtenWords = $writtenWrodsElem->innertext;
             }
 
             //获取作者
-            $bookAuthorElem = $booktr->find("div p a[class=name]", 0);
+            $bookAuthorElem = $booktr->find("td",4)->find("a",0);;
             if($bookAuthorElem){
                 $bookDataModel->authorName = $bookAuthorElem->innertext;
                 $bookDataModel->authorURL = $bookAuthorElem->href;
             }
 
-            //获取小说主分类
-            $mainCategoryElem = $booktr->find("div.book-mid-info p.author a[data-aid=qd_B60]",0);
-            if($mainCategoryElem){
-                $bookDataModel->mainCategory = $mainCategoryElem->innertext;
-            }
-            //获取小说子分类
-            $subCategoryElem = $booktr->find("div.book-mid-info p.author a[data-aid=qd_B61]",0);
-            if($mainCategoryElem){
-                $bookDataModel->subCategory = $subCategoryElem->innertext;
-            }
-
-            //获取小说写作状态
-            $statusElem = $booktr->find("div.book-mid-info p.author span",0);
-            if($statusElem){
-                $bookDataModel->status = $statusElem->innertext;
-            }
-
-            //获取小说短简介
-            $shortDescriptionElem = $booktr->find("p.intro",0);
-            if($shortDescriptionElem){
-                $bookDataModel->shortDescription = trim($shortDescriptionElem->innertext);
-            }
-
-            //获取小说字数
-            $writtenWrodsElem = $booktr->find("p.update span",0);
-            if($writtenWrodsElem){
-                $bookDataModel->writtenWords = $writtenWrodsElem->innertext;
+            //最后更新时间
+            $lastestUpdateTimeElem = $booktr->find("td",5)->find("span",0);;
+            if($lastestUpdateTimeElem){
+                $bookDataModel->lastestUpdateTime = $lastestUpdateTimeElem->innertext;
             }
 
             $sqlTool=new \SQLTool();
             $dataArray=array("id" => intval($bookDataModel->Id),
                 "url" => $bookDataModel->URL,
-                "image_url" => $bookDataModel->imgURL,
+                "cover_image_url" => $bookDataModel->coverImgURL,
                 "short_description" => $bookDataModel->shortDescription,
                 "name" => $bookDataModel->name,
                 "author_url" => $bookDataModel->authorURL,
@@ -132,7 +141,10 @@ class ChuangshiSpider
                 "main_category" => $bookDataModel->mainCategory,
                 "sub_category" => $bookDataModel->subCategory,
                 "status" => $bookDataModel->status,
-                "written_words" => $bookDataModel->writtenWords);
+                "written_words" => $bookDataModel->writtenWords,
+                "lastest_update_time" => $bookDataModel->lastestUpdateTime,
+                "lastest_chapter" => $bookDataModel->lastestChapter,
+                "lastest_chapter_url" => $bookDataModel->lastestChapterURL);
 
             $result = $sqlTool->insert($dataArray, "QiDianBaseInfo");
 
