@@ -9,7 +9,7 @@
 
 namespace Spider;
 
-include_once "webRequest.php";
+include_once "WebRequest.php";
 include_once "../utils/encoder.php";
 require '../vendor/autoload.php';
 include_once "simple_html_dom.php";

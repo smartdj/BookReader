@@ -6,7 +6,7 @@
  * Time: 下午3:08
  */
 
-namespace utils;
+namespace app\spider\common\utils;
 
 
 class Encoder

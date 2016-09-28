@@ -6,11 +6,9 @@
  * Time: 20:39
  */
 
-namespace Spider;
-include_once "webRequest.php";
-include_once "simple_html_dom.php";
-include_once "../Base/Utils.php";
-include_once "../Base/SQLTool.php";
+namespace app\spider\controller;
+
+//include_once "../common/base/simple_html_dom.php";
 
 class ChuangShiBookModel
 {
@@ -35,6 +33,29 @@ class ChuangshiSpider
 {
     private static $baseURL = "http://chuangshi.qq.com/bk/p/%d.html";
 
+    public function start(){
+        //取消脚本最大时间限制
+        //set_time_limit(0);
+
+        $chuangshiSpider = new ChuangshiSpider();
+        $startPageNumber = 1;
+        $maxPage = $startPageNumber+1;//初始先设置为2,为了让循环能顺利运行下去
+        for ($page=$startPageNumber; $page<$maxPage; $page++){
+
+            $html_dom = $chuangshiSpider->getContentWithPageNumber($page);
+
+            if($page==$startPageNumber){
+                $maxPage = $chuangshiSpider->getMaxPage($html_dom);
+                echo $maxPage;
+                echo "<br/>";
+            }
+
+            $booksInfo = $chuangshiSpider->getBooksBaseInfo($html_dom);
+            break;
+            //sleep(1);
+            //print_r($booksInfo);
+        }
+    }
     static function getFullURLWithPageNumber($pageNumber){
         return sprintf(self::$baseURL,$pageNumber);
     }
@@ -42,7 +63,7 @@ class ChuangshiSpider
     public function getContentWithPageNumber($pageNumber){
         $pageURL = self::getFullURLWithPageNumber($pageNumber);
 
-        $result = WebRequest::get($pageURL, WebRequest::genHeaders($pageURL));
+        $result = \app\spider\common\base\WebRequest::get($pageURL, \app\spider\common\base\WebRequest::genHeaders($pageURL));
 
         $html_dom = str_get_html($result);
         return $html_dom;
@@ -156,24 +177,3 @@ class ChuangshiSpider
     }
 }
 
-//取消脚本最大时间限制
-//set_time_limit(0);
-
-$chuangshiSpider = new ChuangshiSpider();
-$startPageNumber = 1;
-$maxPage = $startPageNumber+1;//初始先设置为2,为了让循环能顺利运行下去
-for ($page=$startPageNumber; $page<$maxPage; $page++){
-
-    $html_dom = $chuangshiSpider->getContentWithPageNumber($page);
-
-    if($page==$startPageNumber){
-        $maxPage = $chuangshiSpider->getMaxPage($html_dom);
-        echo $maxPage;
-        echo "<br/>";
-    }
-
-    $booksInfo = $chuangshiSpider->getBooksBaseInfo($html_dom);
-    break;
-    //sleep(1);
-    //print_r($booksInfo);
-}

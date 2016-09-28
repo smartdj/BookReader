@@ -11,6 +11,9 @@
  * @author Marijan Šuflaj <msufflaj32@gmail.com&gt
  * @link http://php4every1.com
  */
+
+namespace app\spider\common\base;
+
 abstract class Enum
 {
     /**

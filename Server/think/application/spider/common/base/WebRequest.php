@@ -6,10 +6,9 @@
  * Date: 16/8/31
  * Time: 下午2:22
  */
-namespace Spider;
-include_once "../Base/Enum.php";
+namespace app\spider\common\base;
 
-class Method extends \Enum {
+class Method extends Enum {
     const GET = "GET";
     const POST = "POST";
     const NUMBER = 1;
@@ -36,7 +35,7 @@ class WebRequest
     public static function genHeaders($URL){
         $arr = parse_url($URL);
         $host = $arr['host'];
-        array(
+        return array(
             "Origin" => $host,
             "User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36",
             "Content-Type" => "application/x-www-form-urlencoded",

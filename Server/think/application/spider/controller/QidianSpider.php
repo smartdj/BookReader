@@ -7,10 +7,7 @@
  */
 
 namespace Spider;
-include_once "webRequest.php";
 include_once "simple_html_dom.php";
-include_once "../Base/Utils.php";
-include_once "../Base/SQLTool.php";
 
 class QidianBookModel
 {
@@ -39,7 +36,7 @@ class QidianSpider
     public function getContentWithPageNumber($pageNumber){
         $pageURL = self::getFullURLWithPageNumber($pageNumber);
 
-        $result = WebRequest::get($pageURL, WebRequest::genHeaders($pageURL));
+        $result = \app\spider\common\base\WebRequest::get($pageURL, \app\spider\common\base\WebRequest::genHeaders($pageURL));
         //showResult($result);
         $html_dom = str_get_html($result);
         return $html_dom;
