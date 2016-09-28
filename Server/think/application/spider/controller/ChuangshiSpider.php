@@ -9,6 +9,7 @@
 namespace app\spider\controller;
 
 //include_once "../common/base/simple_html_dom.php";
+use Sunra\PhpSimple\HtmlDomParser;
 
 class ChuangShiBookModel
 {
@@ -65,7 +66,7 @@ class ChuangshiSpider
 
         $result = \app\spider\common\base\WebRequest::get($pageURL, \app\spider\common\base\WebRequest::genHeaders($pageURL));
 
-        $html_dom = str_get_html($result);
+        $html_dom = HtmlDomParser::str_get_html($result);
         return $html_dom;
     }
 
