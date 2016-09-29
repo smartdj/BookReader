@@ -11,8 +11,8 @@ return [
     'hostname'    => '127.0.0.1',
     // 数据库名
     'database'    => 'spider',
-    'params' => [
-        \PDO::ATTR_PERSISTENT   => true,//长连接
-        \PDO::ATTR_CASE         => \PDO::CASE_LOWER,//返回小写列名
-    ]
+//    'params' => [
+//        \PDO::ATTR_PERSISTENT   => true,//长连接
+//        \PDO::ATTR_CASE         => \PDO::CASE_LOWER,//返回小写列名
+//    ]
 ];

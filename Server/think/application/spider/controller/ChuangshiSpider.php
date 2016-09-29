@@ -71,7 +71,7 @@ class ChuangshiSpider
         $books = $html_dom->find("tr[!class]");
         foreach ($books as $booktr){
 
-            $bookDataModel = model('ChuangShiBook');
+            $bookDataModel = new ChuangShiBook;
 
             //获取小说分类
             $categoryElem = $booktr->find("td",1)->find("a",0);
@@ -83,11 +83,11 @@ class ChuangshiSpider
                 if($categoryArray)
                 {
                     if(count($categoryArray)==2){
-                        $bookDataModel->mainCategory = $categoryArray[0];
-                        $bookDataModel->subCategory = $categoryArray[1];
+                        $bookDataModel->main_category = $categoryArray[0];
+                        $bookDataModel->sub_category = $categoryArray[1];
                     }
                     else if(count($categoryArray)==1){
-                        $bookDataModel->mainCategory = $categoryArray[0];
+                        $bookDataModel->main_category = $categoryArray[0];
                     }
                 }
             }
@@ -98,46 +98,43 @@ class ChuangshiSpider
                 $bookDataModel->name = $bookNameElem->innertext;
 
                 //获取bookurl
-                $bookDataModel->URL = $bookNameElem->href;
+                $bookDataModel->url = $bookNameElem->href;
 
                 //获取bookid
-                $URLPaths = explode("/",$bookDataModel->URL);
+                $URLPaths = explode("/",$bookDataModel->url);
                 if($URLPaths && count($URLPaths)>0){
                     $bookId = $URLPaths[count($URLPaths)-1];
-                    $bookDataModel->Id = str_replace(".html", "", $bookId);
+                    $bookDataModel->id = str_replace(".html", "", $bookId);
                 }
             }
 
             //最新章节
             $lastestChapterElem = $booktr->find("td",2)->find("a",1);
             if($lastestChapterElem){
-                $bookDataModel->lastestChapterURL = $lastestChapterElem->href;
-                $bookDataModel->lastestChapter = $lastestChapterElem->innertext;
+                $bookDataModel->lastest_chapter_url = $lastestChapterElem->href;
+                $bookDataModel->lastest_chapter = $lastestChapterElem->innertext;
             }
 
             //获取小说字数
             $writtenWrodsElem = $booktr->find("td",3);
             if($writtenWrodsElem){
-                $bookDataModel->writtenWords = $writtenWrodsElem->innertext;
+                $bookDataModel->written_words = $writtenWrodsElem->innertext;
             }
 
             //获取作者
             $bookAuthorElem = $booktr->find("td",4)->find("a",0);;
             if($bookAuthorElem){
-                $bookDataModel->authorName = $bookAuthorElem->innertext;
-                $bookDataModel->authorURL = $bookAuthorElem->href;
+                $bookDataModel->author_name = $bookAuthorElem->innertext;
+                $bookDataModel->author_url = $bookAuthorElem->href;
             }
 
             //最后更新时间
             $lastestUpdateTimeElem = $booktr->find("td",5)->find("span",0);;
             if($lastestUpdateTimeElem){
-                $bookDataModel->lastestUpdateTime = $lastestUpdateTimeElem->innertext;
+                $bookDataModel->lastest_update_time = $lastestUpdateTimeElem->innertext;
             }
 
             $bookDataModel->save();
-
-            //array_push($booksInfo,$bookDataModel);
-
         }
 
         return $booksInfo;
