@@ -19,6 +19,7 @@ class ChuangshiSpider
     public function start(){
         //取消脚本最大时间限制
         //set_time_limit(0);
+        header("Content-Type:text/html; charset=utf-8");
 
         $chuangshiSpider = new ChuangshiSpider();
         $startPageNumber = 1;
@@ -95,7 +96,7 @@ class ChuangshiSpider
             //获取书名
             $bookNameElem = $booktr->find("td",2)->find("a",0);
             if($bookNameElem){
-                $bookDataModel->name = $bookNameElem->innertext;
+                $bookDataModel->book_name = $bookNameElem->innertext;
 
                 //获取bookurl
                 $bookDataModel->url = $bookNameElem->href;
@@ -104,7 +105,7 @@ class ChuangshiSpider
                 $URLPaths = explode("/",$bookDataModel->url);
                 if($URLPaths && count($URLPaths)>0){
                     $bookId = $URLPaths[count($URLPaths)-1];
-                    $bookDataModel->id = str_replace(".html", "", $bookId);
+                    $bookDataModel->book_id = str_replace(".html", "", $bookId);
                 }
             }
 

@@ -14,38 +14,47 @@ class ChuangShiBook  extends Model
 {
     // 设置当前模型对应的完整数据表名称
     protected $table = 'chuang_shi_book';
-    protected $pk = 'id';
+    protected $pk = 'book_id';
 
-    public $id;
+    public $book_id;
     public $url;
     public $cover_img_url;
     public $short_description;
     public $long_description;
-    public $name;
+    public $book_name;
     public $author_url;
     public $author_name;
     public $main_category;
     public $sub_category;
-    public $status;
+    public $book_status;
     public $written_words;
     public $lastest_update_time;
     public $lastest_chapter;
     public $lastest_chapter_url;
 
+    public function __construct($data = []){
+        //用来将数据库查询结果赋值给成员变量
+        foreach ($data as $key => $value){
+            if(property_exists($this, $key)){
+                $this->$key = $value;
+            }
+        }
+        parent::__construct($data);
+    }
     public function save($data = [], $where = [], $sequence = null){
         if($data == null){
             $data = array(
-                'id' => $this->id,
+                'book_id' => $this->book_id,
                 'url' => $this->url,
                 'cover_img_url'    => $this->cover_img_url,
                 'short_description'   => $this->short_description,
                 'long_description' => $this->long_description,
-                'name' => $this->name,
+                'book_name' => $this->book_name,
                 'author_url' => $this->author_url,
                 'author_name' => $this->author_name,
                 'main_category' => $this->main_category,
                 'sub_category' => $this->sub_category,
-                'status' => $this->status,
+                'book_status' => $this->book_status,
                 'written_words' => $this->written_words,
                 'lastest_update_time' => $this->lastest_update_time,
                 'lastest_chapter' => $this->lastest_chapter,
@@ -54,9 +63,11 @@ class ChuangShiBook  extends Model
         }
 
         if($where == null){
-            $existRecord = self::get($data['id']);//先检查数据是否存在
+            $existRecord = ChuangShiBook::get($data['book_id']);//先检查数据是否存在
+
             if($existRecord){//如果存在则设置更新规则更新
-                $where['id'] = $data['id'];
+                echo $existRecord->book_name. "<br/>";
+                $where['book_id'] = $existRecord->book_id;
             }
         }
 
