@@ -40,6 +40,36 @@ class ChuangshiSpider
             //print_r($booksInfo);
         }
     }
+
+    public function getTableofContents($bookURL){
+        $result = \app\spider\common\base\WebRequest::get($bookURL, \app\spider\common\base\WebRequest::genHeaders($bookURL));
+        if($result){
+            $html_dom = HtmlDomParser::str_get_html($result);
+            if($html_dom){
+                $tableOfContentsURLElem = $html_dom->find('a[class=active]',0);//获取目录页的URL
+                if($tableOfContentsURLElem){
+                    $tableOfContentsURL = $tableOfContentsURLElem->href;
+                    if($tableOfContentsURL){
+                        $result = \app\spider\common\base\WebRequest::get($tableOfContentsURL, \app\spider\common\base\WebRequest::genHeaders($tableOfContentsURL));
+                        if($result){
+                            $html_dom = HtmlDomParser::str_get_html($result);
+                            if($html_dom){
+                                $listElems = $html_dom->find('div[class=index_area]',0)->find('div[class=list]');
+                                foreach ($listElems as $listElem){//获取分卷
+                                    $juanTitle = $listElem->find('h1',0)->innertext;
+                                    $chapterElems = $listElem->find('a');//获取章节
+                                    foreach ($chapterElems as $chapterElem){
+                                        echo $juanTitle . "  " .$chapterElem->innertext. "  "  . $chapterElem->href . "<br/>";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     static function getFullURLWithPageNumber($pageNumber){
         return sprintf(self::$baseURL,$pageNumber);
     }
@@ -135,6 +165,8 @@ class ChuangshiSpider
                 $bookDataModel->lastest_update_time = $lastestUpdateTimeElem->innertext;
             }
 
+            $this->getTableofContents($bookDataModel->url);
+            break;
             $bookDataModel->save();
         }
 
