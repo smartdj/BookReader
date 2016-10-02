@@ -10,7 +10,7 @@ return [
     // 服务器地址
     'hostname'    => '127.0.0.1',
     // 数据库名
-    'database'    => 'spider',
+    'database'    => 'bookreader',
     // 数据库编码默认采用utf8
     'charset'        => 'utf8',
 //    'params' => [

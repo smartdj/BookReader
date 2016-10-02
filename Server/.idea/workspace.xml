@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca0f30de-9800-4031-8d3d-2a5a53c9c548" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php" afterPath="$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/database.php" afterPath="$PROJECT_DIR$/think/application/spider/database.php" />
     </list>
     <ignored path="Server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChuangshiSpider.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChuangshiSpider.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding>
                 <element signature="e#171#205#0#PHP" expanded="true" />
               </folding>
@@ -40,7 +39,7 @@
       <file leaf-file-name="ChuangShiBook_TableOfContents.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="102">
               <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
@@ -50,8 +49,8 @@
       <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/App.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3762">
-              <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+            <state relative-caret-position="3961">
+              <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,20 +59,8 @@
       <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/db/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35280">
-              <caret line="1984" column="0" selection-start-line="1984" selection-start-column="0" selection-end-line="1984" selection-end-column="0" />
-              <folding>
-                <marker date="1475034039000" expanded="true" signature="8926:8966" ph="SELECT * FRO... ${$this-&gt;getTable()}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Error.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Error.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state relative-caret-position="33320">
+              <caret line="1993" column="0" selection-start-line="1993" selection-start-column="0" selection-end-line="1993" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,7 +69,7 @@
       <file leaf-file-name="Loader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Loader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8856">
+            <state relative-caret-position="8364">
               <caret line="500" column="0" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
               <folding />
             </state>
@@ -92,24 +79,14 @@
       <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1782">
+            <state relative-caret-position="1683">
               <caret line="115" column="31" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="standard_5.php" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5508">
-              <caret line="306" column="28" selection-start-line="306" selection-start-column="28" selection-end-line="306" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChuangShiBook.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChuangShiBook.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/application/spider/model/ChuangShiBook.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -119,10 +96,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/think/application/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/think/application/spider/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Core.php" pinned="false" current-in-tab="false">
         <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7182">
+            <state relative-caret-position="6783">
               <caret line="399" column="9" selection-start-line="399" selection-start-column="9" selection-end-line="399" selection-end-column="9" />
               <folding />
             </state>
@@ -167,10 +164,10 @@
         <option value="$PROJECT_DIR$/think/application/spider/readme" />
         <option value="$PROJECT_DIR$/think/application/spider/common/base/simple_html_dom.php" />
         <option value="$PROJECT_DIR$/think/application/spider/common/utils/Encoder.php" />
-        <option value="$PROJECT_DIR$/think/application/spider/database.php" />
-        <option value="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook.php" />
-        <option value="$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php" />
         <option value="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php" />
+        <option value="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook.php" />
+        <option value="$PROJECT_DIR$/think/application/spider/database.php" />
+        <option value="$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php" />
       </list>
     </option>
   </component>
@@ -193,14 +190,15 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5">
     <include_path>
       <path value="." />
-      <path value="$PROJECT_DIR$/../../../xamppfiles/lib/php" />
+      <path value="F:/xamppfiles/lib/php" />
     </include_path>
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" port="80" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -227,6 +225,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -430,7 +429,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -558,6 +556,7 @@
       <workItem from="1475113131975" duration="3944000" />
       <workItem from="1475124994699" duration="9344000" />
       <workItem from="1475139843574" duration="1636000" />
+      <workItem from="1475403956241" duration="1507000" />
     </task>
     <servers />
   </component>
@@ -573,30 +572,30 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81473000" />
+    <option name="totallyTimeSpent" value="82980000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2515625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2682672" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24935952" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2682672" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -647,13 +646,7 @@
     <entry file="file://$PROJECT_DIR$/Base/Utils.php" />
     <entry file="file://$PROJECT_DIR$/Utils/Encoder.php" />
     <entry file="file://$PROJECT_DIR$/Spider/WebRequest.php" />
-    <entry file="file://$PROJECT_DIR$/../../phpinfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../phpinfo.php" />
     <entry file="file://$PROJECT_DIR$/Spider/QidianSpider.php" />
     <entry file="file://$PROJECT_DIR$/Spider/simple_html_dom.php" />
     <entry file="file://$PROJECT_DIR$/Base/SQLTool.php" />
@@ -708,14 +701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/think/application/spider/simple_html/simple_html_dom.php" />
     <entry file="file://$PROJECT_DIR$/think/application/spider/common/base/simple_html_dom.php" />
-    <entry file="file://$PROJECT_DIR$/think/vendor/sunra/php-simple-html-dom-parser/Src/Sunra/PhpSimple/HtmlDomParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/think/vendor/sunra/php-simple-html-dom-parser/Src/Sunra/PhpSimple/HtmlDomParser.php" />
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
@@ -761,100 +747,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="29" column="31" selection-start-line="28" selection-start-column="4" selection-end-line="29" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/phpmyadmin.css.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/js/whitelist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/js/get_image.js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/js/get_scripts.js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/sql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/db_structure.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/db_routines.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/server_privileges.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../phpmyadmin/db_operations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <marker date="1448283212000" expanded="true" signature="9489:9717" ph="SELECT * FRO... ${PMA_Util::backquote($cfgRelation['pdf_pages'])}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://F:/phpmyadmin/index.php" />
+    <entry file="file://F:/phpmyadmin/phpmyadmin.css.php" />
+    <entry file="file://F:/phpmyadmin/js/whitelist.php" />
+    <entry file="file://F:/phpmyadmin/js/get_image.js.php" />
+    <entry file="file://F:/phpmyadmin/js/get_scripts.js.php" />
+    <entry file="file://F:/phpmyadmin/sql.php" />
+    <entry file="file://F:/phpmyadmin/db_structure.php" />
+    <entry file="file://F:/phpmyadmin/db_routines.php" />
+    <entry file="file://F:/phpmyadmin/server_privileges.php" />
+    <entry file="file://F:/phpmyadmin/db_operations.php" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5508">
+        <state relative-caret-position="5202">
           <caret line="306" column="28" selection-start-line="306" selection-start-column="28" selection-end-line="306" selection-end-column="28" />
           <folding />
         </state>
@@ -862,7 +767,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Error.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
+        <state relative-caret-position="1122">
           <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding />
         </state>
@@ -870,7 +775,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Loader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8856">
+        <state relative-caret-position="8364">
           <caret line="500" column="0" selection-start-line="500" selection-start-column="0" selection-end-line="500" selection-end-column="0" />
           <folding />
         </state>
@@ -878,7 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1782">
+        <state relative-caret-position="1683">
           <caret line="115" column="31" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="31" />
           <folding />
         </state>
@@ -886,17 +791,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/db/Query.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35280">
-          <caret line="1984" column="0" selection-start-line="1984" selection-start-column="0" selection-end-line="1984" selection-end-column="0" />
-          <folding>
-            <marker date="1475034039000" expanded="true" signature="8926:8966" ph="SELECT * FRO... ${$this-&gt;getTable()}" />
-          </folding>
+        <state relative-caret-position="33320">
+          <caret line="1993" column="0" selection-start-line="1993" selection-start-column="0" selection-end-line="1993" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7182">
+        <state relative-caret-position="6783">
           <caret line="399" column="9" selection-start-line="399" selection-start-column="9" selection-end-line="399" selection-end-column="9" />
           <folding />
         </state>
@@ -904,25 +807,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/App.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3762">
-          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+        <state relative-caret-position="3961">
+          <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
-          <folding>
-            <element signature="e#171#205#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="102">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
@@ -933,6 +826,32 @@
         <state relative-caret-position="238">
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="e#171#205#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

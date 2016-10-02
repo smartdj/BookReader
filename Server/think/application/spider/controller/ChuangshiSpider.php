@@ -41,6 +41,7 @@ class ChuangshiSpider
         }
     }
 
+    //分析目录
     public function getTableofContents($bookURL){
         $result = \app\spider\common\base\WebRequest::get($bookURL, \app\spider\common\base\WebRequest::genHeaders($bookURL));
         if($result){
@@ -70,10 +71,12 @@ class ChuangshiSpider
         }
     }
 
+    //根据页码获取小说列表的URL
     static function getFullURLWithPageNumber($pageNumber){
         return sprintf(self::$baseURL,$pageNumber);
     }
 
+    //根据页码获取小说列表的DOM
     public function getContentWithPageNumber($pageNumber){
         $pageURL = self::getFullURLWithPageNumber($pageNumber);
 
@@ -83,6 +86,7 @@ class ChuangshiSpider
         return $html_dom;
     }
 
+    //获取小说列表的最大页数
     public function getMaxPage($html_dom){
 
         $pageMaxEM = $html_dom->find('div.Pagination em',1);
@@ -96,6 +100,7 @@ class ChuangshiSpider
         return 0;
     }
 
+    //获取小说列表中，小说的基本信息
     public function getBooksBaseInfo($html_dom){
         $booksInfo = array();
 
