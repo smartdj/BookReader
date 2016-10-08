@@ -8,11 +8,11 @@
 
 namespace app\spider\controller;
 
-//include_once "../common/base/simple_html_dom.php";
+use app\spider\common\utils\SearchUtils;
 use Sunra\PhpSimple\HtmlDomParser;
 use app\spider\model\ChuangShiBook;
 
-class ChuangshiSpider
+class Chuangshispider
 {
     private static $baseURL = "http://chuangshi.qq.com/bk/p/%d.html";
 
@@ -21,20 +21,23 @@ class ChuangshiSpider
         //set_time_limit(0);
         header("Content-Type:text/html; charset=utf-8");
 
-        $chuangshiSpider = new ChuangshiSpider();
+        SearchUtils::searchRank("test a", array("testatest", "aaatewst", "bbb", "ddd"));
+        return;
+
+        $chuangshispider = new Chuangshispider();
         $startPageNumber = 1;
         $maxPage = $startPageNumber+1;//初始先设置为2,为了让循环能顺利运行下去
         for ($page=$startPageNumber; $page<$maxPage; $page++){
 
-            $html_dom = $chuangshiSpider->getContentWithPageNumber($page);
+            $html_dom = $chuangshispider->getContentWithPageNumber($page);
 
             if($page==$startPageNumber){
-                $maxPage = $chuangshiSpider->getMaxPage($html_dom);
+                $maxPage = $chuangshispider->getMaxPage($html_dom);
                 echo $maxPage;
                 echo "<br/>";
             }
 
-            $booksInfo = $chuangshiSpider->getBooksBaseInfo($html_dom);
+            $booksInfo = $chuangshispider->getBooksBaseInfo($html_dom);
             break;
             //sleep(1);
             //print_r($booksInfo);
