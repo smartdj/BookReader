@@ -16,13 +16,14 @@ class Chuangshispider
 {
     private static $baseURL = "http://chuangshi.qq.com/bk/p/%d.html";
 
+    public function test(){
+        SearchUtils::searchRank("test a", array("testatest", "aaatewst", "bbb", "ddd"));
+    }
+
     public function start(){
         //取消脚本最大时间限制
         //set_time_limit(0);
         header("Content-Type:text/html; charset=utf-8");
-
-        SearchUtils::searchRank("test a", array("testatest", "aaatewst", "bbb", "ddd"));
-        return;
 
         $chuangshispider = new Chuangshispider();
         $startPageNumber = 1;
