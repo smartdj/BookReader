@@ -40,7 +40,7 @@ class SearchUtils
                             $dist = self::distance($word, substr($str, $j, strlen($word) + $i));
 
                             if($dist > 0){
-                                array_push($q);
+                                array_push($q, $str);
                             }
                         }
                     }
