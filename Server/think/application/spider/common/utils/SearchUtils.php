@@ -39,15 +39,17 @@ class SearchUtils
                         for ($j=0; $j<max(strlen($str) - strlen($word) - $i +1, 0); $j++){
                             $dist = self::distance($word, substr($str, $j, strlen($word) + $i));
 
-                            if($dist > 0){
+                            if($dist <= $maxDist){
                                 if(in_array($str, $q) == false){//保证不重复
                                     array_push($q, $str);
                                 }
+                                break;
                             }
                         }
                     }
                 }
             }
+            sort($q);
             $datas = $q;
         }
 

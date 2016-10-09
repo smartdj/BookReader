@@ -7,12 +7,12 @@
  * Time: 下午2:22
  */
 
-namespace Spider;
+namespace app\spider\controller;
 
-include_once "WebRequest.php";
-include_once "../utils/encoder.php";
-require '../vendor/autoload.php';
-include_once "simple_html_dom.php";
+use app\spider\common\base\WebRequest;
+use app\spider\common\utils\SearchUtils;
+use app\spider\common\utils\Encoder;
+use Sunra\PhpSimple\HtmlDomParser;
 
 class SoshuSpider
 {
@@ -35,34 +35,45 @@ class SoshuSpider
         "txt" => ""
     );
 
+    public function test()
+    {
+        $htmlData = SoshuSpider::search("俗人回档");
+        $result = SoshuSpider::analyseSearchResultHTML($htmlData);
+        var_dump($result);
+        $result = SearchUtils::searchRank("俗人回档", array_keys($result));
+        var_dump($result);
+    }
+
     //执行搜索操作
     static function search($bookName)
     {
-        self::$postFieldsArray["txt"] = \utils\Encoder::UTF8ToGBK($bookName);
+        self::$postFieldsArray["txt"] = Encoder::UTF8ToGBK($bookName);
 
         $result = WebRequest::post(self::$searchURL, self::$headersArray, self::$postFieldsArray);
-        return \utils\Encoder::GBKToUTF8($result);
+        return Encoder::GBKToUTF8($result);
     }
-
-
 
     //解析返回数据
     static function analyseSearchResultHTML($htmlData)
     {
-        $html_dom = str_get_html($htmlData);
+        $html_dom = HtmlDomParser::str_get_html($htmlData);
         // 查找搜索结果中的第一个结果
-        $firstSearchResult = $html_dom->find('form p a',0);
+        $searchResults = $html_dom->find('form p a');
 
-        if($firstSearchResult && $firstSearchResult->href){
-            $fullURL = self::$baseURL . $firstSearchResult->href;
-            echo $fullURL;
+        $resultArray = array();
+
+        foreach ($searchResults as $result){
+            if($result->href && $result->plaintext){
+                $fullURL = self::$baseURL . $result->href;
+                $resultArray[$result->plaintext] = $fullURL;
+            }
         }
 
-//        echo "<TEXTAREA  rows=6 cols=60>";
-//        echo $htmlData;
-//        echo "</TEXTAREA>";
+        echo "<TEXTAREA  rows=6 cols=60>";
+        echo $htmlData;
+        echo "</TEXTAREA>";
+
+        return $resultArray;
     }
 }
 
-$htmlData = SoshuSpider::search("俗人回档");
-SoshuSpider::analyseSearchResultHTML($htmlData);

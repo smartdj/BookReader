@@ -6,9 +6,10 @@
  * Time: 下午3:12
  */
 
-namespace Spider;
+namespace app\spider\controller;
 
-include_once "WebRequest.php";
+use app\spider\common\utils\SearchUtils;
+use Sunra\PhpSimple\HtmlDomParser;
 
 class SodusoSpider
 {

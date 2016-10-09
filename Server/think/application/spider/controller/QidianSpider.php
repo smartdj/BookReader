@@ -6,8 +6,10 @@
  * Time: 1:16
  */
 
-namespace Spider;
-include_once "simple_html_dom.php";
+namespace app\spider\controller;
+
+use app\spider\common\utils\SearchUtils;
+use Sunra\PhpSimple\HtmlDomParser;
 
 class QidianBookModel
 {
@@ -28,6 +30,30 @@ class QidianBookModel
 class QidianSpider
 {
     private static $baseURL = "http://a.qidian.com/?size=-1&sign=-1&tag=-1&chanId=-1&subCateId=-1&orderId=&page=%d&month=-1&style=1&action=-1&vip=-1";
+
+    public function start(){
+        //取消脚本最大时间限制
+        set_time_limit(0);
+
+        $qidianSpider = new QidianSpider();
+        $startPageNumber = 1;
+        $maxPage = $startPageNumber+1;//初始先设置为2,为了让循环能顺利运行下去
+        for ($page=$startPageNumber; $page<$maxPage; $page++){
+
+            $html_dom = $qidianSpider->getContentWithPageNumber($page);
+
+            if($page==$startPageNumber){
+                $maxPage = $qidianSpider->getMaxPage($html_dom);
+                echo $maxPage;
+                echo "<br/>";
+            }
+
+            $booksInfo = $qidianSpider->getBooksBaseInfo($html_dom);
+
+            //sleep(1);
+            //print_r($booksInfo);
+        }
+    }
 
     static function getFullURLWithPageNumber($pageNumber){
         return sprintf(self::$baseURL,$pageNumber);
@@ -139,25 +165,5 @@ class QidianSpider
 
 }
 
-//取消脚本最大时间限制
-set_time_limit(0);
 
-$qidianSpider = new QidianSpider();
-$startPageNumber = 1;
-$maxPage = $startPageNumber+1;//初始先设置为2,为了让循环能顺利运行下去
-for ($page=$startPageNumber; $page<$maxPage; $page++){
-
-    $html_dom = $qidianSpider->getContentWithPageNumber($page);
-
-    if($page==$startPageNumber){
-        $maxPage = $qidianSpider->getMaxPage($html_dom);
-        echo $maxPage;
-        echo "<br/>";
-    }
-
-    $booksInfo = $qidianSpider->getBooksBaseInfo($html_dom);
-
-    //sleep(1);
-    //print_r($booksInfo);
-}
 

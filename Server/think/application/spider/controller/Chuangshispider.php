@@ -40,8 +40,6 @@ class Chuangshispider
 
             $booksInfo = $chuangshispider->getBooksBaseInfo($html_dom);
             break;
-            //sleep(1);
-            //print_r($booksInfo);
         }
     }
 

@@ -10,6 +10,7 @@ namespace app\spider\model;
 
 use think\Model;
 
+//小说基本信息模型
 class ChuangShiBook  extends Model
 {
     // 设置当前模型对应的完整数据表名称
