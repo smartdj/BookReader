@@ -20,7 +20,9 @@
         "topthink/framework": "^5.0",
         "sunra/php-simple-html-dom-parser": "1.5.1",
         "bupt1987/html-parser": "dev-master",
-        "chrisboulton/php-resque": "1.2.x"
+        "chrisboulton/php-resque": "1.2.x",
+        "fabpot/goutte":"",
+        "vdb/php-spider":""
     },
     "extra": {
         "think-path": "thinkphp"

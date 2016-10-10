@@ -37,11 +37,12 @@ class SoshuSpider
 
     public function test()
     {
+        SearchUtils::searchRank("test a", array("testatest", "aaatewst", "bbb", "ddd"));
+
         $htmlData = SoshuSpider::search("俗人回档");
         $result = SoshuSpider::analyseSearchResultHTML($htmlData);
-        var_dump($result);
+
         $result = SearchUtils::searchRank("俗人回档", array_keys($result));
-        var_dump($result);
     }
 
     //执行搜索操作

@@ -8,7 +8,7 @@
 
 namespace app\spider\controller;
 
-use app\spider\common\utils\SearchUtils;
+use app\spider\common\base\WebRequest;
 use Sunra\PhpSimple\HtmlDomParser;
 
 class QidianBookModel
@@ -31,27 +31,33 @@ class QidianSpider
 {
     private static $baseURL = "http://a.qidian.com/?size=-1&sign=-1&tag=-1&chanId=-1&subCateId=-1&orderId=&page=%d&month=-1&style=1&action=-1&vip=-1";
 
+    public function test(){
+        //测试获取小说目录
+        //$this->getTableofContents($bookDataModel->URL);
+
+    }
+
     public function start(){
         //取消脚本最大时间限制
         set_time_limit(0);
 
-        $qidianSpider = new QidianSpider();
         $startPageNumber = 1;
         $maxPage = $startPageNumber+1;//初始先设置为2,为了让循环能顺利运行下去
         for ($page=$startPageNumber; $page<$maxPage; $page++){
 
-            $html_dom = $qidianSpider->getContentWithPageNumber($page);
+            $html_dom = $this->getContentWithPageNumber($page);
 
             if($page==$startPageNumber){
-                $maxPage = $qidianSpider->getMaxPage($html_dom);
+                $maxPage = $this->getMaxPage($html_dom);
                 echo $maxPage;
                 echo "<br/>";
             }
 
-            $booksInfo = $qidianSpider->getBooksBaseInfo($html_dom);
+            $booksInfo = $this->getBooksBaseInfo($html_dom);
 
             //sleep(1);
             //print_r($booksInfo);
+            //break;
         }
     }
 
@@ -59,12 +65,66 @@ class QidianSpider
         return sprintf(self::$baseURL,$pageNumber);
     }
 
+    //获取小说目录
+    public function getTableofContents($bookURL)
+    {
+        $result = WebRequest::get($bookURL, WebRequest::genHeaders($bookURL));
+        if ($result) {
+            $html_dom = HtmlDomParser::str_get_html($result);
+            if ($html_dom) {
+                $readElem = $html_dom->find("a[stat-type=read]", 0);//查找界面上的"点击阅读"按钮
+                if($readElem){
+                    //获取目录的入口
+                    $tableOfContentURL = $readElem->href;
+                    if($tableOfContentURL){
+                        $result = WebRequest::get($tableOfContentURL, WebRequest::genHeaders($tableOfContentURL));//获取目录的DOM
+                        if ($result) {
+                            $html_dom = HtmlDomParser::str_get_html($result);
+                            if ($html_dom) {
+                                $contentElem = $html_dom->find("div[id=content]", 0);
+                                if($contentElem){
+
+                                    $juanTitle = null;
+
+                                    foreach ($contentElem->children() as $childElem){
+                                        if($childElem->class == "box_title"){//卷
+                                            $juanElem = $childElem->find("div b", 0);
+                                            if($juanElem){
+                                                foreach ($juanElem->nodes as $elem){//这里需要再次获取子元素,因为<B>里面包含了<A>(书名),而我只是单纯的需要获取卷名,否则的话还需要使用正则
+                                                    if($elem->tag == "text"){
+                                                        $juanTitle = trim($elem->plaintext);
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else if($childElem->class == "box_cont"){//章节
+                                            $chapterTitleElems = $childElem->find("a[itemprop=url]");
+                                            foreach ($chapterTitleElems as $elem){
+                                                $spanElem = $elem->find("span", 0);
+                                                if($spanElem){
+                                                    $chapterTitle = trim($spanElem->plaintext);
+                                                    $chapterURL = $elem->href;
+                                                    echo  $chapterURL . "<br/>";
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public function getContentWithPageNumber($pageNumber){
         $pageURL = self::getFullURLWithPageNumber($pageNumber);
 
-        $result = \app\spider\common\base\WebRequest::get($pageURL, \app\spider\common\base\WebRequest::genHeaders($pageURL));
+        $result = WebRequest::get($pageURL, WebRequest::genHeaders($pageURL));
         //showResult($result);
-        $html_dom = str_get_html($result);
+        $html_dom = HtmlDomParser::str_get_html($result);
         return $html_dom;
     }
 
@@ -141,20 +201,20 @@ class QidianSpider
                 $bookDataModel->writtenWords = $writtenWrodsElem->innertext;
             }
 
-            $sqlTool=new \SQLTool();
-            $dataArray=array("id" => intval($bookDataModel->Id),
-                "url" => $bookDataModel->URL,
-                "image_url" => $bookDataModel->imgURL,
-                "short_description" => $bookDataModel->shortDescription,
-                "name" => $bookDataModel->name,
-                "author_url" => $bookDataModel->authorURL,
-                "author_name" => $bookDataModel->authorName,
-                "main_category" => $bookDataModel->mainCategory,
-                "sub_category" => $bookDataModel->subCategory,
-                "status" => $bookDataModel->status,
-                "written_words" => $bookDataModel->writtenWords);
-
-            $result = $sqlTool->insert($dataArray, "QiDianBaseInfo");
+//            $sqlTool=new \SQLTool();
+//            $dataArray=array("id" => intval($bookDataModel->Id),
+//                "url" => $bookDataModel->URL,
+//                "image_url" => $bookDataModel->imgURL,
+//                "short_description" => $bookDataModel->shortDescription,
+//                "name" => $bookDataModel->name,
+//                "author_url" => $bookDataModel->authorURL,
+//                "author_name" => $bookDataModel->authorName,
+//                "main_category" => $bookDataModel->mainCategory,
+//                "sub_category" => $bookDataModel->subCategory,
+//                "status" => $bookDataModel->status,
+//                "written_words" => $bookDataModel->writtenWords);
+//
+//            $result = $sqlTool->insert($dataArray, "QiDianBaseInfo");
 
             //array_push($booksInfo,$bookDataModel);
 

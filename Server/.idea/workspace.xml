@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca0f30de-9800-4031-8d3d-2a5a53c9c548" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/spider/model/SpiderTaskModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/common/utils/SearchUtils.php" afterPath="$PROJECT_DIR$/think/application/spider/common/utils/SearchUtils.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/controller/Chuangshispider.php" afterPath="$PROJECT_DIR$/think/application/spider/controller/Chuangshispider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/controller/QidianSpider.php" afterPath="$PROJECT_DIR$/think/application/spider/controller/QidianSpider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/controller/SodusoSpider.php" afterPath="$PROJECT_DIR$/think/application/spider/controller/SodusoSpider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/controller/SoshuSpider.php" afterPath="$PROJECT_DIR$/think/application/spider/controller/SoshuSpider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook.php" afterPath="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php" afterPath="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/composer.json" afterPath="$PROJECT_DIR$/think/composer.json" />
     </list>
     <ignored path="Server.iws" />
@@ -32,36 +27,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Chuangshispider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/think/application/spider/controller/Chuangshispider.php">
+      <file leaf-file-name="QidianSpider.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/think/application/spider/controller/QidianSpider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="51" column="57" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="57" />
+            <state relative-caret-position="180">
+              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
               <folding>
-                <element signature="e#6#82#0#PHP" expanded="true" />
-                <element signature="e#118#158#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Encoder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/think/application/spider/common/utils/Encoder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SodusoSpider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/think/application/spider/controller/SodusoSpider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-              <folding>
-                <element signature="e#122#162#0#PHP" expanded="true" />
+                <element signature="e#117#155#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,21 +42,11 @@
       <file leaf-file-name="SoshuSpider.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/application/spider/controller/SoshuSpider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+            <state relative-caret-position="-90">
+              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
               <folding>
                 <element signature="e#123#161#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/App.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3762">
-              <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -99,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchUtils.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchUtils.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/application/spider/common/utils/SearchUtils.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
@@ -112,7 +74,7 @@
       <file leaf-file-name="SpiderTaskModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/application/spider/model/SpiderTaskModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="252">
               <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="e#117#149#0#PHP" expanded="true" />
@@ -124,8 +86,8 @@
       <file leaf-file-name="WebRequest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think/application/spider/common/base/WebRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,17 +144,17 @@
         <option value="$PROJECT_DIR$/think/application/.htaccess" />
         <option value="$PROJECT_DIR$/think/application/config.php" />
         <option value="$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php" />
-        <option value="$PROJECT_DIR$/think/composer.json" />
         <option value="$PROJECT_DIR$/think/application/spider/model/SpiderStatusModel.php" />
-        <option value="$PROJECT_DIR$/think/application/spider/controller/QidianSpider.php" />
         <option value="$PROJECT_DIR$/think/application/spider/common/base/WebRequest.php" />
         <option value="$PROJECT_DIR$/think/application/spider/model/SpiderWorkModel.php" />
-        <option value="$PROJECT_DIR$/think/application/spider/controller/Chuangshispider.php" />
         <option value="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php" />
         <option value="$PROJECT_DIR$/think/application/spider/model/ChuangShiBook.php" />
         <option value="$PROJECT_DIR$/think/application/spider/controller/SodusoSpider.php" />
-        <option value="$PROJECT_DIR$/think/application/spider/controller/SoshuSpider.php" />
         <option value="$PROJECT_DIR$/think/application/spider/common/utils/SearchUtils.php" />
+        <option value="$PROJECT_DIR$/think/application/spider/controller/SoshuSpider.php" />
+        <option value="$PROJECT_DIR$/think/application/spider/controller/Chuangshispider.php" />
+        <option value="$PROJECT_DIR$/think/composer.json" />
+        <option value="$PROJECT_DIR$/think/application/spider/controller/QidianSpider.php" />
       </list>
     </option>
   </component>
@@ -250,8 +212,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,24 +231,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="think" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="think" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -472,10 +414,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -604,7 +548,8 @@
       <workItem from="1475686076286" duration="1452000" />
       <workItem from="1475970015074" duration="371000" />
       <workItem from="1475994182359" duration="7768000" />
-      <workItem from="1476007522134" duration="403000" />
+      <workItem from="1476007522134" duration="457000" />
+      <workItem from="1476062805195" duration="6766000" />
     </task>
     <servers />
   </component>
@@ -620,10 +565,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99249000" />
+    <option name="totallyTimeSpent" value="106069000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2328125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -635,7 +580,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27139875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26200417" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -676,12 +621,11 @@
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="65" />
+      <option name="time" value="78" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Base/SQLTool.php" />
     <entry file="file://$PROJECT_DIR$/Spider/ChuangshiSpider.php" />
     <entry file="file://$PROJECT_DIR$/think/application/spider/common/utils/Utils.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -815,13 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Loader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -833,7 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="565">
           <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,23 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/controller/QidianSpider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-          <folding>
-            <element signature="e#117#157#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -869,28 +788,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/model/ChuangShiBook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/think/application/spider/controller/SodusoSpider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="90">
           <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding>
-            <element signature="e#122#162#0#PHP" expanded="true" />
+            <element signature="e#122#162#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -903,16 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/model/SpiderTaskModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="e#117#149#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/App.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3762">
@@ -921,40 +814,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/common/base/WebRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/controller/Chuangshispider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="57" />
-          <folding>
-            <element signature="e#6#82#0#PHP" expanded="true" />
-            <element signature="e#118#158#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/think/thinkphp/library/think/Error.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/think/application/spider/controller/SoshuSpider.php">
+    <entry file="file://$PROJECT_DIR$/think/application/spider/model/ChuangShiBook.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-          <folding>
-            <element signature="e#123#161#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -963,6 +834,87 @@
         <state relative-caret-position="324">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/model/SpiderTaskModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#117#149#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/model/ChuangShiBook_TableOfContents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/common/base/WebRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/controller/Chuangshispider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2417">
+          <caret line="171" column="18" selection-start-line="171" selection-start-column="18" selection-end-line="171" selection-end-column="18" />
+          <folding>
+            <element signature="e#6#82#0#PHP" expanded="true" />
+            <element signature="e#118#156#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/controller/SoshuSpider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+          <folding>
+            <element signature="e#123#161#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think/application/spider/controller/QidianSpider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+          <folding>
+            <element signature="e#117#155#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

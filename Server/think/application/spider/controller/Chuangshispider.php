@@ -8,17 +8,13 @@
 
 namespace app\spider\controller;
 
-use app\spider\common\utils\SearchUtils;
+use app\spider\common\base\WebRequest;
 use Sunra\PhpSimple\HtmlDomParser;
 use app\spider\model\ChuangShiBook;
 
 class Chuangshispider
 {
     private static $baseURL = "http://chuangshi.qq.com/bk/p/%d.html";
-
-    public function test(){
-        SearchUtils::searchRank("test a", array("testatest", "aaatewst", "bbb", "ddd"));
-    }
 
     public function start(){
         //取消脚本最大时间限制
@@ -45,7 +41,7 @@ class Chuangshispider
 
     //分析目录
     public function getTableofContents($bookURL){
-        $result = \app\spider\common\base\WebRequest::get($bookURL, \app\spider\common\base\WebRequest::genHeaders($bookURL));
+        $result = WebRequest::get($bookURL, WebRequest::genHeaders($bookURL));
         if($result){
             $html_dom = HtmlDomParser::str_get_html($result);
             if($html_dom){
@@ -53,7 +49,7 @@ class Chuangshispider
                 if($tableOfContentsURLElem){
                     $tableOfContentsURL = $tableOfContentsURLElem->href;
                     if($tableOfContentsURL){
-                        $result = \app\spider\common\base\WebRequest::get($tableOfContentsURL, \app\spider\common\base\WebRequest::genHeaders($tableOfContentsURL));
+                        $result = WebRequest::get($tableOfContentsURL, WebRequest::genHeaders($tableOfContentsURL));
                         if($result){
                             $html_dom = HtmlDomParser::str_get_html($result);
                             if($html_dom){
@@ -82,7 +78,7 @@ class Chuangshispider
     public function getContentWithPageNumber($pageNumber){
         $pageURL = self::getFullURLWithPageNumber($pageNumber);
 
-        $result = \app\spider\common\base\WebRequest::get($pageURL, \app\spider\common\base\WebRequest::genHeaders($pageURL));
+        $result = WebRequest::get($pageURL, WebRequest::genHeaders($pageURL));
 
         $html_dom = HtmlDomParser::str_get_html($result);
         return $html_dom;
