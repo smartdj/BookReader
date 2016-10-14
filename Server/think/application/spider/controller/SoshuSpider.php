@@ -26,7 +26,8 @@ class SoshuSpider
         "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
         "Referer:http://3g.soshu.cc/Book/Search.aspx",
         "Accept-Encoding" => "gzip, deflate",
-        "Accept-Language" =>"zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4"
+        "Accept-Language" =>"zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
+        "Content-Length" => "0"
     );
 
     private static $postFieldsArray = array(
@@ -37,28 +38,33 @@ class SoshuSpider
 
     public function test()
     {
-        SearchUtils::searchRank("test a", array("testatest", "aaatewst", "bbb", "ddd"));
-
-        $htmlData = SoshuSpider::search("俗人回档");
-        $result = SoshuSpider::analyseSearchResultHTML($htmlData);
-
-        $result = SearchUtils::searchRank("俗人回档", array_keys($result));
+        $htmlData = SoshuSpider::search("俗人回档", function ($htmlData){
+            $result = SoshuSpider::analyseSearchResultHTML($htmlData);
+            $sortedResult = SearchUtils::searchRank("俗人回档", array_keys($result));
+            echo $result[$sortedResult[0]]."<br>";
+        });
     }
 
     //执行搜索操作
-    static function search($bookName)
+    static function search($bookName, callable $listener)
     {
         self::$postFieldsArray["txt"] = Encoder::UTF8ToGBK($bookName);
 
-        $result = WebRequest::post(self::$searchURL, self::$headersArray, self::$postFieldsArray);
-        return Encoder::GBKToUTF8($result);
+        //$result = WebRequest::post(self::$searchURL, self::$headersArray, self::$postFieldsArray);
+        $result = WebRequest::asyncRequest("POST"
+            , WebRequest::makePostURL(self::$searchURL, self::$postFieldsArray)
+            , self::$headersArray, null, function ($data) use(&$listener)
+            {
+                $data = Encoder::GBKToUTF8($data);
+                call_user_func($listener, $data);
+        });
     }
 
     //解析返回数据
     static function analyseSearchResultHTML($htmlData)
     {
         $html_dom = HtmlDomParser::str_get_html($htmlData);
-        // 查找搜索结果中的第一个结果
+
         $searchResults = $html_dom->find('form p a');
 
         $resultArray = array();
@@ -70,9 +76,9 @@ class SoshuSpider
             }
         }
 
-        echo "<TEXTAREA  rows=6 cols=60>";
-        echo $htmlData;
-        echo "</TEXTAREA>";
+//        echo "<TEXTAREA  rows=6 cols=60>";
+//        echo $htmlData;
+//        echo "</TEXTAREA>";
 
         return $resultArray;
     }

@@ -49,8 +49,8 @@ class QidianSpider
 
             if($page==$startPageNumber){
                 $maxPage = $this->getMaxPage($html_dom);
-                echo $maxPage;
-                echo "<br/>";
+//                echo $maxPage;
+//                echo "<br/>";
             }
 
             $booksInfo = $this->getBooksBaseInfo($html_dom);
