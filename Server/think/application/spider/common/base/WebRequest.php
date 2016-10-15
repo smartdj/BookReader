@@ -8,6 +8,11 @@
  */
 namespace app\spider\common\base;
 
+use Exception;
+use React\EventLoop\Factory as LoopFactory;
+use React\Dns\Resolver\Factory as DNSResolverFactory;
+use React\HttpClient\Factory as HttpClientFactory;
+
 class Method extends Enum {
     const GET = "GET";
     const POST = "POST";
@@ -93,6 +98,45 @@ class WebRequest
         $result = curl_exec($ch);
 
         return $result;
+    }
+
+    //异步发送请求
+    static public function asyncRequest($method, $url, $headers, $data, callable $listener) {
+        $loop = LoopFactory::create();
+        $dnsResolverFactory = new DnsResolverFactory();
+        $dnsResolver = $dnsResolverFactory->createCached('114.114.114.114', $loop);
+        $factory = new HttpClientFactory();
+        $client = $factory->create($loop, $dnsResolver);
+
+        $request = $client->request($method, $url, $headers);
+
+        $request->on('response', function ($response) use (&$listener, &$loop) {
+            $buffer = '';
+            $response->on('data', function ($data) use (&$buffer, &$loop) {
+                $buffer .= $data;
+            });
+            $response->on('end', function () use (&$buffer, &$loop, &$listener) {
+                $loop->stop();
+                call_user_func($listener, $buffer);
+            });
+        });
+        $request->on('end', function ($error, $response) {
+            echo $error;
+        });
+        $request->write($data);
+        //$request->end();
+        $loop->run();
+    }
+
+    public static function makePostURL($requestURL, $fields){
+        $param = null;
+        $keys = array_keys($fields);
+        foreach ($keys as $key){
+            $param = $param . $key . "=" . $fields[$key];
+            $param = $param . "&";
+        }
+        $param = substr($param, 0, strlen($param)-1);
+        return $requestURL . "?" . $param;
     }
 
     /**
