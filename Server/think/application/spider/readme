@@ -2,3 +2,19 @@ http://localhost/bookreader/Server/think/public/spider/chuangshispider/start
 通过这个URL可以访问创世的爬虫
 
 http://localhost/bookreader/Server/think/public/spider/seventeenkspider/run
+
+开发计划:
+1.抓取原始发布网站数据
+    (1)原始网站包括:起点、创世、17K(有反爬虫机制,需要研究)、纵横、逐浪
+    (2)数据包括:名称、作者、封面、字数、简介、最新章节、更新时间、目录
+2.抓取盗版小说网站数据
+    (1)盗版小说网站包括:乐读窝(http://m.leduwo.com/)、去看看(http://m.7kankan.com/)、猫扑中文网(http://wap.mpzw.com/)
+    (2)数据包括:名称、最新章节、更新时间、目录、章节内容
+3.API接口
+    (1)搜索
+    (2)阅读
+        A.目录
+        B.章节内容
+    (3)注册、登录
+    (4)收藏(增加、删除)
+    (5)更新通知

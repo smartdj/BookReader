@@ -116,15 +116,24 @@ class WebRequest
                 $buffer .= $data;
             });
             $response->on('end', function () use (&$buffer, &$loop, &$listener) {
-                $loop->stop();
+                //$loop->stop();
                 call_user_func($listener, $buffer);
             });
         });
+
         $request->on('end', function ($error, $response) {
-            echo $error;
+            $code = $response->getCode();
+            $headers = $response->getHeaders();
+
+            if($error){
+                echo $error;
+            }
+            else{
+                echo "";
+            }
         });
-        $request->write($data);
-        //$request->end();
+
+        $request->end($data);
         $loop->run();
     }
 
