@@ -1,2 +1,4 @@
 http://localhost/bookreader/Server/think/public/spider/chuangshispider/start
 通过这个URL可以访问创世的爬虫
+
+http://localhost/bookreader/Server/think/public/spider/seventeenkspider/run
