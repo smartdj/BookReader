@@ -2,6 +2,9 @@ http://localhost/bookreader/Server/think/public/spider/chuangshispider/start
 通过这个URL可以访问创世的爬虫
 
 http://localhost/bookreader/Server/think/public/spider/seventeenkspider/run
+http://localhost/bookreader/Server/think/public/spider/leduwospider/test
+
+"vdb/php-spider":"0.2",
 
 开发计划:
 1.抓取原始发布网站数据

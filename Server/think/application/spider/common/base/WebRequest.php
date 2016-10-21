@@ -9,9 +9,9 @@
 namespace app\spider\common\base;
 
 use Exception;
-use React\EventLoop\Factory as LoopFactory;
-use React\Dns\Resolver\Factory as DNSResolverFactory;
-use React\HttpClient\Factory as HttpClientFactory;
+use GuzzleHttp\Client;
+use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Exception\RequestException;
 
 class Method extends Enum {
     const GET = "GET";
@@ -102,39 +102,28 @@ class WebRequest
 
     //异步发送请求
     static public function asyncRequest($method, $url, $headers, $data, callable $listener) {
-        $loop = LoopFactory::create();
-        $dnsResolverFactory = new DnsResolverFactory();
-        $dnsResolver = $dnsResolverFactory->createCached('114.114.114.114', $loop);
-        $factory = new HttpClientFactory();
-        $client = $factory->create($loop, $dnsResolver);
+        $clientOption = ['headers' => $headers];
+        $client = new Client($clientOption);
 
-        $request = $client->request($method, $url, $headers);
+        $promise = null;
 
-        $request->on('response', function ($response) use (&$listener, &$loop) {
-            $buffer = '';
-            $response->on('data', function ($data) use (&$buffer, &$loop) {
-                $buffer .= $data;
-            });
-            $response->on('end', function () use (&$buffer, &$loop, &$listener) {
-                //$loop->stop();
-                call_user_func($listener, $buffer);
-            });
-        });
+        if($method == "POST"){
+            $requestOption = ['body' => $data];
+            $promise = $client->postAsync($url, $requestOption);
+        }
+        else if($method == "GET"){
+            $promise = $client->getAsync($url);
+        }
 
-        $request->on('end', function ($error, $response) {
-            $code = $response->getCode();
-            $headers = $response->getHeaders();
-
-            if($error){
-                echo $error;
+        $promise->then(
+            function (ResponseInterface $res) use(&$listener) {
+                echo $res->getStatusCode() . "\n";
+            },
+            function (RequestException $e) use(&$listener) {
+                echo $e->getMessage() . "\n";
+                echo $e->getRequest()->getMethod();
             }
-            else{
-                echo "";
-            }
-        });
-
-        $request->end($data);
-        $loop->run();
+        );
     }
 
     public static function makePostURL($requestURL, $fields){

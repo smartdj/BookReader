@@ -229,4 +229,10 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //本项目的配置
+    "web_name" => "ozgweb",
+    "web_root" => "http://localhost/bookreader/Server/think/public",
+    "web_res_root" => "http://localhost/bookreader/Server/think/public/static",
+    "web_page_size" => 16,
 ];
