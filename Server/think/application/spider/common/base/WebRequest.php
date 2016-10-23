@@ -37,6 +37,9 @@ class RequestModel
 
 class WebRequest
 {
+    public $maxRedirectTimes = 5;
+    private $redirectTimes = 0;
+
     public static function genHeaders($URL){
         $arr = parse_url($URL);
         $host = $arr['host'];
@@ -101,29 +104,54 @@ class WebRequest
     }
 
     //异步发送请求
-    static public function asyncRequest($method, $url, $headers, $data, callable $listener) {
-        $clientOption = ['headers' => $headers];
-        $client = new Client($clientOption);
+    public function asyncRequest($method, $url, $headers, $data, callable $listener, $currentRedirectTimes = 0) {
 
-        $promise = null;
+        $clientOption = [
+            //'decode_content' => false,
+            'headers'=>[
+                "User-Agent"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36"
+            ],
+            'allow_redirects' => false
+        ];
+
+        $client = new \GuzzleHttp\Client($clientOption);
+
+        $request = null;
 
         if($method == "POST"){
-            $requestOption = ['body' => $data];
-            $promise = $client->postAsync($url, $requestOption);
+            $request = new \GuzzleHttp\Psr7\Request('POST', $url, $headers, $data);
         }
         else if($method == "GET"){
-            $promise = $client->getAsync($url);
+            $request = new \GuzzleHttp\Psr7\Request('GET', $url, $headers);
         }
 
-        $promise->then(
-            function (ResponseInterface $res) use(&$listener) {
-                echo $res->getStatusCode() . "\n";
-            },
-            function (RequestException $e) use(&$listener) {
-                echo $e->getMessage() . "\n";
-                echo $e->getRequest()->getMethod();
-            }
-        );
+        $promise = $client->sendAsync($request)
+            ->then(
+                function ($response) use(&$listener, &$currentRedirectTimes){
+                    $body = $response->getBody();
+                    $code = $response->getStatusCode();
+                    //自己手动处理跳转，因为测试用发现，调用乐读窝搜索返回的数据，guzzle不能良好的处理
+                    if($code > 300 && $code < 400 && $response->hasHeader("Location")
+                        && $currentRedirectTimes < $this->maxRedirectTimes){
+
+                        $location = $response->getHeader("Location");
+                        if($location && count($location)){
+                            $currentRedirectTimes += 1;
+                            $this->asyncRequest("GET", $location[0], array(), null, $listener, $currentRedirectTimes);//此处没加重定向次数,目前只有给乐读窝使用
+                        }
+                    }
+                    else{
+                        call_user_func($listener, $body) ;
+                    }
+
+                    //echo $code.'<br>' . $body;
+                    //var_dump($response);
+                },
+                function ($execption) {
+                    echo $execption->getMessage();
+                }
+            );
+        $promise->wait();
     }
 
     public static function makePostURL($requestURL, $fields){

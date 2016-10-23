@@ -20,14 +20,15 @@ class LeDuWoSpider
 //        "Pragma"=>"no-cache",
 //        "Cache-Control"=>"no-cache",
 //        "Upgrade-Insecure-Requests"=>"1",
-//        "User-Agent"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36",
-//        "Accept"=>"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "User-Agent"=>"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36",
+        "Accept"=>"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
 //        "DNT"=>"1",
 //        "Referer"=>"http=>//m.baidu.com/tcredirect?src=http=>//leduwo.com/book/47/47911/23009279.html&mask=3a53f12f21eb3ef80e6977988aae44f5&et=0",
-//        "Accept-Encoding"=>"gzip, deflate, sdch",
-//        "Accept-Language"=>"zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
+//        "Accept-Encoding"=>"gzip, deflate, sdch",//搜索的时候需要服务器返回文本，因为乐读窝的GZIP压缩有问题，开启这个头之后CURL不能正确解压。
+        "Accept-Language"=>"zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
         "Content-Length" => "0",
-        "Content-Type"=>"application/x-www-form-urlencoded"
+        "Content-Type"=>"application/x-www-form-urlencoded",
+//        "Cookie"=>"PHPSESSID=01ug4phi9dokp1d8aofst4pf32; jieqiVisitId=article_articleviews%3D96330; PHPSESSID=01ug4phi9dokp1d8aofst4pf32; jieqiVisitTime=jieqiArticlesearchTime%3D1477224668; CNZZDATA1257043782=924529475-1477218579-%7C1477223979\r\n"
     );
 
     public function test(){
@@ -66,9 +67,10 @@ class LeDuWoSpider
             $headersArray = $this::$headersArray;
             $headersArray["Content-Length"] = strlen($formData);
 
-            WebRequest::asyncRequest("POST", $URL, $headersArray, $formData, function ($data) use(&$listener)
+            (new WebRequest())->asyncRequest("POST", $URL, $headersArray, $formData, function ($data) use(&$listener)
             {
                 $data = Encoder::GBKToUTF8($data);
+                echo $data;
                 call_user_func($listener, $data);
             });
         }
@@ -81,7 +83,7 @@ class LeDuWoSpider
         $URL = substr($URL, 0, strlen($URL)-1);
         $URL .= "_1_1/";
 
-        WebRequest::asyncRequest("GET", $URL, $this::$headersArray, null, function ($data) {
+        (new WebRequest())->asyncRequest("GET", $URL, $this::$headersArray, null, function ($data) {
             $data = Encoder::GBKToUTF8($data);
             $html_dom = HtmlDomParser::str_get_html($data);
             $pageTxt = $html_dom->find("pageinput", 0)->parent()->plaintext;
