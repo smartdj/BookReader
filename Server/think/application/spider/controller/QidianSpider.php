@@ -9,23 +9,11 @@
 namespace app\spider\controller;
 
 use app\spider\common\base\WebRequest;
+use app\spider\model\QidianBookModel;
+use app\spider\model\QidianTableOfContentModel;
 use Sunra\PhpSimple\HtmlDomParser;
+use think\Model;
 
-class QidianBookModel
-{
-    public $Id;
-    public $URL;
-    public $imgURL;
-    public $shortDescription;
-    public $longDescription;
-    public $name;
-    public $authorURL;
-    public $authorName;
-    public $mainCategory;
-    public $subCategory;
-    public $status;
-    public $writtenWords;
-}
 
 class QidianSpider
 {
@@ -57,7 +45,7 @@ class QidianSpider
 
             //sleep(1);
             //print_r($booksInfo);
-            //break;
+            break;
         }
     }
 
@@ -66,7 +54,7 @@ class QidianSpider
     }
 
     //获取小说目录
-    public function getTableofContents($bookURL)
+    public function getTableofContents($bookURL, $bookId)
     {
         $result = WebRequest::get($bookURL, WebRequest::genHeaders($bookURL));
         if ($result) {
@@ -93,6 +81,7 @@ class QidianSpider
                                                 foreach ($juanElem->nodes as $elem){//这里需要再次获取子元素,因为<B>里面包含了<A>(书名),而我只是单纯的需要获取卷名,否则的话还需要使用正则
                                                     if($elem->tag == "text"){
                                                         $juanTitle = trim($elem->plaintext);
+                                                        $juanTitle = str_replace('&nbsp;', '', $juanTitle);
                                                         break;
                                                     }
                                                 }
@@ -101,11 +90,26 @@ class QidianSpider
                                         else if($childElem->class == "box_cont"){//章节
                                             $chapterTitleElems = $childElem->find("a[itemprop=url]");
                                             foreach ($chapterTitleElems as $elem){
+                                                $tableOfContent = new QidianTableOfContentModel();
+
+                                                $updateTime = $elem->getAttribute('title');
+
+                                                if($updateTime){//获取更新时间
+                                                    if(preg_match("/\d+-\d+-\d+.\d+:\d+:\d+/", $updateTime, $matches)) {
+                                                        $tableOfContent->updateTime = $matches[0];
+                                                    }
+                                                }
                                                 $spanElem = $elem->find("span", 0);
                                                 if($spanElem){
                                                     $chapterTitle = trim($spanElem->plaintext);
                                                     $chapterURL = $elem->href;
-                                                    echo  $chapterURL . "<br/>";
+
+
+                                                    $tableOfContent->bookId = $bookId;
+                                                    $tableOfContent->juanTitle = $juanTitle;
+                                                    $tableOfContent->chapterTitle = $chapterTitle;
+                                                    $tableOfContent->chapterURL = $chapterURL;
+                                                    $tableOfContent->save();
                                                 }
                                             }
                                         }
@@ -129,27 +133,32 @@ class QidianSpider
     }
 
     public function getMaxPage($html_dom){
-        $pageMaxDiv = $html_dom->find('div[data-pageMax]',0);
+        if($html_dom){
+            $pageMaxDiv = $html_dom->find('div[data-pageMax]',0);
 
-        if($pageMaxDiv){
-            return $pageMaxDiv->attr['data-pagemax'];
+            if($pageMaxDiv){
+                return $pageMaxDiv->attr['data-pagemax'];
+            }
         }
-
         return 0;
     }
 
     public function getBooksBaseInfo($html_dom){
+        if($html_dom == null){
+            return null;
+        }
+
         $booksInfo = array();
 
         $books = $html_dom->find("li[data-rankid]");
         foreach ($books as $bookli){
 
-            $bookDataModel = new QidianBookModel();
+            $bookDataModel = new QidianBookModel;
 
             //获取bookid
             $bookIdElem = $bookli->find("a[data-bid]", 0);
             if($bookIdElem){
-                $bookDataModel->Id = $bookIdElem->attr["data-bid"];
+                $bookDataModel->id = $bookIdElem->attr["data-bid"];
                 $bookDataModel->URL = $bookIdElem->href;
             }
 
@@ -201,23 +210,10 @@ class QidianSpider
                 $bookDataModel->writtenWords = $writtenWrodsElem->innertext;
             }
 
-//            $sqlTool=new \SQLTool();
-//            $dataArray=array("id" => intval($bookDataModel->Id),
-//                "url" => $bookDataModel->URL,
-//                "image_url" => $bookDataModel->imgURL,
-//                "short_description" => $bookDataModel->shortDescription,
-//                "name" => $bookDataModel->name,
-//                "author_url" => $bookDataModel->authorURL,
-//                "author_name" => $bookDataModel->authorName,
-//                "main_category" => $bookDataModel->mainCategory,
-//                "sub_category" => $bookDataModel->subCategory,
-//                "status" => $bookDataModel->status,
-//                "written_words" => $bookDataModel->writtenWords);
-//
-//            $result = $sqlTool->insert($dataArray, "QiDianBaseInfo");
+            $bookDataModel->save();
 
-            //array_push($booksInfo,$bookDataModel);
-
+            $this->getTableofContents($bookDataModel->URL,  $bookDataModel->id);
+            break;
         }
 
         return $booksInfo;
