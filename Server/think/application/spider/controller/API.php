@@ -12,19 +12,23 @@ namespace app\spider\controller;
 use app\spider\model\QidianBookModel;
 use think\Db;
 use think\Request;
+use think\db\Query;
 
 class API
 {
     public function qidianAllBook($page, $count){
         // 获取当前请求的所有变量（经过过滤）
         //var_dump(Request::instance()->param());
-
+//数据库查询方式
 //        $list = Db::table('book_qidian')->page($page, $count)->select();
 //        $json_string = json_encode($list);
 //        echo $json_string;
-        $list = QidianBookModel::all(function($query) use ($count, $page)
+
+        //模型查询方式
+        $list = QidianBookModel::all(function(\think\db\Query $query) use ($count, $page)
         {
-            $query->where()->limit($count)->order('id', 'asc');
+            $query->page($page, $count)->order('id', 'asc');
         });
+        echo json_encode($list);
     }
 }

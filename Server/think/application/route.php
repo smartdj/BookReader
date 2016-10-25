@@ -9,13 +9,18 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ],
+//return [
+//    '__pattern__' => [
+//        'name' => '\w+',
+//    ],
+//    '[hello]'     => [
+//        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
+//        ':name' => ['index/hello', ['method' => 'post']],
+//    ],
+//
+//];
+use think\Route;
 
-];
+//访问地址由:  http://localhost/bookreader/Server/think/public/spider/api/qidianallbook/page/1/count/10
+//变为:       http://localhost/bookreader/Server/think/public/api/qidianallbook/1/10
+Route::rule('api/qidianAllBook/:page/:count','spider/api/qidianAllBook');

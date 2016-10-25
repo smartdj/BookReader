@@ -40,4 +40,17 @@ class ModelWrap extends Model
             parent::save($data, $where, $sequence);
         }
     }
+
+    function initialize(){
+        //使用模型从数据库查询出结果后初始化时将查询结果赋值给属性。
+        if(isset($this->data) && count($this->data) > 0){
+            $reflectionClass = new ReflectionClass($this);
+
+            foreach ($this->data as $key=>$value){
+                if($reflectionClass->hasProperty($key)){
+                    $this->$key = $value;
+                }
+            }
+        }
+    }
 }
