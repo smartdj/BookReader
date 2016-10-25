@@ -32,14 +32,10 @@ class LeDuWoSpider
     );
 
     public function test(){
-        $this->search("刺杀全世界", function($htmlData){
-            $html_dom = HtmlDomParser::str_get_html($htmlData);
-            if($html_dom){
-                $tableOfContentBtnElem = $html_dom->find("div.ablum_read span a", 1);
-                if($tableOfContentBtnElem){
-                    $URL = $tableOfContentBtnElem->href;
-                    $this->readBookOfContent($URL);
-                }
+        $bookName = "刺杀全世界";
+        $this->search($bookName, function($relativePath, $tableOfContentURL) use($bookName){
+            if($tableOfContentURL){
+                $this->readBookOfContent($tableOfContentURL);
             }
         });
 
@@ -48,46 +44,65 @@ class LeDuWoSpider
         $URL =  "http://m.leduwo.com/modules/article/waps.php";
         //$URL = "http://27.221.30.95/modules/article/waps.php";
 
-        if($listener == null){
-            $formField = array(//curl使用
-                "searchkey"=> Encoder::UTF8ToGBK($bookName),
-                "searchtype"=>"articlename",
-                "submit"=>""
-            );
+        $formData = sprintf("searchkey=%s&searchtype=articlename&submit=",urlencode(Encoder::UTF8ToGBK($bookName)));//ReactPHP使用
 
-            $data = WebRequest::post($URL, null, $formField);
-            if($data){
-                $data = Encoder::GBKToUTF8($data);
+        $headersArray = $this::$headersArray;
+        $headersArray["Content-Length"] = strlen($formData);
+
+        $webRequest = new WebRequest();
+        $webRequest->asyncRequest("POST", $URL, $headersArray, $formData, function ($response) use(&$listener, $webRequest)
+        {
+            if($response->getStatusCode() == 302 && $response->hasHeader("Location")){//找到小说
+                $location = $response->getHeader("Location");//http://m.leduwo.com/xs/96/96330/
+                if(count($location) > 0){
+                    if(preg_match("/\d+\/\d+/", $location[0], $matches)) {
+                        $bookRelativePath = $matches[0];
+
+                        //获取目录
+                        $tableOfContentURL = 'http://m.leduwo.com/wapbook/' . $bookRelativePath . "/";
+
+                        call_user_func_array($listener, array("relativePath"=>$bookRelativePath, "tableOfContentURL"=>$tableOfContentURL));
+                        return;
+                    }
+                }
+
+                call_user_func_array($listener, array("relativePath"=>null, "tableOfContentURL"=>null));
+
             }
-            return $data;
-        }
-        else{
-            $formData = sprintf("searchkey=%s&searchtype=articlename&submit=",urlencode(Encoder::UTF8ToGBK($bookName)));//ReactPHP使用
-
-            $headersArray = $this::$headersArray;
-            $headersArray["Content-Length"] = strlen($formData);
-
-            (new WebRequest())->asyncRequest("POST", $URL, $headersArray, $formData, function ($data) use(&$listener)
-            {
-                $data = Encoder::GBKToUTF8($data);
-                echo $data;
-                call_user_func($listener, $data);
-            });
-        }
-        return null;
+            else{//返回多个结果
+                exit("返回多个搜索结果");
+            }
+        });
     }
 
     public function readBookOfContent($URL)
     {
         //使用倒序排列
-        $URL = substr($URL, 0, strlen($URL)-1);
-        $URL .= "_1_1/";
+        $URL = substr($URL, 0, strlen($URL)-1);//http://m.leduwo.com/wapbook/96/96330/
+        $URL .= "_1_1/";//http://m.leduwo.com/wapbook/96/96330_1_1/
 
-        (new WebRequest())->asyncRequest("GET", $URL, $this::$headersArray, null, function ($data) {
-            $data = Encoder::GBKToUTF8($data);
-            $html_dom = HtmlDomParser::str_get_html($data);
-            $pageTxt = $html_dom->find("pageinput", 0)->parent()->plaintext;
-            echo $pageTxt;
+        (new WebRequest())->asyncRequest("GET", $URL, $this::$headersArray, null, function ($response) {
+            if($response->getStatusCode() == 200){
+                $data = Encoder::GBKToUTF8($response->getBody());
+                $html_dom = HtmlDomParser::str_get_html($data);
+                if($html_dom){
+                    $chapterElem = $html_dom->find("ul[class=chapter]", 0);
+                    if($chapterElem){
+                        $liElems = $chapterElem->find("li");
+                        if($liElems){
+                            foreach ($liElems as $liElem){
+                                $aTagElem = $liElem->find("a", 0);
+                                if($aTagElem){
+                                    $chapterURL = $aTagElem->href;
+                                    $chapterTitle = $aTagElem->plaintext;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
         });
     }
 }

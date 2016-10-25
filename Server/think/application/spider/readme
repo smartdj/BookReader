@@ -3,7 +3,7 @@ http://localhost/bookreader/Server/think/public/spider/chuangshispider/start
 http://localhost/bookreader/Server/think/public/spider/qidianspider/start
 http://localhost/bookreader/Server/think/public/spider/seventeenkspider/run
 http://localhost/bookreader/Server/think/public/spider/leduwospider/test
-
+http://localhost/bookreader/Server/think/public/spider/api/qidianallbook/page/1/count/10 //获取七点所有小说的api,支持分页
 "vdb/php-spider":"0.2",
 
 开发计划:

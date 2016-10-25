@@ -104,7 +104,7 @@ class WebRequest
     }
 
     //异步发送请求
-    public function asyncRequest($method, $url, $headers, $data, callable $listener, $currentRedirectTimes = 0) {
+    public function asyncRequest($method, $url, $headers, $data, callable $listener, $allowRedirect = false, $currentRedirectTimes = 0) {
 
         $clientOption = [
             //'decode_content' => false,
@@ -127,11 +127,11 @@ class WebRequest
 
         $promise = $client->sendAsync($request)
             ->then(
-                function ($response) use(&$listener, &$currentRedirectTimes){
-                    $body = $response->getBody();
+                function ($response) use(&$listener, &$currentRedirectTimes, $allowRedirect){
+                    //$body = $response->getBody();
                     $code = $response->getStatusCode();
                     //自己手动处理跳转，因为测试用发现，调用乐读窝搜索返回的数据，guzzle不能良好的处理
-                    if($code > 300 && $code < 400 && $response->hasHeader("Location")
+                    if($allowRedirect && $code > 300 && $code < 400 && $response->hasHeader("Location")
                         && $currentRedirectTimes < $this->maxRedirectTimes){
 
                         $location = $response->getHeader("Location");
@@ -141,7 +141,7 @@ class WebRequest
                         }
                     }
                     else{
-                        call_user_func($listener, $body) ;
+                        call_user_func($listener, $response) ;
                     }
 
                     //echo $code.'<br>' . $body;
@@ -165,81 +165,5 @@ class WebRequest
         return $requestURL . "?" . $param;
     }
 
-    /**
-     * [multiProcessRequest 多进程发送请求]
-     * @param  [字符串] $method [请求类型]
-     * @param  [数组,RequestModel] $requestList [请求内容]
-     * @return [type]            [description]
-     */
-    public static function multiProcessRequest($requestList)
-    {
-        $ch_arr = array();
-        $text = array();
-        $len = count($requestList);
-        $max_size = ($len > 5) ? 5 : $len;//限制最大进程数量为5
-        $requestMap = array();
-        $mh = curl_multi_init();
 
-        for ($i = 0; $i < $max_size; $i++)
-        {
-            $requestObject = $requestList[$i];
-
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_HEADER, 0);
-            curl_setopt($ch, CURLOPT_URL, $requestObject.URL);
-            if($requestObject.cookies)
-                curl_setopt($ch, CURLOPT_COOKIE, self::genCookie($requestObject.cookies));
-            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-            if($requestObject.method == Medhod::POST)
-            {
-                curl_setopt($ch, CURLOPT_POST, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $requestObject.$fields);
-            }
-            $requestMap[$i] = $ch;
-            curl_multi_add_handle($mh, $ch);
-        }
-
-        $user_arr = array();
-
-        do {
-            while (($cme = curl_multi_exec($mh, $active)) == CURLM_CALL_MULTI_PERFORM);
-
-            if ($cme != CURLM_OK) {break;}
-
-            while ($done = curl_multi_info_read($mh))
-            {
-                $info = curl_getinfo($done['handle']);
-                $tmp_result = curl_multi_getcontent($done['handle']);
-                $error = curl_error($done['handle']);
-//                $user_arr[] = array_values(getUserInfo($tmp_result));
-                //保证同时有$max_size个请求在处理
-                if ($i < sizeof($requestList) && isset($requestList[$i]) && $i < count($requestList))
-                {
-                    $ch = curl_init();
-                    curl_setopt($ch, CURLOPT_HEADER, 0);
-                    curl_setopt($ch, CURLOPT_URL, $requestObject.URL);
-                    if($requestObject.cookies)
-                        curl_setopt($ch, CURLOPT_COOKIE, self::genCookie($requestObject.cookies));
-                    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36');
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-                    if($requestObject.method == Medhod::POST)
-                    {
-                        curl_setopt($ch, CURLOPT_POST, true);
-                        curl_setopt($ch, CURLOPT_POSTFIELDS, $requestObject.$fields);
-                    }
-                    $requestMap[$i] = $ch;
-                    curl_multi_add_handle($mh, $ch);
-                    $i++;
-                }
-                curl_multi_remove_handle($mh, $done['handle']);
-            }
-            if ($active)
-                curl_multi_select($mh, 10);
-        } while ($active);
-        curl_multi_close($mh);
-        return $user_arr;
-    }
 }
