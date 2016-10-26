@@ -14,7 +14,8 @@ import DrawerController
 class MainViewController: UIViewController {
     
     let userBookListViewController = UserBookListViewController();
-
+    var visibleViewController:UIViewController?;
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class MainViewController: UIViewController {
         
         //更新约束
         view.setNeedsUpdateConstraints();
+        
         
     }
     
@@ -53,12 +55,30 @@ class MainViewController: UIViewController {
     func rightDrawerButtonPress(sender: AnyObject?) {
         self.evo_drawerController?.toggleDrawerSide(.Right, animated: true, completion: nil)
     }
+    
+    func showViewController(viewControler: UIViewController, animated: Bool){
+        if(animated){
+            
+        }
+        else{
+            viewControler.view.alpha = 0;//先隐藏
+            self.view.bringSubviewToFront(viewControler.view);//置顶
+            //做一个渐隐切换动画
+            UIView.animateWithDuration(kAnimationSpringToNormal, animations: {[unowned self] in
+                self.visibleViewController!.view.alpha = 0;
+                viewControler.view.alpha = 1;
+            })
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated);
+        
+    }
 }
 

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E9CD4081DC073E900E6FD32 /* UserBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4071DC073E900E6FD32 /* UserBookListViewController.swift */; };
+		8E9CD40B1DC0741A00E6FD32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4091DC0741A00E6FD32 /* ProfileViewController.swift */; };
+		8E9CD40C1DC0741A00E6FD32 /* SettingCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD40A1DC0741A00E6FD32 /* SettingCenterViewController.swift */; };
+		8E9CD4101DC0968D00E6FD32 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD40E1DC0968D00E6FD32 /* LeftMenuViewController.swift */; };
+		8E9CD4111DC0968D00E6FD32 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD40F1DC0968D00E6FD32 /* RightMenuViewController.swift */; };
+		8E9CD4141DC096F600E6FD32 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4131DC096F600E6FD32 /* SideMenuTableViewCell.swift */; };
+		8E9CD4161DC09A1400E6FD32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */; };
+		8E9CD4181DC09C7F00E6FD32 /* ConstDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */; };
+		8E9CD41A1DC09F5800E6FD32 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */; };
+		8E9CD41D1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD41C1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift */; };
 		8EBFB8A11D78184800568EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBFB8A01D78184800568EC7 /* AppDelegate.swift */; };
 		8EBFB8A61D78184800568EC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EBFB8A41D78184800568EC7 /* Main.storyboard */; };
 		8EBFB8A81D78184800568EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EBFB8A71D78184800568EC7 /* Assets.xcassets */; };
@@ -14,11 +24,6 @@
 		8EBFB8B61D78184800568EC7 /* BookReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBFB8B51D78184800568EC7 /* BookReaderTests.swift */; };
 		8EBFB8C11D78184800568EC7 /* BookReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBFB8C01D78184800568EC7 /* BookReaderUITests.swift */; };
 		8EE70E0E1D781CAD000A5C37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E0D1D781CAD000A5C37 /* MainViewController.swift */; };
-		8EE70E101D781CDB000A5C37 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E0F1D781CDB000A5C37 /* BookListViewController.swift */; };
-		8EE70E131D781D59000A5C37 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E121D781D59000A5C37 /* LeftMenuViewController.swift */; };
-		8EE70E151D781D6C000A5C37 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E141D781D6C000A5C37 /* RightMenuViewController.swift */; };
-		8EE70E181D781DAE000A5C37 /* SettingCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E171D781DAE000A5C37 /* SettingCenterViewController.swift */; };
-		8EE70E1A1D781DE4000A5C37 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E191D781DE4000A5C37 /* ProfileViewController.swift */; };
 		8EE70E1D1D781E6C000A5C37 /* DNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E1C1D781E6C000A5C37 /* DNavigationController.swift */; };
 		8EE70E221D79140F000A5C37 /* DSwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E211D79140F000A5C37 /* DSwiftHelper.swift */; };
 		8EE70E281D79297C000A5C37 /* GCDGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E241D79297C000A5C37 /* GCDGroup.swift */; };
@@ -50,6 +55,16 @@
 /* Begin PBXFileReference section */
 		06539B56840048B3F6D963B2 /* Pods-BookReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookReader/Pods-BookReader.debug.xcconfig"; sourceTree = "<group>"; };
 		52C76522C03BA454C6BB14FB /* Pods-BookReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookReader/Pods-BookReader.release.xcconfig"; sourceTree = "<group>"; };
+		8E9CD4071DC073E900E6FD32 /* UserBookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBookListViewController.swift; sourceTree = "<group>"; };
+		8E9CD4091DC0741A00E6FD32 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8E9CD40A1DC0741A00E6FD32 /* SettingCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCenterViewController.swift; sourceTree = "<group>"; };
+		8E9CD40E1DC0968D00E6FD32 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		8E9CD40F1DC0968D00E6FD32 /* RightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
+		8E9CD4131DC096F600E6FD32 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstDefine.swift; sourceTree = "<group>"; };
+		8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8E9CD41C1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCellModel.swift; sourceTree = "<group>"; };
 		8EA062DD1D9116DC002B13BF /* RTRootNavigationController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RTRootNavigationController.framework; path = "../../../../../../../Users/Arthur/Library/Developer/Xcode/DerivedData/BookReader-duxcatpwmrewxxggibqavspfjoch/Build/Products/Debug-iphonesimulator/RTRootNavigationController/RTRootNavigationController.framework"; sourceTree = "<group>"; };
 		8EBFB89D1D78184800568EC7 /* BookReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBFB8A01D78184800568EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,11 +79,6 @@
 		8EBFB8C01D78184800568EC7 /* BookReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderUITests.swift; sourceTree = "<group>"; };
 		8EBFB8C21D78184800568EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EE70E0D1D781CAD000A5C37 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		8EE70E0F1D781CDB000A5C37 /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
-		8EE70E121D781D59000A5C37 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
-		8EE70E141D781D6C000A5C37 /* RightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
-		8EE70E171D781DAE000A5C37 /* SettingCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCenterViewController.swift; sourceTree = "<group>"; };
-		8EE70E191D781DE4000A5C37 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8EE70E1C1D781E6C000A5C37 /* DNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNavigationController.swift; sourceTree = "<group>"; };
 		8EE70E211D79140F000A5C37 /* DSwiftHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSwiftHelper.swift; sourceTree = "<group>"; };
 		8EE70E241D79297C000A5C37 /* GCDGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDGroup.swift; sourceTree = "<group>"; };
@@ -107,6 +117,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E9CD4061DC073C900E6FD32 /* CenterViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E9CD4091DC0741A00E6FD32 /* ProfileViewController.swift */,
+				8E9CD40A1DC0741A00E6FD32 /* SettingCenterViewController.swift */,
+				8E9CD4071DC073E900E6FD32 /* UserBookListViewController.swift */,
+			);
+			path = CenterViewControllers;
+			sourceTree = "<group>";
+		};
+		8E9CD40D1DC0968D00E6FD32 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8E9CD41B1DC0B3F000E6FD32 /* Model */,
+				8E9CD4121DC096A000E6FD32 /* View */,
+				8E9CD40E1DC0968D00E6FD32 /* LeftMenuViewController.swift */,
+				8E9CD40F1DC0968D00E6FD32 /* RightMenuViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		8E9CD4121DC096A000E6FD32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E9CD4131DC096F600E6FD32 /* SideMenuTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E9CD41B1DC0B3F000E6FD32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E9CD41C1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8EBFB8941D78184800568EC7 = {
 			isa = PBXGroup;
 			children = (
@@ -134,16 +181,13 @@
 			children = (
 				8EBFB8A01D78184800568EC7 /* AppDelegate.swift */,
 				8EE70E0D1D781CAD000A5C37 /* MainViewController.swift */,
-				8EE70E0F1D781CDB000A5C37 /* BookListViewController.swift */,
-				8EE70E171D781DAE000A5C37 /* SettingCenterViewController.swift */,
-				8EE70E191D781DE4000A5C37 /* ProfileViewController.swift */,
 				8EE70E321D79754C000A5C37 /* DrawerVisualStateManager.swift */,
 				8EE70E1E1D7913E9000A5C37 /* DSwiftHelper */,
 				8EE70E1B1D781E3D000A5C37 /* Controls */,
-				8EE70E161D781D74000A5C37 /* 侧边栏 */,
 				8EBFB8A71D78184800568EC7 /* Assets.xcassets */,
 				8EBFB8AC1D78184800568EC7 /* Info.plist */,
 				8EE70E111D781CFF000A5C37 /* Storyboard */,
+				8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */,
 			);
 			path = BookReader;
 			sourceTree = "<group>";
@@ -175,18 +219,11 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
-		8EE70E161D781D74000A5C37 /* 侧边栏 */ = {
-			isa = PBXGroup;
-			children = (
-				8EE70E121D781D59000A5C37 /* LeftMenuViewController.swift */,
-				8EE70E141D781D6C000A5C37 /* RightMenuViewController.swift */,
-			);
-			name = "侧边栏";
-			sourceTree = "<group>";
-		};
 		8EE70E1B1D781E3D000A5C37 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				8E9CD40D1DC0968D00E6FD32 /* SideMenu */,
+				8E9CD4061DC073C900E6FD32 /* CenterViewControllers */,
 				8EE70E1C1D781E6C000A5C37 /* DNavigationController.swift */,
 			);
 			path = Controls;
@@ -218,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				8EE70E2F1D7940DB000A5C37 /* UIDeviceExtension.swift */,
+				8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */,
+				8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -311,6 +350,7 @@
 				TargetAttributes = {
 					8EBFB89C1D78184800568EC7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 97LHX2YDWA;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -426,21 +466,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9CD4161DC09A1400E6FD32 /* UIColorExtension.swift in Sources */,
 				8EE70E301D7940DB000A5C37 /* UIDeviceExtension.swift in Sources */,
-				8EE70E181D781DAE000A5C37 /* SettingCenterViewController.swift in Sources */,
 				8EE70E221D79140F000A5C37 /* DSwiftHelper.swift in Sources */,
 				8EE70E281D79297C000A5C37 /* GCDGroup.swift in Sources */,
+				8E9CD4141DC096F600E6FD32 /* SideMenuTableViewCell.swift in Sources */,
 				8EE70E2A1D79297C000A5C37 /* GCDSemaphore.swift in Sources */,
+				8E9CD41D1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift in Sources */,
+				8E9CD4111DC0968D00E6FD32 /* RightMenuViewController.swift in Sources */,
 				8EBFB8A11D78184800568EC7 /* AppDelegate.swift in Sources */,
+				8E9CD4181DC09C7F00E6FD32 /* ConstDefine.swift in Sources */,
+				8E9CD40B1DC0741A00E6FD32 /* ProfileViewController.swift in Sources */,
 				8EE70E0E1D781CAD000A5C37 /* MainViewController.swift in Sources */,
-				8EE70E131D781D59000A5C37 /* LeftMenuViewController.swift in Sources */,
 				8EE70E2B1D79297C000A5C37 /* GCDTimer.swift in Sources */,
 				8EE70E291D79297C000A5C37 /* GCDQueue.swift in Sources */,
+				8E9CD41A1DC09F5800E6FD32 /* UIViewExtension.swift in Sources */,
 				8EE70E331D79754C000A5C37 /* DrawerVisualStateManager.swift in Sources */,
-				8EE70E1A1D781DE4000A5C37 /* ProfileViewController.swift in Sources */,
-				8EE70E101D781CDB000A5C37 /* BookListViewController.swift in Sources */,
+				8E9CD4081DC073E900E6FD32 /* UserBookListViewController.swift in Sources */,
 				8EE70E1D1D781E6C000A5C37 /* DNavigationController.swift in Sources */,
-				8EE70E151D781D6C000A5C37 /* RightMenuViewController.swift in Sources */,
+				8E9CD4101DC0968D00E6FD32 /* LeftMenuViewController.swift in Sources */,
+				8E9CD40C1DC0741A00E6FD32 /* SettingCenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,13 +628,16 @@
 			baseConfigurationReference = 06539B56840048B3F6D963B2 /* Pods-BookReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 97LHX2YDWA;
 				INFOPLIST_FILE = BookReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BookReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartdj.bookreader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -600,13 +648,16 @@
 			baseConfigurationReference = 52C76522C03BA454C6BB14FB /* Pods-BookReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 97LHX2YDWA;
 				INFOPLIST_FILE = BookReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BookReader;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartdj.bookreader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

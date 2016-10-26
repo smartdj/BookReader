@@ -1,5 +1,5 @@
 //
-//  LeftSideViewController.swift
+//  RightSideViewController.swift
 //  BookReader
 //
 //  Created by Arthur on 16/9/1.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class LeftMenuViewController: UIViewController {
+class RightMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.blackColor();
+        self.view.backgroundColor = UIColor.redColor();
     }
 }
