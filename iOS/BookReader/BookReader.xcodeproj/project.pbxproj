@@ -12,11 +12,12 @@
 		8E9CD40C1DC0741A00E6FD32 /* SettingCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD40A1DC0741A00E6FD32 /* SettingCenterViewController.swift */; };
 		8E9CD4101DC0968D00E6FD32 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD40E1DC0968D00E6FD32 /* LeftMenuViewController.swift */; };
 		8E9CD4111DC0968D00E6FD32 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD40F1DC0968D00E6FD32 /* RightMenuViewController.swift */; };
-		8E9CD4141DC096F600E6FD32 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4131DC096F600E6FD32 /* SideMenuTableViewCell.swift */; };
+		8E9CD4141DC096F600E6FD32 /* LeftSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4131DC096F600E6FD32 /* LeftSideMenuTableViewCell.swift */; };
 		8E9CD4161DC09A1400E6FD32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */; };
 		8E9CD4181DC09C7F00E6FD32 /* ConstDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */; };
 		8E9CD41A1DC09F5800E6FD32 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */; };
 		8E9CD41D1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD41C1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift */; };
+		8E9CD41F1DC1D2BD00E6FD32 /* RightSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD41E1DC1D2BD00E6FD32 /* RightSideMenuTableViewCell.swift */; };
 		8EBFB8A11D78184800568EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBFB8A01D78184800568EC7 /* AppDelegate.swift */; };
 		8EBFB8A61D78184800568EC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EBFB8A41D78184800568EC7 /* Main.storyboard */; };
 		8EBFB8A81D78184800568EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EBFB8A71D78184800568EC7 /* Assets.xcassets */; };
@@ -60,11 +61,12 @@
 		8E9CD40A1DC0741A00E6FD32 /* SettingCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCenterViewController.swift; sourceTree = "<group>"; };
 		8E9CD40E1DC0968D00E6FD32 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		8E9CD40F1DC0968D00E6FD32 /* RightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
-		8E9CD4131DC096F600E6FD32 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		8E9CD4131DC096F600E6FD32 /* LeftSideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstDefine.swift; sourceTree = "<group>"; };
 		8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8E9CD41C1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCellModel.swift; sourceTree = "<group>"; };
+		8E9CD41E1DC1D2BD00E6FD32 /* RightSideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		8EA062DD1D9116DC002B13BF /* RTRootNavigationController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RTRootNavigationController.framework; path = "../../../../../../../Users/Arthur/Library/Developer/Xcode/DerivedData/BookReader-duxcatpwmrewxxggibqavspfjoch/Build/Products/Debug-iphonesimulator/RTRootNavigationController/RTRootNavigationController.framework"; sourceTree = "<group>"; };
 		8EBFB89D1D78184800568EC7 /* BookReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBFB8A01D78184800568EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +143,8 @@
 		8E9CD4121DC096A000E6FD32 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8E9CD4131DC096F600E6FD32 /* SideMenuTableViewCell.swift */,
+				8E9CD4131DC096F600E6FD32 /* LeftSideMenuTableViewCell.swift */,
+				8E9CD41E1DC1D2BD00E6FD32 /* RightSideMenuTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,7 +348,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Arthur;
 				TargetAttributes = {
 					8EBFB89C1D78184800568EC7 = {
@@ -466,11 +469,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9CD41F1DC1D2BD00E6FD32 /* RightSideMenuTableViewCell.swift in Sources */,
 				8E9CD4161DC09A1400E6FD32 /* UIColorExtension.swift in Sources */,
 				8EE70E301D7940DB000A5C37 /* UIDeviceExtension.swift in Sources */,
 				8EE70E221D79140F000A5C37 /* DSwiftHelper.swift in Sources */,
 				8EE70E281D79297C000A5C37 /* GCDGroup.swift in Sources */,
-				8E9CD4141DC096F600E6FD32 /* SideMenuTableViewCell.swift in Sources */,
+				8E9CD4141DC096F600E6FD32 /* LeftSideMenuTableViewCell.swift in Sources */,
 				8EE70E2A1D79297C000A5C37 /* GCDSemaphore.swift in Sources */,
 				8E9CD41D1DC0B41000E6FD32 /* SideMenuTableViewCellModel.swift in Sources */,
 				8E9CD4111DC0968D00E6FD32 /* RightMenuViewController.swift in Sources */,
@@ -554,8 +558,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -599,8 +605,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -619,6 +627,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -627,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06539B56840048B3F6D963B2 /* Pods-BookReader.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -647,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52C76522C03BA454C6BB14FB /* Pods-BookReader.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

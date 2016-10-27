@@ -10,58 +10,47 @@ import UIKit
 import SnapKit;
 
 class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-//    var userButton:UIButton = UIButton();
-//    var homeButton:UIButton = UIButton();
-//    var messageButton:UIButton = UIButton();
-//    var settingsButton:UIButton = UIButton();
-    var tableView:UITableView?
+    
+    lazy var tableView:UITableView? = {
+        //初始化
+        var tableView = UITableView();
+        //注册Cell
+        tableView.registerClass(LeftSideMenuTableViewCell.self, forCellReuseIdentifier: kDefaultCellIdentifier)
+        
+        //设置数据源和代理
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView.backgroundColor = UIColor.clearColor();
+        tableView.separatorColor = UIColor.blackColor();//设置分割线颜色
+        tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        tableView.tableFooterView = UIView(frame: CGRectZero);
+        tableView.bounces = false;
+        return tableView;
+    }()
+    
+    //设置单元格数据，使用懒加载
+    lazy var dataSource: [SideMenuTableViewCellModel] = {
+        return [SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "hsm_default_avatar"), isSelected:false)
+        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "hsm_icon_1"), isSelected:true)
+        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "hsm_icon_2"), isSelected:false)
+        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "hsm_icon_3"), isSelected:false)];
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = kColorRGB(40, g: 37, b: 34);
         
-//        userButton.setImage(UIImage.init(named: "hsm_default_avatar"), forState: UIControlState.Normal);
-//        homeButton.setImage(UIImage.init(named: "hsm_icon_1"), forState: UIControlState.Normal);
-//        messageButton.setImage(UIImage.init(named: "hsm_icon_2"), forState: UIControlState.Normal);
-//        settingsButton.setImage(UIImage.init(named: "hsm_icon_3"), forState: UIControlState.Normal);
-//        
-//        self.view.addSubview(userButton);
-//        self.view.addSubview(homeButton);
-//        self.view.addSubview(messageButton);
-//        self.view.addSubview(settingsButton);
-//        
-//        userButton.snp.makeConstraints { (make) -> Void in
-//            make.width.equalTo(21)
-//            make.height.equalTo(23);
-//            make.center.equalTo(self.view)
-//        }
-        //初始化
-        self.tableView = UITableView();
-        //注册Cell
-        self.tableView!.registerClass(SideMenuTableViewCell.self, forCellReuseIdentifier: kDefaultCellIdentifier)
-
-        //设置数据源和代理
-        self.tableView!.delegate = self;
-        self.tableView!.dataSource = self;
-        self.tableView!.backgroundColor = UIColor.clearColor();
-        self.tableView!.separatorColor = UIColor.blackColor();//设置分割线颜色
-        self.tableView!.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        //添加tableview
+        view.addSubview(tableView!);
         
-        self.view.addSubview(tableView!);
-        
-        self.tableView!.snp_makeConstraints { [unowned self] (make) -> Void in
+        tableView!.snp_makeConstraints { [unowned self] (make) -> Void in
             make.left.right.bottom.equalTo(self.view);
             make.top.equalTo(kNavBarHeight);
         };
-    }
-    
-    lazy var dataSource: [String] = {
-        return ["a"];
-    }()
-    
-    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true;
+        
+        //给tableView顶部添加一个分割线
+        self.view.setBorder(.topBorder, color: UIColor.blackColor(), widthOrHeight: 0.5, edgeInsets: EdgeInsetsMake(kNavBarHeight-0.5, left: 0, bottom: 0, right: 0))
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -69,21 +58,20 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kDefaultCellIdentifier, forIndexPath: indexPath) as! SideMenuTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kDefaultCellIdentifier, forIndexPath: indexPath) as! LeftSideMenuTableViewCell
 
         // 配置cell
-        cell.textLabel!.text = "假数据 - \(dataSource[indexPath.row])"
-
+        cell.dataModel = self.dataSource[indexPath.row];
         // 返回cell
         return cell
     }
     
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //qi
+        //
         for i in 0 ..< dataSource.count{
-            let cell = tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: i, inSection: indexPath.section)) as! SideMenuTableViewCell;
-            
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: i, inSection: indexPath.section)) as! LeftSideMenuTableViewCell;
+            cell.dataModel?.isSelected = i == indexPath.row;
             cell.setSelected(i == indexPath.row, animated: true);
         }
     }

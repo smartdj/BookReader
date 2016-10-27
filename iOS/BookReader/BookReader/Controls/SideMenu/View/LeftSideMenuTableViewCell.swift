@@ -8,8 +8,30 @@
 
 import UIKit
 
-class SideMenuTableViewCell: UITableViewCell {
-
+class LeftSideMenuTableViewCell: UITableViewCell {
+    private var _dataModel:SideMenuTableViewCellModel?
+    var dataModel:SideMenuTableViewCellModel?{
+        set{
+            _dataModel = newValue;
+            self.setSelected((_dataModel?.isSelected)!, animated: false);
+            self.iconImage?.image = newValue?.icon;
+        }
+        get{
+            return _dataModel;
+        }
+    }
+    
+    lazy var iconImage:UIImageView? = {
+        var iconImage = UIImageView();
+        self.addSubview(iconImage);
+        iconImage.snp_makeConstraints(closure: {[unowned self] (make) in
+            make.center.equalTo(self);
+            make.width.equalTo(21);
+            make.height.equalTo(23);
+        })
+        return iconImage;
+    }()
+    
     var selectedIdentifior:UIView!;
     
     override func awakeFromNib() {
@@ -19,19 +41,13 @@ class SideMenuTableViewCell: UITableViewCell {
 
     override func setHighlighted(highlighted: Bool, animated: Bool){
         super.setHighlighted(highlighted, animated: animated)
-        
-        if(highlighted){
-            selectedIdentifior.backgroundColor = UIColor.redColor();
-        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        selectedIdentifior.hidden = !selected;
-        
-        if(selected){
-            selectedIdentifior.backgroundColor = UIColor.redColor();
+        if let dataModel = dataModel{//init的时候会调用这个函数，这时model为nil需要校验
+            selectedIdentifior.hidden = !(dataModel.isSelected);
         }
     }
     
@@ -39,7 +55,7 @@ class SideMenuTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
         
         self.backgroundColor = UIColor.clearColor();
-        
+        self.selectionStyle = .None;
         selectedIdentifior = UIView();
         selectedIdentifior.backgroundColor = UIColor.redColor();
         selectedIdentifior.hidden = true;
