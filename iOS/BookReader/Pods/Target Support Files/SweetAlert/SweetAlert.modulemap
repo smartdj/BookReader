@@ -1,6 +1,0 @@
-framework module SweetAlert {
-  umbrella header "SweetAlert-umbrella.h"
-
-  export *
-  module * { export * }
-}

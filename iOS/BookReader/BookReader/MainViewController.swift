@@ -13,9 +13,14 @@ import DrawerController
 
 class MainViewController: UIViewController {
     
-    let userBookListViewController = UserBookListViewController();
     var visibleViewController:UIViewController?;
     
+    lazy var centerViewController:CenterViewController = {
+        var centerViewController = CenterViewController()
+        self.addChildViewController(centerViewController)
+        self.view.addSubview(centerViewController.view)
+        return centerViewController;
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +31,13 @@ class MainViewController: UIViewController {
         self.setupLeftMenuButton()
         self.setupRightMenuButton()
         
+        centerViewController.view.snp_makeConstraints {[unowned self] (make) in
+            make.edges.equalTo(self.view)
+        }
+        
+        
         //更新约束
         view.setNeedsUpdateConstraints();
-        
-        
     }
     
     //开始更新约束

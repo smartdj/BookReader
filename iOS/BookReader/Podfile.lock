@@ -1,22 +1,22 @@
 PODS:
-  - Alamofire (3.5.0)
+  - Alamofire (3.5.1)
   - AlamofireImage (2.5.0):
     - Alamofire (~> 3.5)
   - AlamofireObjectMapper (3.0.2):
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
-  - DrawerController (1.1.1):
-    - DrawerController/Core (= 1.1.1)
-    - DrawerController/DrawerVisualStates (= 1.1.1)
-  - DrawerController/Core (1.1.1)
-  - DrawerController/DrawerVisualStates (1.1.1):
+  - DrawerController (2.0.0):
+    - DrawerController/Core (= 2.0.0)
+    - DrawerController/DrawerVisualStates (= 2.0.0)
+  - DrawerController/Core (2.0.0)
+  - DrawerController/DrawerVisualStates (2.0.0):
     - DrawerController/Core
   - IQKeyboardManagerSwift (4.0.5)
   - LGHelper (1.1.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - NightNight (0.3.1)
-  - ObjectMapper (1.4.0)
+  - ObjectMapper (1.5.0)
   - OMGHTTPURLRQ (3.2.0):
     - OMGHTTPURLRQ/RQ (= 3.2.0)
   - OMGHTTPURLRQ/FormURLEncode (3.2.0)
@@ -36,31 +36,25 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (3.5.1):
     - PromiseKit/CorePromise
-  - Realm (1.1.0):
-    - Realm/Headers (= 1.1.0)
-  - Realm/Headers (1.1.0)
-  - RealmSwift (1.1.0):
-    - Realm (= 1.1.0)
+  - Realm (2.0.3):
+    - Realm/Headers (= 2.0.3)
+  - Realm/Headers (2.0.3)
+  - RealmSwift (2.0.3):
+    - Realm (= 2.0.3)
   - Reveal-iOS-SDK (1.6.2)
-  - RTRootNavigationController (0.5.21)
-  - SDCycleScrollView (1.65):
-    - SDWebImage (~> 3.7)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
+  - RTRootNavigationController (0.5.22)
   - SnapKit (0.22.0)
-  - SweetAlert (0.1.0)
   - SWTableViewCell (0.3.7)
   - TYAttributedLabel (2.6.2)
   - UITableView+FDTemplateLayoutCell (1.4)
-  - XCGLogger (3.5.3)
+  - XCGLogger (3.6.0)
   - XLPagerTabStrip (5.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AlamofireObjectMapper (= 3.0.2)
-  - DrawerController
+  - DrawerController (= 2.0.0)
   - IQKeyboardManagerSwift (= 4.0.5)
   - LGHelper (from `https://github.com/smartdj/LGHelper.git`)
   - MBProgressHUD
@@ -70,56 +64,46 @@ DEPENDENCIES:
   - RealmSwift
   - Reveal-iOS-SDK
   - RTRootNavigationController
-  - SDCycleScrollView (~> 1.64)
   - SnapKit (= 0.22.0)
-  - SweetAlert (from `https://github.com/codestergit/SweetAlert-iOS.git`)
   - SWTableViewCell
   - TYAttributedLabel (~> 2.6.2)
   - UITableView+FDTemplateLayoutCell
-  - XCGLogger
+  - XCGLogger (= 3.6.0)
   - XLPagerTabStrip (~> 5.0)
 
 EXTERNAL SOURCES:
   LGHelper:
     :git: https://github.com/smartdj/LGHelper.git
-  SweetAlert:
-    :git: https://github.com/codestergit/SweetAlert-iOS.git
 
 CHECKOUT OPTIONS:
   LGHelper:
     :commit: d9d7eea8e379669bbf2a648192161e8596768dc0
     :git: https://github.com/smartdj/LGHelper.git
-  SweetAlert:
-    :commit: 36750d5eba843f43f3344124e953b62d697c5eeb
-    :git: https://github.com/codestergit/SweetAlert-iOS.git
 
 SPEC CHECKSUMS:
-  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
   AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
   AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
-  DrawerController: ff3a2630c74f0daf7840702a1492b8accbbf3d7e
+  DrawerController: c23e650b135c2192a598d0d1d14c6f4e716ea143
   IQKeyboardManagerSwift: 41fd3a45a2cdb2a0e031af697708a95b865068a1
   LGHelper: e1976649226bb222c1dcb9a0452c654f095af525
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   NightNight: c3ff139aace06406787b7c6cc85e4d954f53e29a
-  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
+  ObjectMapper: 386645adca9d9d23b95eda43090b09d66444cf14
   OMGHTTPURLRQ: 1e54807cb7d5dbb506926e53498e1e9ac5720c79
   PromiseKit: 99ea973444a4bff6c38ffb97fa1bb175e619bcf0
-  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
-  RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
+  Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
+  RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
-  RTRootNavigationController: 1d4e675d08f4993e78762cbfdf8e3ed468b7cfe9
-  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  RTRootNavigationController: cf134c044a8ce14d97fc668847ed4567efc53f91
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
-  SweetAlert: c2a033cd37f8aa2ac50d9644cce3fa7304eae725
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   TYAttributedLabel: 1c1f1e7604043ba584e005d4fd3aee8a1a7a2020
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
-  XCGLogger: dbe4a9c7bbaac73717a34e0b94c64fd151c74d6c
+  XCGLogger: 53a3efe22e228e8b25ed8184bc074c2b06d48490
   XLPagerTabStrip: 9191deaa2336735b7c47beb21e42be537fa4242a
 
-PODFILE CHECKSUM: 460c602a13b091930dd31f2b65ae0a9c73c44ff5
+PODFILE CHECKSUM: b1053730100085b6bc2411f617378c83faa56709
 
 COCOAPODS: 1.1.0.beta.2
