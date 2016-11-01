@@ -1,22 +1,24 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
-Source Server         : local
-Source Server Version : 50617
-Source Host           : localhost:3306
-Source Database       : bookreader
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 100113
+ Source Host           : localhost
+ Source Database       : bookreader
 
-Target Server Type    : MYSQL
-Target Server Version : 50617
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 100113
+ File Encoding         : utf-8
 
-Date: 2016-10-02 18:27:19
+ Date: 11/01/2016 17:30:46 PM
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for spiderstatus
+--  Table structure for `spiderstatus`
 -- ----------------------------
 DROP TABLE IF EXISTS `spiderstatus`;
 CREATE TABLE `spiderstatus` (
@@ -27,3 +29,5 @@ CREATE TABLE `spiderstatus` (
   `lastUpdateTime` datetime DEFAULT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+SET FOREIGN_KEY_CHECKS = 1;
