@@ -11,6 +11,8 @@
 		8E95AE9C1DC861BB0033082D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AE9B1DC861BB0033082D /* Log.swift */; };
 		8E95AE9F1DC86BA50033082D /* DFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AE9E1DC86BA50033082D /* DFileHelper.swift */; };
 		8E95AEA21DC878CF0033082D /* GlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AEA11DC878CF0033082D /* GlobalConfig.swift */; };
+		8E95AEA61DC884650033082D /* QiDianBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AEA41DC884650033082D /* QiDianBookModel.swift */; };
+		8E95AEA71DC884650033082D /* UserBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AEA51DC884650033082D /* UserBookModel.swift */; };
 		8E9CD4161DC09A1400E6FD32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */; };
 		8E9CD4181DC09C7F00E6FD32 /* ConstDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */; };
 		8E9CD41A1DC09F5800E6FD32 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */; };
@@ -32,10 +34,8 @@
 		8ED286DD1DC322A30044A39F /* RightSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED286D41DC322A30044A39F /* RightSideMenuTableViewCell.swift */; };
 		8ED286DF1DC3244F0044A39F /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED286DE1DC3244F0044A39F /* CenterViewController.swift */; };
 		8ED286E21DC32BB10044A39F /* UserBookListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED286E11DC32BB10044A39F /* UserBookListTableViewCell.swift */; };
-		8ED286E41DC32D700044A39F /* UserBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED286E31DC32D700044A39F /* UserBookModel.swift */; };
 		8ED286E61DC32FAA0044A39F /* UserBookWebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED286E51DC32FAA0044A39F /* UserBookWebAPI.swift */; };
 		8ED286E81DC333310044A39F /* QiDianWebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED286E71DC333310044A39F /* QiDianWebAPI.swift */; };
-		8ED286EA1DC333DB0044A39F /* QiDianBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED286E91DC333DB0044A39F /* QiDianBookModel.swift */; };
 		8EE70E0E1D781CAD000A5C37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E0D1D781CAD000A5C37 /* MainViewController.swift */; };
 		8EE70E221D79140F000A5C37 /* DSwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E211D79140F000A5C37 /* DSwiftHelper.swift */; };
 		8EE70E281D79297C000A5C37 /* GCDGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70E241D79297C000A5C37 /* GCDGroup.swift */; };
@@ -71,6 +71,8 @@
 		8E95AE9B1DC861BB0033082D /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		8E95AE9E1DC86BA50033082D /* DFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFileHelper.swift; sourceTree = "<group>"; };
 		8E95AEA11DC878CF0033082D /* GlobalConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConfig.swift; sourceTree = "<group>"; };
+		8E95AEA41DC884650033082D /* QiDianBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiDianBookModel.swift; sourceTree = "<group>"; };
+		8E95AEA51DC884650033082D /* UserBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBookModel.swift; sourceTree = "<group>"; };
 		8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstDefine.swift; sourceTree = "<group>"; };
 		8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -99,10 +101,8 @@
 		8ED286D41DC322A30044A39F /* RightSideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		8ED286DE1DC3244F0044A39F /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		8ED286E11DC32BB10044A39F /* UserBookListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBookListTableViewCell.swift; sourceTree = "<group>"; };
-		8ED286E31DC32D700044A39F /* UserBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBookModel.swift; sourceTree = "<group>"; };
 		8ED286E51DC32FAA0044A39F /* UserBookWebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBookWebAPI.swift; sourceTree = "<group>"; };
 		8ED286E71DC333310044A39F /* QiDianWebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiDianWebAPI.swift; sourceTree = "<group>"; };
-		8ED286E91DC333DB0044A39F /* QiDianBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiDianBookModel.swift; sourceTree = "<group>"; };
 		8EE70E0D1D781CAD000A5C37 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8EE70E211D79140F000A5C37 /* DSwiftHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSwiftHelper.swift; sourceTree = "<group>"; };
 		8EE70E241D79297C000A5C37 /* GCDGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDGroup.swift; sourceTree = "<group>"; };
@@ -166,6 +166,15 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		8E95AEA31DC884650033082D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E95AEA41DC884650033082D /* QiDianBookModel.swift */,
+				8E95AEA51DC884650033082D /* UserBookModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8E9CD4211DC2029D00E6FD32 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +188,7 @@
 		8E9CD4221DC2029D00E6FD32 /* WebAPI */ = {
 			isa = PBXGroup;
 			children = (
+				8E95AEA31DC884650033082D /* Model */,
 				8E9CD4231DC202B300E6FD32 /* WebAPIBase.swift */,
 				8ED286E51DC32FAA0044A39F /* UserBookWebAPI.swift */,
 				8ED286E71DC333310044A39F /* QiDianWebAPI.swift */,
@@ -256,7 +266,6 @@
 		8ED286C71DC322A30044A39F /* CenterViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8ED286C81DC322A30044A39F /* Model */,
 				8ED286E01DC32AD80044A39F /* View */,
 				8ED286C91DC322A30044A39F /* ProfileViewController.swift */,
 				8ED286CA1DC322A30044A39F /* SettingCenterViewController.swift */,
@@ -264,15 +273,6 @@
 				8ED286DE1DC3244F0044A39F /* CenterViewController.swift */,
 			);
 			path = CenterViewControllers;
-			sourceTree = "<group>";
-		};
-		8ED286C81DC322A30044A39F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8ED286E31DC32D700044A39F /* UserBookModel.swift */,
-				8ED286E91DC333DB0044A39F /* QiDianBookModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		8ED286CD1DC322A30044A39F /* SideMenu */ = {
@@ -561,8 +561,8 @@
 			files = (
 				8ED286D71DC322A30044A39F /* UserBookListViewController.swift in Sources */,
 				8ED286DF1DC3244F0044A39F /* CenterViewController.swift in Sources */,
+				8E95AEA61DC884650033082D /* QiDianBookModel.swift in Sources */,
 				8E95AE9F1DC86BA50033082D /* DFileHelper.swift in Sources */,
-				8ED286EA1DC333DB0044A39F /* QiDianBookModel.swift in Sources */,
 				8E9CD4161DC09A1400E6FD32 /* UIColorExtension.swift in Sources */,
 				8EE70E301D7940DB000A5C37 /* UIDeviceExtension.swift in Sources */,
 				8EE70E221D79140F000A5C37 /* DSwiftHelper.swift in Sources */,
@@ -576,7 +576,6 @@
 				8ED286DD1DC322A30044A39F /* RightSideMenuTableViewCell.swift in Sources */,
 				8EE70E0E1D781CAD000A5C37 /* MainViewController.swift in Sources */,
 				8EE70E2B1D79297C000A5C37 /* GCDTimer.swift in Sources */,
-				8ED286E41DC32D700044A39F /* UserBookModel.swift in Sources */,
 				8EE70E291D79297C000A5C37 /* GCDQueue.swift in Sources */,
 				8ED286D81DC322A30044A39F /* DNavigationController.swift in Sources */,
 				8E9CD41A1DC09F5800E6FD32 /* UIViewExtension.swift in Sources */,
@@ -589,6 +588,7 @@
 				8ED286D61DC322A30044A39F /* SettingCenterViewController.swift in Sources */,
 				8E9CD4241DC202B300E6FD32 /* WebAPIBase.swift in Sources */,
 				8EE70E331D79754C000A5C37 /* DrawerVisualStateManager.swift in Sources */,
+				8E95AEA71DC884650033082D /* UserBookModel.swift in Sources */,
 				8E95AE9C1DC861BB0033082D /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
