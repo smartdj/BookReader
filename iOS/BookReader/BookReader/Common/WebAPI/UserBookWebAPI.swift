@@ -9,5 +9,7 @@
 import UIKit
 
 class UserBookWebAPI: WebAPIBase {
-    
+    class func refresh(complated:((statusCode:Int, dataModels:Array<QiDianBookModel>?) -> (Void))?){
+        
+    }
 }

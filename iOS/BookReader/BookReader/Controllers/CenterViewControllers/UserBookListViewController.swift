@@ -10,10 +10,12 @@ import UIKit
 
 class UserBookListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var dataSource:NSMutableArray = NSMutableArray()
+    let dataSource:NSMutableArray = NSMutableArray()
+    let tableView:UITableView = UITableView()
+    let refreshControl:UIRefreshControl = UIRefreshControl()
     
-    lazy var tableView:UITableView = {
-        var tableView:UITableView = UITableView()
+    func setupTableView()
+    {
         //注册Cell
         tableView.registerClass(UserBookListTableViewCell.self, forCellReuseIdentifier: kDefaultCellIdentifier)
         
@@ -25,11 +27,23 @@ class UserBookListViewController: UIViewController, UITableViewDelegate, UITable
         //tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         tableView.tableFooterView = UIView(frame: CGRectZero);
         self.view.addSubview(tableView)
-        return tableView;
-    }()
+        tableView.snp_makeConstraints(closure: {[unowned self] (make) -> Void in
+            make.edges.equalTo(self.view)
+            })
+    }
+    
+    func setupRefreshControl(){
+        //添加刷新
+        refreshControl.addTarget(self, action: #selector(UserBookListViewController.refreshData),
+                                 forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新数据")
+        self.tableView.addSubview(refreshControl)
+    }
     
     override func viewDidLoad() {
-        
+        setupTableView()
+        setupRefreshControl()
+        refreshData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,5 +57,14 @@ class UserBookListViewController: UIViewController, UITableViewDelegate, UITable
         cell.dataModel = self.dataSource[indexPath.row] as? UserBookModel;
         // 返回cell
         return cell
+    }
+    
+    // 刷新数据
+    func refreshData() {
+        UserBookWebAPI.refresh {[unowned self] (statusCode, dataModels) -> (Void) in
+            self.dataSource.removeAllObjects()
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
     }
 }
