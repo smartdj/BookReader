@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E95AE991DC848950033082D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E95AE981DC848950033082D /* ObjectMapper.framework */; };
+		8E95AE9C1DC861BB0033082D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AE9B1DC861BB0033082D /* Log.swift */; };
+		8E95AE9F1DC86BA50033082D /* DFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AE9E1DC86BA50033082D /* DFileHelper.swift */; };
+		8E95AEA21DC878CF0033082D /* GlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AEA11DC878CF0033082D /* GlobalConfig.swift */; };
 		8E9CD4161DC09A1400E6FD32 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */; };
 		8E9CD4181DC09C7F00E6FD32 /* ConstDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */; };
 		8E9CD41A1DC09F5800E6FD32 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */; };
@@ -63,6 +67,10 @@
 /* Begin PBXFileReference section */
 		06539B56840048B3F6D963B2 /* Pods-BookReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookReader/Pods-BookReader.debug.xcconfig"; sourceTree = "<group>"; };
 		52C76522C03BA454C6BB14FB /* Pods-BookReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookReader/Pods-BookReader.release.xcconfig"; sourceTree = "<group>"; };
+		8E95AE981DC848950033082D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../../../../Users/Arthur/Library/Developer/Xcode/DerivedData/BookReader-duxcatpwmrewxxggibqavspfjoch/Build/Products/Debug-iphonesimulator/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
+		8E95AE9B1DC861BB0033082D /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		8E95AE9E1DC86BA50033082D /* DFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFileHelper.swift; sourceTree = "<group>"; };
+		8E95AEA11DC878CF0033082D /* GlobalConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConfig.swift; sourceTree = "<group>"; };
 		8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8E9CD4171DC09C7F00E6FD32 /* ConstDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstDefine.swift; sourceTree = "<group>"; };
 		8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E95AE991DC848950033082D /* ObjectMapper.framework in Frameworks */,
 				92061092B9336118A518AAFF /* Pods_BookReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,9 +142,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E95AE9A1DC861910033082D /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				8E95AE9B1DC861BB0033082D /* Log.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		8E95AE9D1DC86B5C0033082D /* function */ = {
+			isa = PBXGroup;
+			children = (
+				8E95AE9E1DC86BA50033082D /* DFileHelper.swift */,
+			);
+			path = function;
+			sourceTree = "<group>";
+		};
+		8E95AEA01DC878AD0033082D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8E95AEA11DC878CF0033082D /* GlobalConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		8E9CD4211DC2029D00E6FD32 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8E95AEA01DC878AD0033082D /* Config */,
+				8E95AE9A1DC861910033082D /* Log */,
 				8E9CD4221DC2029D00E6FD32 /* WebAPI */,
 			);
 			path = Common;
@@ -288,6 +323,7 @@
 		8EE70E1E1D7913E9000A5C37 /* DSwiftHelper */ = {
 			isa = PBXGroup;
 			children = (
+				8E95AE9D1DC86B5C0033082D /* function */,
 				8EE70E2E1D7940AD000A5C37 /* extension */,
 				8EE70E231D79297C000A5C37 /* GCD */,
 				8EE70E211D79140F000A5C37 /* DSwiftHelper.swift */,
@@ -329,6 +365,7 @@
 		A04E9D44F967D6141AE592FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E95AE981DC848950033082D /* ObjectMapper.framework */,
 				8EA062DD1D9116DC002B13BF /* RTRootNavigationController.framework */,
 				FBCBCB1D88D4CB913AAA4D2E /* Pods_BookReader.framework */,
 			);
@@ -401,7 +438,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Arthur;
 				TargetAttributes = {
 					8EBFB89C1D78184800568EC7 = {
@@ -524,6 +561,7 @@
 			files = (
 				8ED286D71DC322A30044A39F /* UserBookListViewController.swift in Sources */,
 				8ED286DF1DC3244F0044A39F /* CenterViewController.swift in Sources */,
+				8E95AE9F1DC86BA50033082D /* DFileHelper.swift in Sources */,
 				8ED286EA1DC333DB0044A39F /* QiDianBookModel.swift in Sources */,
 				8E9CD4161DC09A1400E6FD32 /* UIColorExtension.swift in Sources */,
 				8EE70E301D7940DB000A5C37 /* UIDeviceExtension.swift in Sources */,
@@ -544,12 +582,14 @@
 				8E9CD41A1DC09F5800E6FD32 /* UIViewExtension.swift in Sources */,
 				8ED286DB1DC322A30044A39F /* RightMenuViewController.swift in Sources */,
 				8ED286D91DC322A30044A39F /* LeftMenuViewController.swift in Sources */,
+				8E95AEA21DC878CF0033082D /* GlobalConfig.swift in Sources */,
 				8ED286E21DC32BB10044A39F /* UserBookListTableViewCell.swift in Sources */,
 				8ED286E61DC32FAA0044A39F /* UserBookWebAPI.swift in Sources */,
 				8ED286DA1DC322A30044A39F /* SideMenuTableViewCellModel.swift in Sources */,
 				8ED286D61DC322A30044A39F /* SettingCenterViewController.swift in Sources */,
 				8E9CD4241DC202B300E6FD32 /* WebAPIBase.swift in Sources */,
 				8EE70E331D79754C000A5C37 /* DrawerVisualStateManager.swift in Sources */,
+				8E95AE9C1DC861BB0033082D /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +736,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06539B56840048B3F6D963B2 /* Pods-BookReader.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -716,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52C76522C03BA454C6BB14FB /* Pods-BookReader.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class QiDianBookModel: Mapable {
+class QiDianBookModel: Mappable {
     var id: Int?
     var URL: String?
     var imgURL:String?

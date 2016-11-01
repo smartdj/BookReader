@@ -10,8 +10,9 @@ import UIKit
 
 class CenterViewController: UIViewController {
 
-    lazy var bookListViewController:UserBookListViewController? = {
-        var bookListViewController = UserBookListViewController()
+    lazy var bookListViewController:UserBookListViewController = {
+        var bookListViewController:UserBookListViewController = UserBookListViewController()
+        
         return bookListViewController
     }()
     
@@ -20,6 +21,12 @@ class CenterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self .addChildViewController(bookListViewController);
+        view.addSubview(bookListViewController.view);
+        
+        bookListViewController.view.snp_makeConstraints { [unowned self] (make) -> Void in
+            make.edges.equalTo(self.view);
+        };
     }
 
     override func didReceiveMemoryWarning() {

@@ -40,7 +40,7 @@ class UserBookListViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier(kDefaultCellIdentifier, forIndexPath: indexPath) as! UserBookListTableViewCell
         
         // 配置cell
-        cell.dataModel = self.dataSource[indexPath.row] as UserBookModel;
+        cell.dataModel = self.dataSource[indexPath.row] as? UserBookModel;
         // 返回cell
         return cell
     }
