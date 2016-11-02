@@ -10,6 +10,7 @@ namespace app\spider\controller;
 
 
 use app\spider\model\QidianBookModel;
+
 use think\Db;
 use think\Request;
 use think\db\Query;
@@ -31,4 +32,6 @@ class API
         });
         echo json_encode($list);
     }
+
+
 }

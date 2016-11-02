@@ -24,3 +24,5 @@ use think\Route;
 //访问地址由:  http://localhost/bookreader/Server/think/public/spider/api/qidianallbook/page/1/count/10
 //变为:       http://localhost/bookreader/Server/think/public/api/qidianallbook/1/10
 Route::rule('api/qidianAllBook/:page/:count','spider/api/qidianAllBook');
+Route::post('api/user/login/', 'API/User/login');
+Route::post('api/user/register/', 'API/User/register');
