@@ -11,7 +11,7 @@
  Target Server Version : 100113
  File Encoding         : utf-8
 
- Date: 11/01/2016 17:30:57 PM
+ Date: 11/03/2016 15:26:29 PM
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,9 @@ CREATE TABLE `user_books` (
   `last_read_time` datetime DEFAULT NULL COMMENT '最后一次阅读时间',
   `read_times` int(11) NOT NULL DEFAULT '0' COMMENT '阅读次数',
   `last_read_chapter` varchar(255) DEFAULT NULL COMMENT '最后一次阅读的章节',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `user_books_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;

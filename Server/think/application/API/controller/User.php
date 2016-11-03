@@ -84,4 +84,8 @@ class User
 
         return Json::create(new CommonResponseModel(1, "", "创建用户失败"), "", 400);
     }
+
+    public function books($userId){
+        
+    }
 }

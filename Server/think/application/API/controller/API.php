@@ -6,7 +6,7 @@
  * Time: 上午10:55
  */
 
-namespace app\spider\controller;
+namespace app\API\controller;
 
 
 use app\spider\model\QidianBookModel;
