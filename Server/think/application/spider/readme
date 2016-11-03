@@ -1,9 +1,8 @@
-http://localhost/bookreader/Server/think/public/spider/chuangshispider/start
-通过这个URL可以访问创世的爬虫
-http://localhost/bookreader/Server/think/public/spider/qidianspider/start
-http://localhost/bookreader/Server/think/public/spider/seventeenkspider/run
-http://localhost/bookreader/Server/think/public/spider/leduwospider/test
-http://localhost/bookreader/Server/think/public/spider/api/qidianallbook/page/1/count/10 //获取七点所有小说的api,支持分页
+http://localhost/bookreader/Server/think/public/spider/chuangshispider/start    //创世爬虫
+http://localhost/bookreader/Server/think/public/spider/qidianspider/start       //起点爬虫
+http://localhost/bookreader/Server/think/public/spider/seventeenkspider/run     //17K爬虫
+http://localhost/bookreader/Server/think/public/spider/leduwospider/test        //乐读窝测试
+http://localhost/bookreader/Server/think/public/spider/api/qidianallbook/page/1/count/10 //获取起点所有小说的api,支持分页
 "vdb/php-spider":"0.2",
 
 开发计划:

@@ -6,8 +6,9 @@
  * Date: 16/8/31
  * Time: 下午2:22
  */
-namespace app\spider\common\base;
+namespace app\common\network;
 
+use app\common\utils\Enum;
 use Exception;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
@@ -104,6 +105,15 @@ class WebRequest
     }
 
     //异步发送请求
+    /**
+     * @param $method
+     * @param $url
+     * @param $headers
+     * @param $data
+     * @param callable $listener
+     * @param bool $allowRedirect
+     * @param int $currentRedirectTimes
+     */
     public function asyncRequest($method, $url, $headers, $data, callable $listener, $allowRedirect = false, $currentRedirectTimes = 0) {
 
         $clientOption = [
@@ -127,6 +137,7 @@ class WebRequest
 
         $promise = $client->sendAsync($request)
             ->then(
+                //response 类型为:\GuzzleHttp\Psr7\Response
                 function ($response) use(&$listener, &$currentRedirectTimes, $allowRedirect){
                     //$body = $response->getBody();
                     $code = $response->getStatusCode();

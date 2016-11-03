@@ -20,7 +20,7 @@ class ModelWrap extends Model
             $reflectionClass = new ReflectionClass($this);
             $propertys = $reflectionClass->getProperties(ReflectionProperty::IS_PUBLIC);
 
-            if(count($this->mapFields) > 0){
+            if(property_exists(get_class($this), 'mapFields') && count($this->mapFields) > 0){
                 foreach ($this->mapFields as $propertyName => $field){
 
                     foreach ($propertys as $property){
@@ -46,7 +46,7 @@ class ModelWrap extends Model
                         $pkValue = $this->data[$pk];
 
                         if($pk && $pkValue){
-                            if(count($this->mapFields)){
+                            if(property_exists(get_class($this), 'mapFields') && count($this->mapFields)){
                                 foreach ($this->mapFields as $propertyName => $fieldName){
                                     if($pk == $fieldName){
                                         $this->$pk = $pkValue;
@@ -64,7 +64,11 @@ class ModelWrap extends Model
             }
             catch (Exception $e){
                 if($e->getCode() == 10501){
-                    parent::save($data, [$this->getPk() => $data[$this->getPk()]]);
+                    try{
+                        parent::save($data, [$this->getPk() => $data[$this->getPk()]]);
+                    }catch (Exception $exception){
+                        throw $exception;
+                    }
                 }
                 else {
                     throw $e;
@@ -82,7 +86,7 @@ class ModelWrap extends Model
             $reflectionClass = new ReflectionClass($this);
 
             foreach ($this->data as $key=>$value){
-                if(count($this->mapFields) > 0){
+                if(property_exists(get_class($this), 'mapFields') && count($this->mapFields) > 0){
                     $isSetted = false;
                     foreach ($this->mapFields as $propertyName => $fieldName){
                         if($fieldName == $key){

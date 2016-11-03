@@ -6,7 +6,7 @@
  * Time: 21:57
  */
 
-namespace app\spider\common\utils;
+namespace app\common\utils;
 
 
 class SearchUtils

@@ -12,7 +12,7 @@
  * @link http://php4every1.com
  */
 
-namespace app\spider\common\base;
+namespace app\common\utils;
 
 abstract class Enum
 {
