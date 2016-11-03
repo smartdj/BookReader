@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca0f30de-9800-4031-8d3d-2a5a53c9c548" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/API/controller/BookCity.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/API/controller/BookList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/API/controller/BookRanking.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/API/controller/Category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/API/controller/RandomRead.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/API/controller/Search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/think/application/API/model/UserBooks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/API/controller/API.php" afterPath="$PROJECT_DIR$/think/application/API/controller/API.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/API/controller/User.php" afterPath="$PROJECT_DIR$/think/application/API/controller/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/数据库结构/user_books.sql" afterPath="$PROJECT_DIR$/think/application/spider/数据库结构/user_books.sql" />
-    </list>
+    <list default="true" id="ca0f30de-9800-4031-8d3d-2a5a53c9c548" name="Default" comment="" />
     <ignored path="Server.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -559,7 +547,7 @@
       <workItem from="1477993021836" duration="595000" />
       <workItem from="1478050439312" duration="19701000" />
       <workItem from="1478155331210" duration="17000" />
-      <workItem from="1478156183521" duration="1630000" />
+      <workItem from="1478156183521" duration="1684000" />
     </task>
     <servers />
   </component>
@@ -575,10 +563,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216654000" />
+    <option name="totallyTimeSpent" value="216708000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1723" height="1053" extended-state="0" />
+    <frame x="0" y="23" width="1723" height="1053" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3067302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
