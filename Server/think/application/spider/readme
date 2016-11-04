@@ -6,7 +6,7 @@ http://localhost/bookreader/Server/think/public/spider/api/qidianallbook/page/1/
 
 http://localhost/bookreader/Server/think/public/api/category/maincategory   //查询主分类
 http://localhost/bookreader/Server/think/public/api/category/subCategory/mainCategory/%E6%B8%B8%E6%88%8F //查询子分类
-
+http://10.1.1.169/bookreader/Server/think/public/api/category/app    //手机端显示分类界面
 "vdb/php-spider":"0.2",
 
 开发计划:

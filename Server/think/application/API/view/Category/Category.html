@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            background-color: #fff;
+        }
+        .row{
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+        .col-xs-4.col-sm-4.col-md-4.col-lg-4 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container" class="container-fluid">
+    {volist name="category_datas" id="main_category"}
+    <div class="row">
+        <!--主分类-->
+        <div class="row">{$key}</div>
+        {volist name="main_category" id="sub_category"}
+        <!--子分类-->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <a>{$sub_category}</a>
+        </div>
+        {/volist}
+    </div>
+    {/volist}
+</div>
+
+</body>
+</html>

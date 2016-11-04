@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DrawerController
 
 class CenterViewController: UIViewController {
 
@@ -20,6 +21,9 @@ class CenterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setupLeftMenuButton()
+        self.setupRightMenuButton()
+        
         // Do any additional setup after loading the view.
         self .addChildViewController(bookListViewController);
         view.addSubview(bookListViewController.view);
@@ -34,15 +38,21 @@ class CenterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupLeftMenuButton() {
+        let leftDrawerButton = DrawerBarButtonItem(target: self, action: #selector(leftDrawerButtonPress(_:)))
+        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
     }
-    */
-
+    
+    func setupRightMenuButton() {
+        let rightDrawerButton = DrawerBarButtonItem(target: self, action: #selector(rightDrawerButtonPress(_:)))
+        self.navigationItem.setRightBarButtonItem(rightDrawerButton, animated: true)
+    }
+    
+    func leftDrawerButtonPress(sender: AnyObject?) {
+        self.evo_drawerController?.toggleDrawerSide(.Left, animated: true, completion: nil)
+    }
+    
+    func rightDrawerButtonPress(sender: AnyObject?) {
+        self.evo_drawerController?.toggleDrawerSide(.Right, animated: true, completion: nil)
+    }
 }

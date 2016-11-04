@@ -9,32 +9,54 @@
 import UIKit
 import SnapKit
 import DrawerController
+import RTRootNavigationController
 
 
-class MainViewController: UIViewController {
+class MainViewController: UINavigationController {
     
-    var visibleViewController:UIViewController?;
+    //var visibleViewController:UIViewController?;
+    var drawerController: DrawerController!
     
-    lazy var centerViewController:CenterViewController = {
-        var centerViewController = CenterViewController()
-        self.addChildViewController(centerViewController)
-        self.view.addSubview(centerViewController.view)
-        return centerViewController;
-    }()
+//    lazy var centerViewController:CenterViewController = {
+//        var centerViewController = CenterViewController()
+//        self.addChildViewController(centerViewController)
+//        self.view.addSubview(centerViewController.view)
+//        return centerViewController;
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = UIColor.redColor();
-        title = "盗版小说！"
+        self.navigationBarHidden = true
+        let centerViewController = CenterViewController();
+        let leftMenuViewController = LeftMenuViewController();
+        let rightMenuViewController = RightMenuViewController();
         
-        self.setupLeftMenuButton()
-        self.setupRightMenuButton()
         
-        centerViewController.view.snp_makeConstraints {[unowned self] (make) in
+        let centerNavigationController = UINavigationController(rootViewController: centerViewController);
+        
+        // 初始化侧滑菜单.
+        self.drawerController = DrawerController(centerViewController:centerNavigationController
+            , leftDrawerViewController: leftMenuViewController
+            , rightDrawerViewController: rightMenuViewController)
+        
+        self.drawerController.showsShadows = false
+        
+        self.drawerController.restorationIdentifier = "Drawer"
+        self.drawerController.maximumRightDrawerWidth = 200.0
+        self.drawerController.openDrawerGestureModeMask = .All
+        self.drawerController.closeDrawerGestureModeMask = .All
+        self.drawerController.maximumLeftDrawerWidth = 60;
+        self.drawerController.shouldStretchDrawer = false
+        self.drawerController.drawerVisualStateBlock = { (drawerController, drawerSide, percentVisible) in
+            let block = DrawerVisualStateManager.sharedManager.drawerVisualStateBlockForDrawerSide(drawerSide)
+            block?(drawerController, drawerSide, percentVisible)
+        }
+        view.addSubview(drawerController.view)
+        drawerController.view.snp_makeConstraints {[unowned self] (make) in
             make.edges.equalTo(self.view)
         }
-        
         
         //更新约束
         view.setNeedsUpdateConstraints();
@@ -46,38 +68,22 @@ class MainViewController: UIViewController {
         super.updateViewConstraints();
     }
     
-    func setupLeftMenuButton() {
-        let leftDrawerButton = DrawerBarButtonItem(target: self, action: #selector(leftDrawerButtonPress(_:)))
-        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
-    }
     
-    func setupRightMenuButton() {
-        let rightDrawerButton = DrawerBarButtonItem(target: self, action: #selector(rightDrawerButtonPress(_:)))
-        self.navigationItem.setRightBarButtonItem(rightDrawerButton, animated: true)
-    }
     
-    func leftDrawerButtonPress(sender: AnyObject?) {
-        self.evo_drawerController?.toggleDrawerSide(.Left, animated: true, completion: nil)
-    }
-    
-    func rightDrawerButtonPress(sender: AnyObject?) {
-        self.evo_drawerController?.toggleDrawerSide(.Right, animated: true, completion: nil)
-    }
-    
-    func showViewController(viewControler: UIViewController, animated: Bool){
-        if(animated){
-            
-        }
-        else{
-            viewControler.view.alpha = 0;//先隐藏
-            self.view.bringSubviewToFront(viewControler.view);//置顶
-            //做一个渐隐切换动画
-            UIView.animateWithDuration(kAnimationSpringToNormal, animations: {[unowned self] in
-                self.visibleViewController!.view.alpha = 0;
-                viewControler.view.alpha = 1;
-            })
-        }
-    }
+//    func showViewController(viewControler: UIViewController, animated: Bool){
+//        if(animated){
+//            
+//        }
+//        else{
+//            viewControler.view.alpha = 0;//先隐藏
+//            self.view.bringSubviewToFront(viewControler.view);//置顶
+//            //做一个渐隐切换动画
+//            UIView.animateWithDuration(kAnimationSpringToNormal, animations: {[unowned self] in
+//                self.visibleViewController!.view.alpha = 0;
+//                viewControler.view.alpha = 1;
+//            })
+//        }
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

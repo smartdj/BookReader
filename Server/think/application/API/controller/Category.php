@@ -10,6 +10,8 @@ namespace app\API\controller;
 use app\API\model\CommonResponseModel;
 use think\Db;
 use think\response\Json;
+use think\View;
+
 /**
  * Class Category
  * @package app\API\controller
@@ -61,6 +63,20 @@ class Category
     }
 
     function all(){
+        return json($this->all_internal());
+    }
+
+    function app(){
+        $categoryData = $this->all_internal();
+        // 实例化视图类
+        $view = new View();
+        // 渲染模板输出
+        return $view->fetch('Category',['category_datas' => $categoryData]);
+    }
+
+    function all_internal(){
+        $result = array();
+
         $mainCategorys = array();
         Db::startTrans();
         try{
@@ -78,14 +94,12 @@ class Category
         }
 
         if($mainCategorys){
-            $result = array();
-
             foreach ($mainCategorys as $mainCategory){
                 $result[$mainCategory] = $this->subCategory_internal($mainCategory);
             }
-
-            return json($result);
         }
+
+        return $result;
     }
 
     protected function subCategory_internal($mainCategory){

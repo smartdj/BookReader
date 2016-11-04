@@ -7,46 +7,25 @@
 //
 
 import UIKit
-import RTRootNavigationController
-import DrawerController
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var drawerController: DrawerController!
+    let mainViewController = MainViewController();
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         setupLog();//配置Log
         
-        let centerViewController = MainViewController();
-        let leftMenuViewController = LeftMenuViewController();
-        let rightMenuViewController = RightMenuViewController();
-        
-        let mainNavigationController = RTRootNavigationController(rootViewController: centerViewController);
-        
-        // 初始化侧滑菜单.
-        self.drawerController = DrawerController(centerViewController: mainNavigationController, leftDrawerViewController: leftMenuViewController, rightDrawerViewController: rightMenuViewController)
-        self.drawerController.showsShadows = false
-        
-        self.drawerController.restorationIdentifier = "Drawer"
-        self.drawerController.maximumRightDrawerWidth = 200.0
-        self.drawerController.openDrawerGestureModeMask = .All
-        self.drawerController.closeDrawerGestureModeMask = .All
-        self.drawerController.maximumLeftDrawerWidth = 60;
-        self.drawerController.shouldStretchDrawer = false
-        self.drawerController.drawerVisualStateBlock = { (drawerController, drawerSide, percentVisible) in
-            let block = DrawerVisualStateManager.sharedManager.drawerVisualStateBlockForDrawerSide(drawerSide)
-            block?(drawerController, drawerSide, percentVisible)
-        }
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
         let tintColor = UIColor(red: 29 / 255, green: 173 / 255, blue: 234 / 255, alpha: 1.0)
         self.window?.tintColor = tintColor
         // 指定 root view controller
-        self.window?.rootViewController = self.drawerController
+        self.window?.rootViewController = self.mainViewController
         
         self.window?.makeKeyAndVisible()
         
