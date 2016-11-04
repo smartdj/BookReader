@@ -99,7 +99,7 @@ class ChuangshiSpider
                         $chapterElems = $listElem->find('a');//获取章节
 
 
-//方法一:一次性插入多条数据
+//方法一:一次性插入多条数据(会出现内存消耗过大的问题)
 //                        $data = array();
 //
 //                        foreach ($listElems as $listElem) {//获取分卷
@@ -127,7 +127,6 @@ class ChuangshiSpider
 //                        });
 
 //方法二:循环写入数据
-
                         foreach ($chapterElems as $chapterElem) {
                             Db::transaction(function () use ($chapterElem, $bookId, $juanTitle) {
                                 $data = array();

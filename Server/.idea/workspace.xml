@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca0f30de-9800-4031-8d3d-2a5a53c9c548" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../设计图/iOS/右侧边栏.pxc" afterPath="$PROJECT_DIR$/../设计图/iOS/右侧边栏.pxc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php" afterPath="$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php" />
     </list>
@@ -28,8 +27,8 @@
       <file leaf-file-name="ChuangshiSpider.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="151" column="25" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
+            <state relative-caret-position="431">
+              <caret line="128" column="12" selection-start-line="128" selection-start-column="12" selection-end-line="128" selection-end-column="12" />
               <folding>
                 <element signature="e#118#152#0#PHP" expanded="true" />
               </folding>
@@ -609,7 +608,7 @@
       <workItem from="1478050439312" duration="19701000" />
       <workItem from="1478155331210" duration="17000" />
       <workItem from="1478156183521" duration="9033000" />
-      <workItem from="1478221389788" duration="4180000" />
+      <workItem from="1478221389788" duration="4933000" />
     </task>
     <servers />
   </component>
@@ -625,7 +624,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228237000" />
+    <option name="totallyTimeSpent" value="228990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="23" width="1723" height="1053" extended-state="0" />
@@ -1137,8 +1136,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/think/application/spider/controller/ChuangshiSpider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="151" column="25" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
+        <state relative-caret-position="431">
+          <caret line="128" column="12" selection-start-line="128" selection-start-column="12" selection-end-line="128" selection-end-column="12" />
           <folding>
             <element signature="e#118#152#0#PHP" expanded="true" />
           </folding>
