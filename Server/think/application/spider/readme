@@ -3,6 +3,10 @@ http://localhost/bookreader/Server/think/public/spider/qidianspider/start       
 http://localhost/bookreader/Server/think/public/spider/seventeenkspider/run     //17K爬虫
 http://localhost/bookreader/Server/think/public/spider/leduwospider/test        //乐读窝测试
 http://localhost/bookreader/Server/think/public/spider/api/qidianallbook/page/1/count/10 //获取起点所有小说的api,支持分页
+
+http://localhost/bookreader/Server/think/public/api/category/maincategory   //查询主分类
+http://localhost/bookreader/Server/think/public/api/category/subCategory/mainCategory/%E6%B8%B8%E6%88%8F //查询子分类
+
 "vdb/php-spider":"0.2",
 
 开发计划:
