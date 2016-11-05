@@ -12,7 +12,7 @@ import DrawerController
 import RTRootNavigationController
 
 
-class MainViewController: UINavigationController {
+class MainViewController: UIViewController {
     
     //var visibleViewController:UIViewController?;
     var drawerController: DrawerController!
@@ -28,18 +28,20 @@ class MainViewController: UINavigationController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = UIColor.redColor();
-        self.navigationBarHidden = true
+        
+        //隐藏导航栏
+        self.navigationController?.navigationBarHidden = true
+        
         let centerViewController = CenterViewController();
         let leftMenuViewController = LeftMenuViewController();
         let rightMenuViewController = RightMenuViewController();
         
-        
         let centerNavigationController = UINavigationController(rootViewController: centerViewController);
         
         // 初始化侧滑菜单.
-        self.drawerController = DrawerController(centerViewController:centerNavigationController
-            , leftDrawerViewController: leftMenuViewController
-            , rightDrawerViewController: rightMenuViewController)
+        self.drawerController = DrawerController(centerViewController:centerNavigationController    //中间的用户书架
+            , leftDrawerViewController: leftMenuViewController  //左侧菜单
+            , rightDrawerViewController: rightMenuViewController)   //右侧菜单
         
         self.drawerController.showsShadows = false
         
@@ -93,6 +95,10 @@ class MainViewController: UINavigationController {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated);
         
+    }
+    
+    override func preferredStatusBarStyle()->UIStatusBarStyle{
+        return UIStatusBarStyle.LightContent
     }
 }
 

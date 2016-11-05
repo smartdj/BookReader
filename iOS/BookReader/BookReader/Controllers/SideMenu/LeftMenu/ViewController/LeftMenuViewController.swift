@@ -30,10 +30,10 @@ class LeftMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //设置单元格数据，使用懒加载
     lazy var dataSource: [SideMenuTableViewCellModel] = {
-        return [SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "hsm_default_avatar"), isSelected:false)
-        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "hsm_icon_1"), isSelected:true)
-        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "hsm_icon_2"), isSelected:false)
-        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "hsm_icon_3"), isSelected:false)];
+        return [SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "侧边栏_左侧边栏_默认头像"), isSelected:false)
+        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "侧边栏_左侧边栏_主界面"), isSelected:true)
+        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "侧边栏_左侧边栏_消息"), isSelected:false)
+        ,SideMenuTableViewCellModel(title: nil, icon: UIImage.init(named: "侧边栏_左侧边栏_设置"), isSelected:false)];
     }()
     
     override func viewDidLoad() {

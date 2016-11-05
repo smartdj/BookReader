@@ -13,6 +13,8 @@
 		8E60C4971DCC58EA001924F0 /* RightSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60C4911DCC58EA001924F0 /* RightSideMenuTableViewCell.swift */; };
 		8E60C4981DCC58EA001924F0 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60C4931DCC58EA001924F0 /* RightMenuViewController.swift */; };
 		8E60C49A1DCC5909001924F0 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60C4991DCC5909001924F0 /* CategoryViewController.swift */; };
+		8E60C49C1DCDC952001924F0 /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60C49B1DCDC952001924F0 /* UIBarButtonItemExtension.swift */; };
+		8E60C49E1DCDE5D4001924F0 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60C49D1DCDE5D4001924F0 /* UINavigationBarExtension.swift */; };
 		8E95AE991DC848950033082D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E95AE981DC848950033082D /* ObjectMapper.framework */; };
 		8E95AE9C1DC861BB0033082D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AE9B1DC861BB0033082D /* Log.swift */; };
 		8E95AE9F1DC86BA50033082D /* DFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AE9E1DC86BA50033082D /* DFileHelper.swift */; };
@@ -74,6 +76,8 @@
 		8E60C4911DCC58EA001924F0 /* RightSideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		8E60C4931DCC58EA001924F0 /* RightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
 		8E60C4991DCC5909001924F0 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		8E60C49B1DCDC952001924F0 /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
+		8E60C49D1DCDE5D4001924F0 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		8E95AE981DC848950033082D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../../../../Users/Arthur/Library/Developer/Xcode/DerivedData/BookReader-duxcatpwmrewxxggibqavspfjoch/Build/Products/Debug-iphonesimulator/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
 		8E95AE9B1DC861BB0033082D /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		8E95AE9E1DC86BA50033082D /* DFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFileHelper.swift; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 				8EE70E2F1D7940DB000A5C37 /* UIDeviceExtension.swift */,
 				8E9CD4151DC09A1400E6FD32 /* UIColorExtension.swift */,
 				8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */,
+				8E60C49B1DCDC952001924F0 /* UIBarButtonItemExtension.swift */,
+				8E60C49D1DCDE5D4001924F0 /* UINavigationBarExtension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -629,7 +635,9 @@
 				8E60C4961DCC58EA001924F0 /* LeftMenuViewController.swift in Sources */,
 				8E60C4981DCC58EA001924F0 /* RightMenuViewController.swift in Sources */,
 				8EE70E2B1D79297C000A5C37 /* GCDTimer.swift in Sources */,
+				8E60C49E1DCDE5D4001924F0 /* UINavigationBarExtension.swift in Sources */,
 				8EE70E291D79297C000A5C37 /* GCDQueue.swift in Sources */,
+				8E60C49C1DCDC952001924F0 /* UIBarButtonItemExtension.swift in Sources */,
 				8E60C49A1DCC5909001924F0 /* CategoryViewController.swift in Sources */,
 				8ED286D81DC322A30044A39F /* DNavigationController.swift in Sources */,
 				8E9CD41A1DC09F5800E6FD32 /* UIViewExtension.swift in Sources */,

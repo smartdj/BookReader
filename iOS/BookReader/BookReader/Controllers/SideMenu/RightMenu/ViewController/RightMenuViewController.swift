@@ -41,7 +41,7 @@ class RightMenuViewController: UIViewController , UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.whiteColor();
+        view.backgroundColor = UIColor.colorFromRBG(0x1b1b1b);
         
         //添加tableview
         view.addSubview(tableView!);

@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+import RTRootNavigationController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let mainViewController = MainViewController();
+    var rootViewController:RTRootNavigationController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,8 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.whiteColor()
         let tintColor = UIColor(red: 29 / 255, green: 173 / 255, blue: 234 / 255, alpha: 1.0)
         self.window?.tintColor = tintColor
+        
         // 指定 root view controller
-        self.window?.rootViewController = self.mainViewController
+        let rootNavigationController = MainViewController();
+        self.rootViewController = RTRootNavigationController(rootViewController: rootNavigationController)
+        
+        self.window?.rootViewController = self.rootViewController
         
         self.window?.makeKeyAndVisible()
         
