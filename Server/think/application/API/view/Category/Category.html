@@ -49,6 +49,20 @@
     </div>
     {/volist}
 </div>
-
+<!--<script src="{$Think.config.web_res_root}/js/bridge.js"></script>-->
+<script>
+    ZHBridge.Core.callNativeHandler(
+            "Image.updatePlaceHolder",
+            [],
+            function(placeHolder) {
+                var items = document.getElementsByTagName('img');
+                for (var i = 0, count = items.length; i < count; ++i) {
+                    var item = items[i];
+                    if (item.src.toLocaleLowerCase() == "file:///default_cover") {
+                        item.src = placeHolder;
+                    }
+                }
+            });
+</script>
 </body>
 </html>

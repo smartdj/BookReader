@@ -23,6 +23,7 @@ target "BookReader" do
     pod 'SWTableViewCell'                           #带很多手势的表单元格。
     pod 'DrawerController', '2.0.0'                          #侧边菜单 is a swift version of the popular MMDrawerController
     pod 'PromiseKit', '~> 3.5'
+    pod 'WebViewBridge.Swift', ''
 end
 
 post_install do |installer|

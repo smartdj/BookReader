@@ -15,6 +15,7 @@
 		8E60C49A1DCC5909001924F0 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60C4991DCC5909001924F0 /* CategoryViewController.swift */; };
 		8E60C49C1DCDC952001924F0 /* UIBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60C49B1DCDC952001924F0 /* UIBarButtonItemExtension.swift */; };
 		8E60C49E1DCDE5D4001924F0 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E60C49D1DCDE5D4001924F0 /* UINavigationBarExtension.swift */; };
+		8E8CD0151DD030AA0059BD08 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CD0141DD030AA0059BD08 /* UIViewControllerExtension.swift */; };
 		8E95AE991DC848950033082D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E95AE981DC848950033082D /* ObjectMapper.framework */; };
 		8E95AE9C1DC861BB0033082D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AE9B1DC861BB0033082D /* Log.swift */; };
 		8E95AE9F1DC86BA50033082D /* DFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95AE9E1DC86BA50033082D /* DFileHelper.swift */; };
@@ -78,6 +79,7 @@
 		8E60C4991DCC5909001924F0 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		8E60C49B1DCDC952001924F0 /* UIBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtension.swift; sourceTree = "<group>"; };
 		8E60C49D1DCDE5D4001924F0 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
+		8E8CD0141DD030AA0059BD08 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		8E95AE981DC848950033082D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../../../../Users/Arthur/Library/Developer/Xcode/DerivedData/BookReader-duxcatpwmrewxxggibqavspfjoch/Build/Products/Debug-iphonesimulator/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
 		8E95AE9B1DC861BB0033082D /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		8E95AE9E1DC86BA50033082D /* DFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFileHelper.swift; sourceTree = "<group>"; };
@@ -215,6 +217,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		8E8CD0231DD065C80059BD08 /* WKWebViewBridge */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = WKWebViewBridge;
+			path = WebViewBridge;
+			sourceTree = "<group>";
+		};
 		8E95AE9A1DC861910033082D /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +236,7 @@
 		8E95AE9D1DC86B5C0033082D /* function */ = {
 			isa = PBXGroup;
 			children = (
+				8E8CD0231DD065C80059BD08 /* WKWebViewBridge */,
 				8E95AE9E1DC86BA50033082D /* DFileHelper.swift */,
 			);
 			path = function;
@@ -406,6 +417,7 @@
 				8E9CD4191DC09F5800E6FD32 /* UIViewExtension.swift */,
 				8E60C49B1DCDC952001924F0 /* UIBarButtonItemExtension.swift */,
 				8E60C49D1DCDE5D4001924F0 /* UINavigationBarExtension.swift */,
+				8E8CD0141DD030AA0059BD08 /* UIViewControllerExtension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -628,6 +640,7 @@
 				8ED286D51DC322A30044A39F /* ProfileViewController.swift in Sources */,
 				8EE70E2A1D79297C000A5C37 /* GCDSemaphore.swift in Sources */,
 				8E60C4941DCC58EA001924F0 /* SideMenuTableViewCellModel.swift in Sources */,
+				8E8CD0151DD030AA0059BD08 /* UIViewControllerExtension.swift in Sources */,
 				8EBFB8A11D78184800568EC7 /* AppDelegate.swift in Sources */,
 				8E9CD4181DC09C7F00E6FD32 /* ConstDefine.swift in Sources */,
 				8ED286E81DC333310044A39F /* QiDianWebAPI.swift in Sources */,

@@ -12,3 +12,4 @@ import Foundation
 // MARK:  默认的cell标识符
 
 let kDefaultCellIdentifier:String = "cell";
+let kShowCategoryViewController = "kShowCategoryViewController"

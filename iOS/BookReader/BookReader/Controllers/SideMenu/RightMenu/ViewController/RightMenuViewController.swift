@@ -72,8 +72,7 @@ class RightMenuViewController: UIViewController , UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let categoryViewController = CategoryViewController()
-        self.navigationController?.pushViewController(categoryViewController, animated: true)
+        NSNotificationCenter.defaultCenter().postNotificationName(kShowCategoryViewController, object: nil)
     }
     
 }

@@ -17,13 +17,6 @@ class MainViewController: UIViewController {
     //var visibleViewController:UIViewController?;
     var drawerController: DrawerController!
     
-//    lazy var centerViewController:CenterViewController = {
-//        var centerViewController = CenterViewController()
-//        self.addChildViewController(centerViewController)
-//        self.view.addSubview(centerViewController.view)
-//        return centerViewController;
-//    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -59,6 +52,8 @@ class MainViewController: UIViewController {
         drawerController.view.snp_makeConstraints {[unowned self] (make) in
             make.edges.equalTo(self.view)
         }
+        
+        self.addObserver()
         
         //更新约束
         view.setNeedsUpdateConstraints();
@@ -99,6 +94,19 @@ class MainViewController: UIViewController {
     
     override func preferredStatusBarStyle()->UIStatusBarStyle{
         return UIStatusBarStyle.LightContent
+    }
+    
+    //添加监听
+    func addObserver(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MainViewController.showViewController(_:)), name: kShowCategoryViewController, object: nil)
+    }
+    
+    
+    func showViewController(notification:NSNotification){
+        if(notification.name == kShowCategoryViewController){
+            let categoryViewController = CategoryViewController.init(open: NSURL(string:"http://10.1.1.169/bookreader/Server/think/public/api/category/app")!, title: "分类")
+            self.navigationController?.pushViewController(categoryViewController, animated: true)
+        }
     }
 }
 
