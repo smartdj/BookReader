@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-
-    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{$Think.config.web_res_root}/css/bootstrap.min.css">
 
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{$Think.config.web_res_root}/js/jquery-3.1.1.min.js"></script>
 
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="{$Think.config.web_res_root}/js/bootstrap.min.js"></script>
 
     <style>
         body{
@@ -43,26 +40,17 @@
         {volist name="main_category" id="sub_category"}
         <!--子分类-->
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <a>{$sub_category}</a>
+            <a class="subcategory">{$sub_category}</a>
         </div>
         {/volist}
     </div>
     {/volist}
 </div>
-<!--<script src="{$Think.config.web_res_root}/js/bridge.js"></script>-->
+
 <script>
-    ZHBridge.Core.callNativeHandler(
-            "Image.updatePlaceHolder",
-            [],
-            function(placeHolder) {
-                var items = document.getElementsByTagName('img');
-                for (var i = 0, count = items.length; i < count; ++i) {
-                    var item = items[i];
-                    if (item.src.toLocaleLowerCase() == "file:///default_cover") {
-                        item.src = placeHolder;
-                    }
-                }
-            });
+    $(".subcategory").click(function (event) {
+        window.webkit.messageHandlers.OOXX.postMessage({title: $(this).text()})
+    })
 </script>
 </body>
 </html>

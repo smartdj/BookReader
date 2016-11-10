@@ -11,12 +11,10 @@ import WebKit
 import MBProgressHUD
 
 //分类界面
-class CategoryViewController: UIViewController, WKNavigationDelegate {
+class CategoryViewController: DWKWebViewController {
 
-    let webView:WKWebView = WKWebView();
     var URL:NSURL? = nil
     var webPageTitle:String? = nil
-    var bridge:ZHWebViewBridge? = nil
     
     convenience init(open:NSURL, title:String){
         self.init()
@@ -29,17 +27,10 @@ class CategoryViewController: UIViewController, WKNavigationDelegate {
         self.setupNavigationBar()
         view.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view.
-        
+        self.delegate = self;
         
         if let URL = URL{
-            
-            view.addSubview(webView)
-            webView.snp_makeConstraints {[unowned self] (make) in
-                make.edges.equalTo(self.view)
-            }
-            
             let req = NSURLRequest(URL:URL)
-            self.webView.navigationDelegate = self
             self.webView.loadRequest(req)
             
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -82,5 +73,14 @@ class CategoryViewController: UIViewController, WKNavigationDelegate {
         
         //设置导航栏标题颜色
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
+    
+}
+
+extension CategoryViewController:DWKWebViewControllerDelegate{
+    func reciveJavaScriptCall(data:NSDictionary){
+        if let title = data["title"]{
+            NSNotificationCenter.defaultCenter().postNotificationName(kShowCategoryViewController, object: title)
+        }
     }
 }

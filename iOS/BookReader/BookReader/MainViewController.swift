@@ -104,7 +104,12 @@ class MainViewController: UIViewController {
     
     func showViewController(notification:NSNotification){
         if(notification.name == kShowCategoryViewController){
-            let categoryViewController = CategoryViewController.init(open: NSURL(string:"http://10.1.1.169/bookreader/Server/think/public/api/category/app")!, title: "分类")
+            var url:NSURL = NSURL(string:"http://10.1.1.169/bookreader/Server/think/public/api/category/app")!
+            
+            if guard title = notification.object{
+                url =
+            }
+            let categoryViewController = CategoryViewController.init(open: url, title: (notification.object ?? "分类") as! String)
             self.navigationController?.pushViewController(categoryViewController, animated: true)
         }
     }
