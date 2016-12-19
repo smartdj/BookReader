@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Component("QidianPipeLine")
 public class QidianPipeLine implements Pipeline {
-    private final Logger logger = LoggerFactory.getLogger(Config.class);
+    private final Logger logger = LoggerFactory.getLogger(QidianPipeLine.class);
     @Autowired
     private QidianBookDAO qidianBookDAO;
 
@@ -41,9 +41,9 @@ public class QidianPipeLine implements Pipeline {
         List<QidianSectionModel> sectionModel = (List<QidianSectionModel>)resultItems.get("sectionModel");
 
         if(bookModel != null){
-            QidianBookModel result = qidianBookDAO.saveAndFlush(bookModel);
-//            QidianBookModel result = qidianBookDAO.save(bookModel);
-            logger.debug("");
+//            QidianBookModel result = qidianBookDAO.saveAndFlush(bookModel);
+            QidianBookModel result = qidianBookDAO.save(bookModel);
+            logger.debug(String.valueOf(qidianBookDAO.count()));
         }
 
         if(sectionModel != null){

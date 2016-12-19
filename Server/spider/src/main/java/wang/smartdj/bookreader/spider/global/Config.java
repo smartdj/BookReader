@@ -40,9 +40,7 @@ public class Config {
 //    private static final String PROPERTY_NAME_DATABASE_URL = Database.PROPERTY_NAME_DATABASE_URL;
 //    private static final String PROPERTY_NAME_DATABASE_USERNAME = Database.PROPERTY_NAME_DATABASE_USERNAME;
 //    private static final String PROPERTY_NAME_DATABASE_PASSWORD = Database.PROPERTY_NAME_DATABASE_PASSWORD;
-//    private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
-//    private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
-//    private static final String PROPERTY_NAME_HIBERNATE_METADATA = "hibernate.temp.use_jdbc_metadata_defaults";
+    private static final String PROPERTY_NAME_HIBERNATE_METADATA = "hibernate.temp.use_jdbc_metadata_defaults";
     private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "wang.smartdj.bookreader.spider.entity";
 
     private static final String PROPERTY_NAME_DB_DRIVER_CLASS = "db.driver";
@@ -70,18 +68,19 @@ public class Config {
 
         //Configures the used database dialect. This allows Hibernate to create SQL
         //that is optimized for the used database.
-        jpaProperties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
+        jpaProperties.put(PROPERTY_NAME_HIBERNATE_DIALECT, env.getRequiredProperty("hibernate.dialect"));
 
         //If the value of this property is true, Hibernate writes all SQL
         //statements to the console.
-        jpaProperties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
+        jpaProperties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, env.getRequiredProperty("hibernate.show_sql"));
 
         //If the value of this property is true, Hibernate will format the SQL
         //that is written to the console.
-        jpaProperties.put("hibernate.format_sql", env.getRequiredProperty("hibernate.format_sql"));
+        jpaProperties.put(PROPERTY_NAME_HIBERNATE_FORMAT_SQL, env.getRequiredProperty("hibernate.format_sql"));
 
-        jpaProperties.setProperty("hibernate.temp.use_jdbc_metadata_defaults", env.getRequiredProperty("hibernate.temp.use_jdbc_metadata_defaults"));
+        jpaProperties.setProperty(PROPERTY_NAME_HIBERNATE_METADATA, env.getRequiredProperty("hibernate.temp.use_jdbc_metadata_defaults"));
 
+//        jpaProperties.setProperty("org.hibernate.flushMode", env.getRequiredProperty("org.hibernate.flushMode"));
         //二级缓存
         jpaProperties.setProperty("hibernate.cache.use_second_level_cache", "true");
         jpaProperties.setProperty("hibernate.cache.use_query_cache", "true");
@@ -94,7 +93,7 @@ public class Config {
         return entityManagerFactoryBean;
     }
 
-    @Bean(destroyMethod = "close")
+    @Bean//(destroyMethod = "close")
     public DataSource dataSource()
     {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
