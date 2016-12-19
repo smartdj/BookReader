@@ -20,6 +20,11 @@
         </plugins>
     </build>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>4.3.4.RELEASE</spring.version>
+        <hibernate.version>5.2.5.Final</hibernate.version>
+    </properties>
 
     <dependencies>
         <!--爬虫-->
@@ -53,9 +58,9 @@
             <version>1.2</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>log4j</groupId>-->
-            <!--<artifactId>log4j</artifactId>-->
-            <!--<version>1.2.17</version>-->
+        <!--<groupId>log4j</groupId>-->
+        <!--<artifactId>log4j</artifactId>-->
+        <!--<version>1.2.17</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>junit</groupId>
@@ -70,12 +75,50 @@
             <scope>test</scope>
         </dependency>
 
+        <!--spring-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.3.4.RELEASE</version>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-releasetrain</artifactId>-->
+            <!--<version>Hopper-SR5</version>-->
+            <!--<type>pom</type>-->
+            <!--<scope>import</scope>-->
+        <!--</dependency>-->
+        <!-- Spring Data Commons -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>1.12.5.RELEASE</version>
         </dependency>
 
+        <!-- Spring Data JPA -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.10.5.RELEASE</version>
+        </dependency>
+
+        <!--hibernate-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.2.2</version>
+        </dependency>
     </dependencies>
 
 
