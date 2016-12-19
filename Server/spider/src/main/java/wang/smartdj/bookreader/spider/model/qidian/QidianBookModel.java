@@ -1,27 +1,42 @@
-package wang.smartdj.bookreader.spider.model;
+package wang.smartdj.bookreader.spider.model.qidian;
 
-import us.codecraft.webmagic.model.annotation.ExtractBy;
-import us.codecraft.webmagic.model.annotation.HelpUrl;
-import us.codecraft.webmagic.model.annotation.TargetUrl;
+import org.hibernate.annotations.*;
 
+import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * Created by Arthur on 2016/12/12.
  */
+@Entity
+@Table(name = "qidian_books")
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class QidianBookModel {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+    @Column(name = "lastest_chapter")
     private String lastestChapter;
     private String name;
     private String author;
+    @Column(name = "main_category")
     private String mainCategory;
+    @Column(name = "sub_category")
     private String subCategory;
+    @Column(name = "relationship_category")
     private String relationshipCategory;
+    @Column(name = "lastest_chapter_description")
     private String lastestChapterDescription;
+    @Column(name = "lastest_update_time")
     private Date lastestUpdateTime;
+    @Column(name = "chapter_count")
     private Integer chapterCount;
+    @Column(name = "cover_image_url")
     private String coverImageURL;
     private String status;
+    @Column(name = "words_count")
     private Integer wordsCount;
 
     public String getChapterListURL() {

@@ -1,14 +1,9 @@
 package wang.smartdj.bookreader.spider.launcher;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.model.OOSpider;
-import us.codecraft.webmagic.pipeline.PageModelPipeline;
 import wang.smartdj.bookreader.spider.global.Constant;
-import wang.smartdj.bookreader.spider.model.QidianBookModel;
 import wang.smartdj.bookreader.spider.pageprocessor.QidianPageProcessor;
 import wang.smartdj.bookreader.spider.pipeline.QidianPipeLine;
 

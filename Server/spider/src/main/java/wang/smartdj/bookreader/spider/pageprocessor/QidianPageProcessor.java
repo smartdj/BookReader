@@ -2,15 +2,16 @@ package wang.smartdj.bookreader.spider.pageprocessor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
+import wang.smartdj.bookreader.spider.dao.QidianBookDAO;
 import wang.smartdj.bookreader.spider.global.Constant;
-import wang.smartdj.bookreader.spider.global.Global;
-import wang.smartdj.bookreader.spider.model.QidianBookModel;
-import wang.smartdj.bookreader.spider.model.QidianChapterModel;
-import wang.smartdj.bookreader.spider.model.QidianSectionModel;
+import wang.smartdj.bookreader.spider.model.qidian.QidianBookModel;
+import wang.smartdj.bookreader.spider.model.qidian.QidianChapterModel;
+import wang.smartdj.bookreader.spider.model.qidian.QidianSectionModel;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -27,6 +28,10 @@ import java.util.regex.Pattern;
 public class QidianPageProcessor implements PageProcessor {
     final String pageNumberRegex = "\\/bookstore\\.aspx\\?sitetype=-1&categoryid=-1&subcategoryid=-1&action=-1&word=-1&vip=-1&orderid=6&update=-1&pageindex=(\\d+)";
     final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Autowired
+    private QidianBookDAO qidianBookDAO;
+
     // 部分一：抓取网站的相关配置，包括编码、抓取间隔、重试次数等
     private Site site = Site.me()
             .setRetryTimes(3)
@@ -99,6 +104,7 @@ public class QidianPageProcessor implements PageProcessor {
 
             page.putField("bookModel", model);
         }else if(pageType == Constant.PageType.ChapterList){
+            //处理目录页
             String bookId = this.bookID(currentURL);
             String chapterTitleXPathSelector = "//p[@class='chap_name_b']/a/text()";
             String chapterURLXPathSelector = "//p[@class='chap_name_b']/a/@href";
@@ -121,24 +127,32 @@ public class QidianPageProcessor implements PageProcessor {
                 page.addTargetRequest(chapterListURL);
             }
 
-            QidianSectionModel sectionModel = new QidianSectionModel();
-            sectionModel.setBookId(Integer.parseInt(bookId));
-            sectionModel.setId(Integer.parseInt(currentSectionValue));
-            sectionModel.setTitle(sectionTitles.get(Integer.parseInt(currentSectionValue)-1));
+            QidianBookModel bookModel = qidianBookDAO.findOne(Integer.parseInt(bookId));
 
-            List<QidianChapterModel> chapterModels = new ArrayList<QidianChapterModel>(chaptersTitle.size());
+            if(bookModel != null){
+                QidianSectionModel sectionModel = new QidianSectionModel();
+                sectionModel.setBookModel(bookModel);
+                //计算当前section字符串的长度，再通过阶乘让bookid右侧空出响应的位数
+                //最后形成的结构就是：111122(1111表示书号，22表示当前的section)
+                sectionModel.setId(Integer.parseInt(bookId) * (10 ^ currentSectionValue.length())  + Integer.parseInt(currentSectionValue));
+                sectionModel.setTitle(sectionTitles.get(Integer.parseInt(currentSectionValue)-1));
 
-            for (int i=0; i<chaptersTitle.size(); i++){
-                QidianChapterModel chapterModel = new QidianChapterModel();
-                chapterModel.setBookId(Integer.parseInt(bookId));
-                chapterModel.setTitle(chaptersTitle.get(i));
-                chapterModel.setId(this.convertChapterId(chaptersURL.get(i)));
-                chapterModel.setSection(sectionModel);
+                page.putField("sectionModel", sectionModel);
 
-                chapterModels.add(chapterModel);
+                List<QidianChapterModel> chapterModels = new ArrayList<QidianChapterModel>(chaptersTitle.size());
+
+                for (int i=0; i<chaptersTitle.size(); i++){
+                    QidianChapterModel chapterModel = new QidianChapterModel();
+                    chapterModel.setBookModel(bookModel);
+                    chapterModel.setTitle(chaptersTitle.get(i));
+                    chapterModel.setId(this.convertChapterId(chaptersURL.get(i)));
+                    chapterModel.setSectionModel(sectionModel);
+
+                    chapterModels.add(chapterModel);
+                }
+
+                page.putField("chapterModels", chapterModels);
             }
-
-            page.putField("chapterModels", chapterModels);
         }
     }
 

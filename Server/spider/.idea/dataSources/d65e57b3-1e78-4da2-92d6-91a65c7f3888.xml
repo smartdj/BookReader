@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - bookreader@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="bookreader">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="phpmyadmin"/>
+    <schema id="6" name="test"/>
+    <table id="7" parent="1" name="book_chuangshi"/>
+    <table id="8" parent="1" name="profile"/>
+    <table id="9" parent="1" name="qidian_books"/>
+    <table id="10" parent="1" name="qidian_chapters"/>
+    <table id="11" parent="1" name="qidian_sections"/>
+    <table id="12" parent="1" name="spiderstatus"/>
+    <table id="13" parent="1" name="table_of_contnet_chuangshi"/>
+    <table id="14" parent="1" name="user">
+      <comment>用户授权表，用来解决使用第三方平台登录（例如：微博、QQ、微信等）</comment>
+    </table>
+    <table id="15" parent="1" name="user_books"/>
+    <column id="16" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="17" parent="7" name="url">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="18" parent="7" name="cover_img_url">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="19" parent="7" name="short_description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="20" parent="7" name="long_description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="21" parent="7" name="book_name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="22" parent="7" name="author_url">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="23" parent="7" name="author_name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="24" parent="7" name="main_category">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="25" parent="7" name="sub_category">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="26" parent="7" name="book_status">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="27" parent="7" name="written_words">
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="28" parent="7" name="lastest_update_time">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="29" parent="7" name="lastest_chapter">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="30" parent="7" name="lastest_chapter_url">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="31" parent="7" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="32" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="33" parent="8" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="34" parent="8" name="nick_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="35" parent="8" name="avator_img">
+      <comment>头像</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="36" parent="8" name="mail">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="37" parent="8" name="user_id">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="38" parent="8" name="user_id_2">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="39" parent="8" name="user_id_3">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="40" parent="8" name="user_id_4">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="41" parent="8" name="user_id_5">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="42" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="43" parent="8" name="user_id">
+      <columns>user_id</columns>
+      <ref-key>~.user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="44" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="45" parent="9" name="lastest_chapter">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="46" parent="9" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="47" parent="9" name="author">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="48" parent="9" name="main_category">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="49" parent="9" name="sub_category">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="50" parent="9" name="relationship_category">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="51" parent="9" name="lastest_cahpter_description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="52" parent="9" name="lastest_update_time">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="53" parent="9" name="chapter_count">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="54" parent="9" name="cover_image_url">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="55" parent="9" name="words_count">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="56" parent="9" name="status">
+      <data-type>varchar(5)|0</data-type>
+    </column>
+    <key id="57" parent="9" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="58" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="59" parent="10" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="60" parent="10" name="section_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="61" parent="10" name="book_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="62" parent="10" name="book_id">
+      <columns>book_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="63" parent="10" name="section_id">
+      <columns>section_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="64" parent="10" name="section_id_2">
+      <columns>section_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="65" parent="10" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="66" parent="10" name="section_id">
+      <columns>section_id</columns>
+      <ref-key>~.qidian_sections.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="67" parent="10" name="bookId">
+      <columns>book_id</columns>
+      <ref-key>~.qidian_books.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="68" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="69" parent="11" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="70" parent="11" name="book_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="71" parent="11" name="book_id">
+      <columns>book_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="72" parent="11" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="73" parent="11" name="book_id">
+      <columns>book_id</columns>
+      <ref-key>~.qidian_books.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="74" parent="12" name="name">
+      <mandatory>1</mandatory>
+      <data-type>enum(&apos;创世&apos;, &apos;起点&apos;)|0</data-type>
+    </column>
+    <column id="75" parent="12" name="status">
+      <data-type>enum(&apos;已结束&apos;, &apos;运行中&apos;)|0</data-type>
+    </column>
+    <column id="76" parent="12" name="current_page">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="77" parent="12" name="max_page">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="78" parent="12" name="lastUpdateTime">
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="79" parent="12" name="PRIMARY">
+      <columns>name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="80" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="81" parent="13" name="book_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="82" parent="13" name="juan_title">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="83" parent="13" name="chapter_title">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="84" parent="13" name="chapter_url">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="85" parent="13" name="update_time">
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="86" parent="13" name="bookId">
+      <columns>book_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="87" parent="13" name="chapter_url">
+      <columns>chapter_url</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="88" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="89" parent="13" name="chapter_url">
+      <columns>chapter_url</columns>
+      <underlying-index>chapter_url</underlying-index>
+    </key>
+    <foreign-key id="90" parent="13" name="table_of_contnet_chuangshi_ibfk_1">
+      <columns>book_id</columns>
+      <ref-key>~.book_chuangshi.PRIMARY</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="91" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="92" parent="14" name="identity_type">
+      <comment>登录类型（手机号 邮箱 用户名）或第三方应用名称（微信 微博等）</comment>
+      <mandatory>1</mandatory>
+      <data-type>enum(&apos;weibo&apos;, &apos;weixin&apos;, &apos;qq&apos;, &apos;phone&apos;, &apos;mail&apos;, &apos;username&apos;)|0</data-type>
+    </column>
+    <column id="93" parent="14" name="identifier">
+      <comment>标识（手机号 邮箱 用户名或第三方应用的唯一标识）</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="94" parent="14" name="credential">
+      <comment> 密码凭证（站内的保存密码，站外的不保存或保存token）</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="95" parent="14" name="register_time">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="96" parent="14" name="login_time">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="97" parent="14" name="token">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="98" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="99" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="100" parent="15" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="101" parent="15" name="index">
+      <comment>书架中的排序</comment>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="102" parent="15" name="qidian_book_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="103" parent="15" name="chuangshi_book_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="104" parent="15" name="add_time">
+      <comment>添加到书架的时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="105" parent="15" name="last_read_time">
+      <comment>最后一次阅读时间</comment>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="106" parent="15" name="read_times">
+      <comment>阅读次数</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="107" parent="15" name="last_read_chapter">
+      <comment>最后一次阅读的章节</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="108" parent="15" name="user_id">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="109" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="110" parent="15" name="user_books_ibfk_1">
+      <columns>user_id</columns>
+      <ref-key>~.user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>
