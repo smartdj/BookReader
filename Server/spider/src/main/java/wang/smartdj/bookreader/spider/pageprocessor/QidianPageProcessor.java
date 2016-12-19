@@ -7,7 +7,6 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 import wang.smartdj.bookreader.spider.global.Constant;
-import wang.smartdj.bookreader.spider.global.Global;
 import wang.smartdj.bookreader.spider.model.QidianBookModel;
 import wang.smartdj.bookreader.spider.model.QidianChapterModel;
 import wang.smartdj.bookreader.spider.model.QidianSectionModel;
