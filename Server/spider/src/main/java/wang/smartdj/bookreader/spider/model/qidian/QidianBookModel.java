@@ -15,7 +15,6 @@ import java.util.Date;
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class QidianBookModel {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     @Column(name = "lastest_chapter")
     private String lastestChapter;

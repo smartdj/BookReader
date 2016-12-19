@@ -14,7 +14,6 @@ import javax.persistence.*;
 @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class QidianChapterModel {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     private String title;
 

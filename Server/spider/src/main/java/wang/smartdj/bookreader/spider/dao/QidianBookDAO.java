@@ -1,6 +1,8 @@
 package wang.smartdj.bookreader.spider.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.Repository;
 import wang.smartdj.bookreader.spider.model.qidian.QidianBookModel;
 
 
@@ -9,6 +11,6 @@ import wang.smartdj.bookreader.spider.model.qidian.QidianBookModel;
  */
 
 
-public interface QidianBookDAO extends JpaRepository<QidianBookModel, Integer> {
+public interface QidianBookDAO extends CrudRepository<QidianBookModel, Integer> {
 
 }
