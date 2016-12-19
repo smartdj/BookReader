@@ -1,4 +1,4 @@
-package wang.smartdj.bookreader.spider.model.qidian;
+package wang.smartdj.bookreader.spider.entity.qidian;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "qidian_sections")
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class QidianSectionModel {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

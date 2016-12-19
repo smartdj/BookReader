@@ -1,4 +1,4 @@
-package wang.smartdj.bookreader.spider.model.qidian;
+package wang.smartdj.bookreader.spider.entity.qidian;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="qidian_chapters")
-@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+//@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class QidianChapterModel {
     @Id
     private Integer id;

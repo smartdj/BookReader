@@ -147,16 +147,16 @@
       <data-type>varchar(255)|0</data-type>
     </column>
     <column id="52" parent="9" name="lastest_update_time">
-      <data-type>varchar(255)|0</data-type>
+      <data-type>date|0</data-type>
     </column>
     <column id="53" parent="9" name="chapter_count">
-      <data-type>varchar(255)|0</data-type>
+      <data-type>int(10)|0</data-type>
     </column>
     <column id="54" parent="9" name="cover_image_url">
       <data-type>varchar(255)|0</data-type>
     </column>
     <column id="55" parent="9" name="words_count">
-      <data-type>varchar(255)|0</data-type>
+      <data-type>int(10)|0</data-type>
     </column>
     <column id="56" parent="9" name="status">
       <data-type>varchar(5)|0</data-type>

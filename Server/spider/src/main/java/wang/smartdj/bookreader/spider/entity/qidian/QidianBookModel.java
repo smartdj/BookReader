@@ -1,4 +1,4 @@
-package wang.smartdj.bookreader.spider.model.qidian;
+package wang.smartdj.bookreader.spider.entity.qidian;
 
 import org.hibernate.annotations.*;
 
@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "qidian_books")
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class QidianBookModel {
     @Id
     private Integer id;

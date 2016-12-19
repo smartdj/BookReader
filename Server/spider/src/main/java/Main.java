@@ -2,6 +2,9 @@ import org.apache.commons.cli.*;
 import wang.smartdj.bookreader.spider.launcher.QidianLauncher;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
+
+import java.io.IOException;
+
 /**
  * Created by Arthur on 2016/12/9.
  */
@@ -43,16 +46,23 @@ class Main {
 
             }
 
-            try {
-                Thread.sleep(20000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+//            try {
+//                Thread.sleep(20000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            System.out.println("The demo stopped!");
+//            System.out.println("To more usage, try to customize your own Spider!");
+//            System.exit(0);
+            int i = 0;
+            while(i!=-1){//读取输入流中的字节直到流的末尾返回1
+                i = System.in.read();
+                System.out.println(i);
             }
-            System.out.println("The demo stopped!");
-            System.out.println("To more usage, try to customize your own Spider!");
-            System.exit(0);
         } catch (ParseException ex) {
 
+        } catch (IOException e) {
+            e.printStackTrace();
         } finally {
 
         }

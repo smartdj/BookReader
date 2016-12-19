@@ -9,9 +9,9 @@ import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 import wang.smartdj.bookreader.spider.dao.QidianBookDAO;
 import wang.smartdj.bookreader.spider.global.Constant;
-import wang.smartdj.bookreader.spider.model.qidian.QidianBookModel;
-import wang.smartdj.bookreader.spider.model.qidian.QidianChapterModel;
-import wang.smartdj.bookreader.spider.model.qidian.QidianSectionModel;
+import wang.smartdj.bookreader.spider.entity.qidian.QidianBookModel;
+import wang.smartdj.bookreader.spider.entity.qidian.QidianChapterModel;
+import wang.smartdj.bookreader.spider.entity.qidian.QidianSectionModel;
 
 import java.text.DateFormat;
 import java.text.ParseException;
