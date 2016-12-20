@@ -68,18 +68,19 @@ public class Config {
 
         //Configures the used database dialect. This allows Hibernate to create SQL
         //that is optimized for the used database.
-        jpaProperties.put(PROPERTY_NAME_HIBERNATE_DIALECT, env.getRequiredProperty("hibernate.dialect"));
+        jpaProperties.put(PROPERTY_NAME_HIBERNATE_DIALECT, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_DIALECT));
 
         //If the value of this property is true, Hibernate writes all SQL
         //statements to the console.
-        jpaProperties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, env.getRequiredProperty("hibernate.show_sql"));
+        jpaProperties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_SHOW_SQL));
 
         //If the value of this property is true, Hibernate will format the SQL
         //that is written to the console.
-        jpaProperties.put(PROPERTY_NAME_HIBERNATE_FORMAT_SQL, env.getRequiredProperty("hibernate.format_sql"));
+        jpaProperties.put(PROPERTY_NAME_HIBERNATE_FORMAT_SQL, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_FORMAT_SQL));
 
-        jpaProperties.setProperty(PROPERTY_NAME_HIBERNATE_METADATA, env.getRequiredProperty("hibernate.temp.use_jdbc_metadata_defaults"));
+        jpaProperties.setProperty(PROPERTY_NAME_HIBERNATE_METADATA, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_METADATA));
 
+        jpaProperties.setProperty(PROPERTY_NAME_HIBERNATE_HBM2DDL_AUTO, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_HBM2DDL_AUTO));
 //        jpaProperties.setProperty("org.hibernate.flushMode", env.getRequiredProperty("org.hibernate.flushMode"));
         //二级缓存
         jpaProperties.setProperty("hibernate.cache.use_second_level_cache", "true");

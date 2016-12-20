@@ -7,11 +7,12 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
-import wang.smartdj.bookreader.spider.dao.QidianBookDAO;
+import wang.smartdj.bookreader.spider.dao.qidian.QidianBookDAO;
 import wang.smartdj.bookreader.spider.global.Constant;
 import wang.smartdj.bookreader.spider.entity.qidian.QidianBookModel;
 import wang.smartdj.bookreader.spider.entity.qidian.QidianChapterModel;
 import wang.smartdj.bookreader.spider.entity.qidian.QidianSectionModel;
+import wang.smartdj.bookreader.spider.launcher.BookSourceLauncher;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -37,8 +38,7 @@ public class QidianPageProcessor implements PageProcessor {
             .setRetryTimes(3)
             .setSleepTime(1000)
             .setDomain("http://m.qidian.com");
-            //.setUserAgent("Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/47\n" +
-            //        ".0.2526.70 Mobile/13C71 Safari/601.1.46");
+            //.setUserAgent();
 
     // process是定制爬虫逻辑的核心接口，在这里编写抽取逻辑
     @Override
@@ -103,6 +103,8 @@ public class QidianPageProcessor implements PageProcessor {
             model.setChapterListURL(chapterListURL);
 
             page.putField("bookModel", model);
+
+            this.searchBookSource(model.getName(), model.getAuthor());
         }else if(pageType == Constant.PageType.ChapterList){
             //处理目录页
             String bookId = this.bookID(currentURL);
@@ -279,5 +281,10 @@ public class QidianPageProcessor implements PageProcessor {
 
         }
         return false;
+    }
+
+    private void searchBookSource(String bookName, String author){
+        BookSourceLauncher.search(bookName, author);
+
     }
 }

@@ -26,6 +26,7 @@
         <!--<spring.version>4.1.7.RELEASE</spring.version>-->
         <hibernate.version>5.2.5.Final</hibernate.version>
         <!--<hibernate.version>4.3.10.Final</hibernate.version>-->
+        <web.magic.version>0.6.0</web.magic.version>
     </properties>
 
     <dependencies>
@@ -33,12 +34,12 @@
         <dependency>
             <groupId>us.codecraft</groupId>
             <artifactId>webmagic-core</artifactId>
-            <version>0.5.3</version>
+            <version>0.6.0</version>
         </dependency>
         <dependency>
             <groupId>us.codecraft</groupId>
             <artifactId>webmagic-extension</artifactId>
-            <version>0.5.3</version>
+            <version>0.6.0</version>
         </dependency>
 
         <!--命令行解析-->

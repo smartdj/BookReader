@@ -1,7 +1,5 @@
 package wang.smartdj.bookreader.spider.entity.qidian;
 
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
 import javax.persistence.*;
 
 /**

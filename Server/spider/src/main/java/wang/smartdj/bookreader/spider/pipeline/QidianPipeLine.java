@@ -4,19 +4,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.Pipeline;
-import wang.smartdj.bookreader.spider.dao.QidianBookDAO;
-import wang.smartdj.bookreader.spider.dao.QidianChapterDAO;
-import wang.smartdj.bookreader.spider.dao.QidianSectionDAO;
+import wang.smartdj.bookreader.spider.dao.qidian.QidianBookDAO;
+import wang.smartdj.bookreader.spider.dao.qidian.QidianChapterDAO;
+import wang.smartdj.bookreader.spider.dao.qidian.QidianSectionDAO;
 import wang.smartdj.bookreader.spider.entity.qidian.QidianBookModel;
 import wang.smartdj.bookreader.spider.entity.qidian.QidianChapterModel;
 import wang.smartdj.bookreader.spider.entity.qidian.QidianSectionModel;
-import wang.smartdj.bookreader.spider.global.Config;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
